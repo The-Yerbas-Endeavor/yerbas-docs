@@ -10,8 +10,8 @@ import styles from './index.module.css';
 import Button from '../components/Button';
 
 // import HomepageFeatures from '../components/HomepageFeatures';
-import RaptoreumLogo from '../components/RaptoreumLogo';
-import RaptoreumTextLogo from '../components/RaptoreumTextLogo';
+import YerbasLogo from '../components/YerbasLogo';
+import YerbasTextLogo from '../components/YerbasTextLogo';
 
 const variants: any = {
   click: { y: [0, 3, 0], scale: [1, 1.25, 1], transition: { duration: 0.5 } },
@@ -33,7 +33,7 @@ function HomepageHeader() {
 
     //     <div className={clsx('container', styles.container)}>
     //       <img
-    //         src="img/raptoreum_logo.png"
+    //         src="img/yerbas_logo.png"
     //         height="128"
     //         width="128"
     //         alt="Yerbas"
@@ -69,16 +69,16 @@ function NavMenu() {
           <div className={styles.primaryHeader}>
             <div className={styles.container}>
               {/* <img
-              src="img/raptoreum_logo.png"
+              src="img/yerbas_logo.png"
               height="128"
               width="128"
               alt="Yerbas"
             /> */}
-              <RaptoreumLogo />
+              <YerbasLogo />
             </div>
           </div>
           <div className={styles.svgcontainer}>
-            <RaptoreumTextLogo />
+            <YerbasTextLogo />
             {/* <h1 className="hero__title">Yerbas</h1> */}
           </div>
         </div>

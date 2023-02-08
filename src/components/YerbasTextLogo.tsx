@@ -3,11 +3,11 @@ import { motion, useMotionValue, useTransform } from 'framer-motion';
 
 // yoyo: Infinity,
 const transition = { duration: 5.5, ease: 'easeInOut' };
-const raptoreumTextTransition = { duration: 3.5, ease: 'easeInOut' };
+const yerbasTextTransition = { duration: 3.5, ease: 'easeInOut' };
 const divTransition = { duration: 6.5, ease: 'easeInOut' };
 const singleLetterTransition = { duration: 3.5, ease: 'easeInOut' };
 
-const RaptoreumTextLogo = (): any => {
+const YerbasTextLogo = (): any => {
   const [isHovered, setHovered] = useState(false);
   // const x = useMotionValue(10);
   // const filter = useTransform(x, (value) => value * 2); poop nuget
@@ -19,7 +19,7 @@ const RaptoreumTextLogo = (): any => {
         // className="box"
         initial={{ offsetDistance: '0%', opacity: 0, y: -250 }}
         animate={{ offsetDistance: '100%', opacity: 1, y: 0 }}
-        transition={raptoreumTextTransition}
+        transition={yerbasTextTransition}
         // whileHover={{
         //   scale: 1.05,
         //   transition: { duration: 0.3 },
@@ -158,4 +158,4 @@ const RaptoreumTextLogo = (): any => {
   );
 };
 
-export default RaptoreumTextLogo;
+export default YerbasTextLogo;

@@ -52,19 +52,19 @@ sudo apt upgrade -y
 sudo reboot
 ```
 
-Get raptoreumd and get it syncing while we do the rest of the setup:
+Get yerbasd and get it syncing while we do the rest of the setup:
 
 ```bash
-wget https://github.com/Raptor3um/Yerbas/releases/download/1.0.15.1/yerbas-1.0.15.1-x86_64-linux-gnu.tar.xz
+wget https://github.com/The-Yerbas-Endeavor/Yerbas/releases/download/1.0.15.1/yerbas-1.0.15.1-x86_64-linux-gnu.tar.xz
 tar -xvf yerbas-1.0.15.1-x86_64-linux-gnu.tar.xz
-mv yerbas-1.0.15.1-x86_64-linux-gnu raptoreum_live
+mv yerbas-1.0.15.1-x86_64-linux-gnu yerbas_live
 ```
 
 Create yerbas data directory and .conf file
 
 ```bash
-mkdir ~/.raptoreumcore
-nano ~/.raptoreumcore/yerbas.conf
+mkdir ~/.yerbascore
+nano ~/.yerbascore/yerbas.conf
 ```
 Add these lines changing the user and password:
 
@@ -76,10 +76,10 @@ rpcport=8777
 daemon=1
 listen=1
 ```
-Start up raptoreumd:
+Start up yerbasd:
 
 ```bash
-~/raptoreum_live/./raptoreumd
+~/yerbas_live/./yerbasd
 ```
 
 Get the pool:
@@ -247,7 +247,7 @@ cp config_example.json config.json
 ```
 :::note
 
-Edit pool_configs/yerbas.json as needed, make sure user and password matches what you have in <code>~/.raptoreumcore/yerbas.conf</code>.
+Edit pool_configs/yerbas.json as needed, make sure user and password matches what you have in <code>~/.yerbascore/yerbas.conf</code>.
 
 :::
 

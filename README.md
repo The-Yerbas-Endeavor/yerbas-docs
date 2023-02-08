@@ -30,7 +30,7 @@ A **Docker image** can be built directly from this repository's source. When doi
 
 1. To build the Docker image, start off by cloning this repository to a directory of your choosing:
 
-   `sudo git clone https://github.com/Raptor3um/docs`
+   `sudo git clone https://github.com/The-Yerbas-Endeavor/docs`
 
 2. Navigate to the cloned repository's root directory.
 3. Build the container:

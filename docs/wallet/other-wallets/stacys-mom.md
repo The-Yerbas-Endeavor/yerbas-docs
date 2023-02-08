@@ -31,7 +31,7 @@ The Wallet Bot is now able to send you private messages with Transaction ID's (T
 
 ### Placing a transaction
 
-Placing a transaction with the Wallet Bot is similar to how RaptoreumCore CLI works. You can send YERB to both addresses, as well as Discord users. Use the following structure:
+Placing a transaction with the Wallet Bot is similar to how YerbasCore CLI works. You can send YERB to both addresses, as well as Discord users. Use the following structure:
 
 `yerb.send <amount> <address> [optional comment]` or `yerb.send <amount> <Discord tag> [optional comment]`
 

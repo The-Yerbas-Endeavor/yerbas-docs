@@ -51,9 +51,9 @@ Follow these steps:
   - evodb
   - powcache.dat
 - Extract to the appropriate data directory:
-  - Unix/Linux: `~/.raptoreumcore`
-  - Windows: `%AppData%\RaptoreumCore`
-- Restart Yerbas Daemon (raptoreumd) and wait for sync
+  - Unix/Linux: `~/.yerbascore`
+  - Windows: `%AppData%\YerbasCore`
+- Restart Yerbas Daemon (yerbasd) and wait for sync
 
 :::danger Wallet.dat
 Do not delete your wallet.dat file without having a backup! This file holds your access to your wallet data. Losing it can mean losing your funds!

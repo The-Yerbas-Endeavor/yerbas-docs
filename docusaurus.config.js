@@ -23,7 +23,7 @@ const config = {
   onBrokenMarkdownLinks: 'warn',
 
   projectName: 'yerbas-docs', // Usually your repo name.
-  organizationName: 'Raptor3um', // Usually your GitHub org/user name.
+  organizationName: 'Yerbas', // Usually your GitHub org/user name.
   i18n: {
     defaultLocale: 'en',
     locales: ['en'],
@@ -36,7 +36,7 @@ const config = {
         docs: {
           sidebarPath: require.resolve('./sidebars.js'),
           // Please change this to your repo.
-          editUrl: 'https://github.com/Raptor3um/docs/tree/develop/',
+          editUrl: 'https://github.com/The-Yerbas-Endeavor/docs/tree/develop/',
         },
         theme: {
           customCss: require.resolve('./src/css/custom.css'),
@@ -78,7 +78,7 @@ const config = {
   themeConfig:
     /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
     ({
-      image: 'img/raptoreum_logo.png',
+      image: 'img/yerbas_logo.png',
       docs: {
         sidebar: {
           autoCollapseCategories: true,
@@ -93,7 +93,7 @@ const config = {
         title: 'Yerbas Docs',
         logo: {
           alt: 'Yerbas',
-          src: 'img/raptoreum_logo.png',
+          src: 'img/yerbas_logo.png',
         },
         items: [
           {
@@ -121,7 +121,7 @@ const config = {
             position: 'right',
           },
           // {
-          //   href: 'https://github.com/Raptor3um/yerbas',
+          //   href: 'https://github.com/The-Yerbas-Endeavor/yerbas',
           //   label: 'GitHub',
           //   position: 'right',
           // },
@@ -176,12 +176,12 @@ const config = {
             title: 'GitHub',
             items: [
               {
-                label: 'RaptoreumCore',
-                href: 'https://github.com/Raptor3um/yerbas',
+                label: 'YerbasCore',
+                href: 'https://github.com/The-Yerbas-Endeavor/yerbas',
               },
               {
                 label: 'Yerbas Docs',
-                href: 'https://github.com/Raptor3um/docs',
+                href: 'https://github.com/The-Yerbas-Endeavor/docs',
               },
             ],
           },

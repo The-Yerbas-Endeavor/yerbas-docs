@@ -5,7 +5,7 @@ import { motion } from 'framer-motion';
 const transition = { duration: 5.0, ease: 'easeOut' };
 const divTransition = { duration: 2.0, ease: 'easeOut' };
 
-const RaptoreumLogo = (): any => {
+const YerbasLogo = (): any => {
   const [isHovered, setHovered] = useState(false);
   return (
     <>
@@ -126,4 +126,4 @@ const RaptoreumLogo = (): any => {
   );
 };
 
-export default RaptoreumLogo;
+export default YerbasLogo;

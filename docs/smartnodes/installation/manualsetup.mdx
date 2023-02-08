@@ -105,7 +105,7 @@ Reboot the server:
 reboot
 ```
 
-Add a system user to run raptoreumd:
+Add a system user to run yerbasd:
 
 ```bash
 adduser <username_here>
@@ -116,21 +116,21 @@ Get Yerbas wallet / daemon and bootstrap:
 ```bash
 mkdir -p rtm_latest
 cd rtm_latest
-wget https://github.com/Raptor3um/yerbas/releases/download/1.3.17.01/yerbas-ubuntu20-1.3.17.01.tar.gz
+wget https://github.com/The-Yerbas-Endeavor/yerbas/releases/download/1.3.17.01/yerbas-ubuntu20-1.3.17.01.tar.gz
 tar -xvf yerbas-ubuntu20-1.3.17.01.tar.gz
 cd ..
 wget https://bootstrap.yerbas.com/bootstraps_for_v1.3.17.00/bootstrap.zip
 unzip bootstrap.zip
-mkdir ~/.raptoreumcore && touch ~/.raptoreumcore/yerbas.conf
-cp -R blocks chainstate evodb llmq ~/.raptoreumcore
-echo "daemon=1" >> ~/.raptoreumcore/yerbas.conf
-~/rtm_latest/yerbas-ubuntu20-1.3.17.01/./raptoreumd
+mkdir ~/.yerbascore && touch ~/.yerbascore/yerbas.conf
+cp -R blocks chainstate evodb llmq ~/.yerbascore
+echo "daemon=1" >> ~/.yerbascore/yerbas.conf
+~/rtm_latest/yerbas-ubuntu20-1.3.17.01/./yerbasd
 echo all done!
 ```
 
 :::tip Info
 
-You should see Raptoreumd server starting. You can confirm it is running <code>top -c</code> it will be using 100% CPU (1 core). This shows you it is working, we will return to it later.
+You should see Yerbasd server starting. You can confirm it is running <code>top -c</code> it will be using 100% CPU (1 core). This shows you it is working, we will return to it later.
 
 :::
 
@@ -144,9 +144,9 @@ This part of the guide is to get your local wallet or control wallet setup. If y
 
 ### 1. Install and Sync Local Wallet:
 
-For this step, you will need the RaptoreumCore wallet installed. 
+For this step, you will need the YerbasCore wallet installed. 
 
-Follow our [RaptoreumCore Wallet](docs/wallet/) guides for detailed instructions on how to do this.
+Follow our [YerbasCore Wallet](docs/wallet/) guides for detailed instructions on how to do this.
 
 To speed up the synchronization, use our POWCache or Bootstrap packages: [Using Powcache & Bootstrap](docs/wallet/bootstrap)
 
@@ -219,15 +219,15 @@ Back to the smartnode server:
 
 ```bash
 ~./yerbas-cli stop
-nano ~/.raptoreumcore/yerbas.conf
+nano ~/.yerbascore/yerbas.conf
 ```
 
 Paste in what you copied from the .conf file made during the protx command, save and exit.
 
-When done with this, run raptoreumd from the terminal:
+When done with this, run yerbasd from the terminal:
 
 ```bash
-~/./raptoreumd
+~/./yerbasd
 ```
 
 When this is done, wait a couple minutes until running `~/./yerbas-cli smartnode status` to check the status of your smartnode. This should return: `Ready Ready`

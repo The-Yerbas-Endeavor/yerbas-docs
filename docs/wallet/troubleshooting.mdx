@@ -4,17 +4,17 @@ sidebar_position: 7
 
 # Troubleshooting
 
-Raptoreumcore Troubleshooting
+Yerbascore Troubleshooting
 
-## Raptoreumcore Fails To Synchronize
+## Yerbascore Fails To Synchronize
 
-Raptoreumcore can fail to synchronize for a few different reasons, the most common ones being:
+Yerbascore can fail to synchronize for a few different reasons, the most common ones being:
 
 - A bad / invalid header or block locally. In your debug console > Peers you will see peers connecting and then being banned as a symptom.
 - Corrupted database files. Wallet will fail to progress on synchronization.
 - Errors related to .dat files, most commonly mncache.dat and sporks.dat.
 
-To fix the first two issues it is best to resynchronize the wallet either from scratch or from bootstrap. Using the bootstrap is much faster. Either option starts with removing the following folders from Raptoreumcore data directory:
+To fix the first two issues it is best to resynchronize the wallet either from scratch or from bootstrap. Using the bootstrap is much faster. Either option starts with removing the following folders from Yerbascore data directory:
 
 ```text
 blocks
@@ -25,8 +25,8 @@ llmq
 
 If you want to resynchronize from scratch start the wallet now. If you want to use the bootstrap:
 
-- Download bootstrap.zip listed on our latest release: <https://github.com/Raptor3um/yerbas/releases/>
-- Unzip the bootstrap and copy the folders into Raptoreumcore data directory.
+- Download bootstrap.zip listed on our latest release: <https://github.com/The-Yerbas-Endeavor/yerbas/releases/>
+- Unzip the bootstrap and copy the folders into Yerbascore data directory.
 - Start the wallet.
 
 ## Fixing .dat Related Errors
@@ -35,21 +35,21 @@ In most cases stopping the wallet and removing the mentioned .dat file is enough
 
 :::note
 
-The first time starting Raptoreumcore progress will seem quite slow, this does not mean the wallet is not synchronizing, it can take up to a day for it to fully synchronize. The slow part is when it says "Synchronizing headers" after that it progresses much quicker.
+The first time starting Yerbascore progress will seem quite slow, this does not mean the wallet is not synchronizing, it can take up to a day for it to fully synchronize. The slow part is when it says "Synchronizing headers" after that it progresses much quicker.
 
 :::
 
-## Raptoreumcore is Showing Incorrect Balance
+## Yerbascore is Showing Incorrect Balance
 
-Go to `Tools > Wallet Repair > Rescan` blockchain files. Using CLI you can do this by using the `-rescan` flag when starting raptoreumd:
+Go to `Tools > Wallet Repair > Rescan` blockchain files. Using CLI you can do this by using the `-rescan` flag when starting yerbasd:
 
 ```bash
-./raptoreumd -rescan
+./yerbasd -rescan
 ```
 
 ## Fixing Long Synchronization Times
 
-The first time you synchronize RaptoreumCore it can take up to a day to fully synchronize. You can reduce this time in most cases to less than one hour by using a bootstrap. We provide a bootstrap with our releases on Github for this reason, it is updated once per month. You can use the bootstrap like so:
+The first time you synchronize YerbasCore it can take up to a day to fully synchronize. You can reduce this time in most cases to less than one hour by using a bootstrap. We provide a bootstrap with our releases on Github for this reason, it is updated once per month. You can use the bootstrap like so:
 
 1. Download: (Yerbas bootstrap packages)[https://bootstrap.yerbas.com/]
 2. Stop wallet or daemon
@@ -68,7 +68,7 @@ The first time you synchronize RaptoreumCore it can take up to a day to fully sy
 
 ## Miscellaneous
 
-If you are experiencing errors or having a hard time synchronizing the wallet and do not see your specific issue above removing all files in your Raptoreumcore data directory except:
+If you are experiencing errors or having a hard time synchronizing the wallet and do not see your specific issue above removing all files in your Yerbascore data directory except:
 
 - wallet.dat files.
 - "backups" directory.

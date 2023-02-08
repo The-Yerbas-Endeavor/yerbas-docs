@@ -4,7 +4,7 @@ sidebar_position: 1
 
 # Installation
 
-Downloads are at: [The Yerbas Github](https://github.com/Raptor3um/yerbas/releases)
+Downloads are at: [The Yerbas Github](https://github.com/The-Yerbas-Endeavor/yerbas/releases)
 
 ## Installer (Windows)
 

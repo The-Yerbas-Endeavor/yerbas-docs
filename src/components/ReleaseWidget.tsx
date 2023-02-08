@@ -20,8 +20,8 @@ export default function ReleaseWidget(props: any): JSX.Element {
   const getReleasesFromGithub = async () => {
     // console.log('getReleasesFromGithub');
     const data = await axios.get(
-      // 'https://api.github.com/repos/Raptor3um/yerbas/releases/latest'
-      'https://api.github.com/repos/Raptor3um/yerbas/releases'
+      // 'https://api.github.com/repos/Yerbas/yerbas/releases/latest'
+      'https://api.github.com/repos/Yerbas/yerbas/releases'
     );
     return data;
   };

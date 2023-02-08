@@ -18,7 +18,7 @@ Login to your Smartnode VIA SSH client.
 Confirm the daemon has stopped:
 
 ```bash
-ps aux | grep raptoreumd
+ps aux | grep yerbasd
 ```
 
 Obtain update from `https://yerbas.com/latest`
