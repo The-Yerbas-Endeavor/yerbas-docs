@@ -65,15 +65,15 @@ Arguments:
 
 #### Sending a simple 100 YERB transaction to a friend, with a note:
 
-`raptorium-cli sendtoaddress <address> <amount> <"own_note"> <"recipient_note">`
+`yerbasium-cli sendtoaddress <address> <amount> <"own_note"> <"recipient_note">`
 
-`raptorium-cli sendtoaddress XwnLY9Tf7Zsef8gMGL2fhWA9ZmMjt4KPwG 100 "donation to you" "friend from club"`
+`yerbasium-cli sendtoaddress XwnLY9Tf7Zsef8gMGL2fhWA9ZmMjt4KPwG 100 "donation to you" "friend from club"`
 
 #### Sending a 50 YERB Futures transaction with a note, set to release after 100 block verifications and after 7 days (60s x 60m x 24h x 7d = 604800s):
 
-`raptorium-cli sendtoaddress <address> <amount> '{"future_maturity": unlock_time_blocks, "future_locktime": unlock_time_seconds}' <"own_note">`
+`yerbasium-cli sendtoaddress <address> <amount> '{"future_maturity": unlock_time_blocks, "future_locktime": unlock_time_seconds}' <"own_note">`
 
-`raptorium-cli sendtoaddress XwnLY9Tf7Zsef8gMGL2fhWA9ZmMjt4KPwG 100 '{"future_maturity":100, "future_locktime": 604800}' "This will unlock in 7 days"`
+`yerbasium-cli sendtoaddress XwnLY9Tf7Zsef8gMGL2fhWA9ZmMjt4KPwG 100 '{"future_maturity":100, "future_locktime": 604800}' "This will unlock in 7 days"`
 
 ---
 

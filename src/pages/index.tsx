@@ -68,19 +68,18 @@ function NavMenu() {
         >
           <div className={styles.primaryHeader}>
             <div className={styles.container}>
-              {/* <img
+              { <img
               src="img/yerbas_logo.png"
               height="128"
               width="128"
               alt="Yerbas"
-            /> */}
-              <YerbasLogo />
+            /> }
             </div>
           </div>
           <div className={styles.svgcontainer}>
-            <YerbasTextLogo />
-            {/* <h1 className="hero__title">Yerbas</h1> */}
-          </div>
+             
+            { <h1 className="hero__title">Yerbas</h1> }
+          </div> 
         </div>
         <div className="row padding-bottom--lg padding-top--lg">
           <div className="col col--2 padding-top--lg margin-top--sm" />

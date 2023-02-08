@@ -21,7 +21,7 @@ Confirm the daemon has stopped:
 ps aux | grep yerbasd
 ```
 
-Obtain update from `https://yerbas.com/latest`
+Obtain update from `https://github.com/the-yerbas=endeavor/latest`
 
 ## Automatic update
 

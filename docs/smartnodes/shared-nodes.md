@@ -9,8 +9,8 @@ Below is a list of shared node providers that the Yerbas community recognizes
 
 ## EvoNodes
 
-## Raptornodes
+## Yerbasnodes
 
-Raptornodes has recently been absorbed into SullyNodes, and users have been migrated to thge SullyNodes services. This migration was finalized on Thursday, 7 october 2022.
+Yerbasnodes has recently been absorbed into SullyNodes, and users have been migrated to thge SullyNodes services. This migration was finalized on Thursday, 7 october 2022.
 
-Raptornodes users can log into SullyNodes using their regular login method. 2FA codes have been migrated accordingly.
+Yerbasnodes users can log into SullyNodes using their regular login method. 2FA codes have been migrated accordingly.

@@ -35,11 +35,11 @@ A **Docker image** can be built directly from this repository's source. When doi
 2. Navigate to the cloned repository's root directory.
 3. Build the container:
 
-   `sudo docker build . -t raptor/docs`
+   `sudo docker build . -t yerbas/docs`
 
 4. Run the container:
 
-   `sudo docker run -p -d raptor/docs`
+   `sudo docker run -p -d yerbas/docs`
    - -p opens the ports specified in the Dockerfile
    - -d specifies detatched 
 
