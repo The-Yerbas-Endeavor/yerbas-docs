@@ -69,7 +69,7 @@ function NavMenu() {
           <div className={styles.primaryHeader}>
             <div className={styles.container}>
               { <img
-              src="img/yerbas_logo.png"
+              src="img/yYerbasLogo.png"
               height="128"
               width="128"
               alt="Yerbas"
