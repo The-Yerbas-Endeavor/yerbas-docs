@@ -1,0 +1,52 @@
+---
+sidebar_position: 1
+---
+
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+
+# Getting started
+
+Get started quickly with the Yerbas Wallet CLI.
+
+## Installation
+
+<Tabs>
+  <TabItem value="windows" label="Windows" default>
+    <p>Installer: <a href="https://github.com/Raptor3um/yerbas/releases/download/1.3.17.01/raptoreumcore-1.3.17-win64-setup.exe" class="button button--primary">raptoreumcore-1.3.17-win64-setup.exe</a></p>
+    <p>Binaries: <a href="https://github.com/Raptor3um/yerbas/releases/download/1.3.17.01/yerbas-win-1.3.17.01.zip" class="button button--primary">yerbas-win-1.3.17.01.zip</a></p>
+  </TabItem>
+  <TabItem value="mac" label="Mac" default>
+    <p>Installer: <a href="https://github.com/Raptor3um/yerbas/releases/download/1.3.17.01/Yerbas-Qt.dmg" class="button button--primary">Yerbas-Qt.dmg</a></p>
+    <p>Binaries: <a href="https://github.com/Raptor3um/yerbas/releases/download/1.3.17.01/yerbas-macos-1.3.17.01.tar.gz" class="button button--primary">yerbas-macos-1.3.17.01.tar.gz</a></p>
+  </TabItem>
+  <TabItem value="linux" label="Linux">
+    <p>Binaries: <a href="https://github.com/Raptor3um/yerbas/releases/download/1.3.17.01/yerbas-ubuntu20-1.3.17.01.tar.gz" class="button button--primary">yerbas-ubuntu20-1.3.17.01.tar.gz</a></p>
+  </TabItem>
+</Tabs>
+
+## Setup
+
+### Standalone Zip
+
+- Extract the zip
+- Use the following per use case:
+  - `raptoreumd` - Yerbas Daemon
+  - `yerbas-qt` - Yerbas Wallet GUI
+  - `yerbas-cli` - Yerbas Wallet CLI
+  - `yerbas-tx` - Yerbas Tx Utility
+- Run Daemon and `./yerbas-cli` for Wallet CLI
+- Allow Daemon to Sync (Use the [bootstrap](docs/wallet/bootstrap))
+
+### Precompiled Binaries
+
+- Download release for Ubuntu 18 or 20:
+- Extract contents:
+  - `tar xzvf raptoreum_1.2.15.2_ubuntu20_64.tar.gz`
+- Use the following per use case:
+  - `raptoreumd` - Yerbas Daemon
+  - `yerbas-qt` - Yerbas Wallet GUI
+  - `yerbas-cli` - Yerbas Wallet CLI
+  - `yerbas-tx` - Yerbas Tx Utility
+- Run Daemon and `yerbas-cli` for Wallet CLI
+- Allow Daemon to Sync (Use the [bootstrap](docs/wallet/bootstrap))

@@ -1,0 +1,56 @@
+---
+sidebar_position: 1
+---
+
+import ReactPlayer from 'react-player';
+
+# bls
+
+_bls "command" ..._
+
+Set of commands to execute BLS related actions.
+
+```bash
+# Available commands:
+  generate          - Create a BLS secret/public key pair
+  fromsecret        - Parse a BLS secret key and return the secret/public key pair
+
+```
+
+`yerbas-cli bls generate`
+
+<ReactPlayer
+  playing
+  controls
+  url={[{ src: `${require('./assets/bls.webm').default}`, type: 'video/webm' }]}
+/>
+
+## Arguments
+
+| Argument  | Type     | Description            |
+| --------- | -------- | ---------------------- |
+| "command" | (string) | The command to execute |
+
+```bash
+Arguments:
+1. "command"        (string, required) The command to execute
+```
+
+## Output
+
+| Result | Type | Description |
+| ------ | ---- | ----------- |
+| ...    | ...  | ...         |
+
+```bash
+Result:
+{
+  ...
+}
+```
+
+## Examples
+
+```bash
+curl --user myusername --data-binary '{"jsonrpc": "1.0", "id":"curltest", "method": "bls", "params": [yerbas+net] }' -H 'content-type: text/plain;' http://127.0.0.1:9998/
+```

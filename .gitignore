@@ -1,0 +1,33 @@
+### Dependencies ###
+/node_modules
+node_modules
+node_modules/*
+
+### Package manager cache/files ###
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+### Production ###
+build/*
+# Use git-add -f to update files in .github folder
+.github
+.github/*
+
+### Generated files ###
+.docusaurus
+.docusaurus/*
+.cache-loader
+.cache-loader/*
+# Use git-add -f to update files in .vscode folder
+.vscode
+.vscode/* 
+
+### Misc ###
+.DS_Store
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+cross-compile-yerb-miner.zip

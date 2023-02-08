@@ -1,0 +1,38 @@
+---
+sidebar_position: 6
+---
+
+import ReactPlayer from 'react-player';
+
+# uptime
+
+_uptime_
+
+Returns the total uptime of the server.
+
+`yerbas-cli uptime`
+
+<ReactPlayer
+  playing
+  controls
+  url={[
+    { src: `${require('./assets/uptime.webm').default}`, type: 'video/webm' },
+  ]}
+/>
+
+## Output
+
+| Result | Type      | Description                                            |
+| ------ | --------- | ------------------------------------------------------ |
+| ttt    | (numeric) | The number of seconds that the server has been running |
+
+```bash
+Result:
+ttt        (numeric) The number of seconds that the server has been running
+```
+
+## Examples
+
+```bash
+curl --user myusername --data-binary '{"jsonrpc": "1.0", "id":"curltest", "method": "uptime", "params": [] }' -H 'content-type: text/plain;' http://127.0.0.1:9998/
+```
