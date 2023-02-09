@@ -70,15 +70,15 @@ function NavMenu() {
             <div className={styles.container}>
               { <img
               src="img/YerbasLogo.png"
-              height="128"
-              width="128"
-              alt="Yerbas"
+              height="400"
+              width="400"
+              alt="Yerb"
             /> }
             </div>
           </div>
           <div className={styles.svgcontainer}>
-             
-            { <h1 className="hero__title">Yerbas</h1> }
+             <br/><br/><br/>
+            {  <h1 className="hero__title">Yerbas</h1> }
           </div> 
         </div>
         <div className="row padding-bottom--lg padding-top--lg">

@@ -93,7 +93,7 @@ const config = {
         title: 'Yerbas Docs',
         logo: {
           alt: 'Yerbas',
-          src: 'img/yerbas_logo.png',
+          src: 'img/YerbasLogo.png',
         },
         items: [
           {
@@ -130,8 +130,8 @@ const config = {
       announcementBar: {
         id: 'new-wallet-release',
         content:
-          'Release <b>v1.3.17.01</b>: There is a new version of the wallet! Updating is required to keep your wallet functioning after the <a href="/docs/yerbas/futures" >Futures</a> release!',
-        backgroundColor: 'var(--ifm-color-danger)',
+          'Release <b>v3.0.0.1</b>: There is a new version of the wallet! Updating is required to keep your wallet functioning after the <a href="https://yerbas.org/assets/" >Assets</a> release!',
+        backgroundColor: 'var(--ifm-color-success)',
         textColor: 'var(--ifm-color-secondary)',
         isCloseable: false,
       },
@@ -143,7 +143,7 @@ const config = {
             items: [
               {
                 label: 'Homepage',
-                to: 'https://www.yerbas.com',
+                to: 'https://yerbas.org',
               },
             ],
           },
@@ -152,23 +152,23 @@ const config = {
             items: [
               {
                 label: 'Discord',
-                href: 'https://discord.gg/yerbas',
+                href: 'https://discord.gg/XGEp2cKSKF',
               },
               {
                 label: 'Telegram',
-                href: 'https://t.me/yerbas',
+                href: 'https://t.me/Yerbas420',
               },
               {
                 label: 'Reddit',
-                href: 'https://www.reddit.com/r/yerbas/',
+                href: 'https://www.reddit.com/r/Yerbas/',
               },
               {
                 label: 'Twitter',
-                href: 'https://twitter.com/yerbas',
+                href: 'https://twitter.com/Yerbas_Endeavor',
               },
               {
                 label: 'YouTube',
-                href: 'https://www.youtube.com/channel/UCfFNoa8d5b0Jt8dfwy0eG7g',
+                href: 'https://youtu.be/9ggB5VjveYQ',
               },
             ],
           },
@@ -181,12 +181,12 @@ const config = {
               },
               {
                 label: 'Yerbas Docs',
-                href: 'https://github.com/The-Yerbas-Endeavor/docs',
+                href: 'https://github.com/The-Yerbas-Endeavor/yerbas-docs',
               },
             ],
           },
         ],
-        copyright: `Copyright © ${new Date().getFullYear()} Yerbas team`,
+        copyright: `Copyright © ${new Date().getFullYear()} The Yerbas Endeavor`,
       },
       prism: {
         theme: lightCodeTheme,

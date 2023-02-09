@@ -100,7 +100,7 @@ const Button = (props: any) => {
           }`}
         />
       );
-      buttonURL = 'docs/yerbas/papers/yerbaslightpaper';
+      buttonURL = 'docs/yerbas/papers/yerbaswhitepaper';
       description = 'Read proposals and developmental plans';
       break;
     default:
