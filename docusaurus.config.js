@@ -36,7 +36,7 @@ const config = {
         docs: {
           sidebarPath: require.resolve('./sidebars.js'),
           // Please change this to your repo.
-          editUrl: 'https://github.com/The-Yerbas-Endeavor/docs/tree/develop/',
+          editUrl: 'https://github.com/The-Yerbas-Endeavor/yerbas-docs/tree/develop/',
         },
         theme: {
           customCss: require.resolve('./src/css/custom.css'),
