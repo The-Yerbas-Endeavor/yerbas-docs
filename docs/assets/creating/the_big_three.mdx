@@ -1,0 +1,142 @@
+---
+sidebar_position: 7
+title: The Big Three
+---
+
+<div>
+ 
+  <p>When working with Yerbas assets you will most likely be using one of these three. They are by far the most used types of assets. It can help to think of these assets as pieces of some abstract on-chain website.</p>
+  <br/>
+  <h4>Main assets</h4>
+  <p>Running on our website analogy, a main asset is like the domain name.</p>
+  
+  <table>
+    <tr>
+      <th>Metadata</th>
+      <th>Information</th>
+    </tr>
+    <tr>
+      <td>Asset Name</td>
+      <td>3-30 capital letters. '.' and '_' are also allowed, but they cannot be at the beginning or end of the asset name. More than one of these special characters also cannot be next to one another. The names YERB, YERBAS, and YERBAS are reserved.</td>
+    </tr>
+    <tr>
+      <td>Ownership Asset</td>
+      <td>Main assets have an associated ownership asset</td>
+    </tr>
+    <tr>
+      <td>Prerequisites</td>
+      <td>None</td>
+    </tr>
+    <tr>
+      <td>Asset Amount</td>
+      <td>1 - 21,000,000,000 of this asset can be created</td>
+    </tr>
+    <tr>
+      <td>Cost</td>
+      <td>20 YERB</td>
+    </tr>
+    <tr>
+      <td>Reissuability</td>
+      <td>This asset can be set to be reissued</td>
+    </tr>
+    <tr>
+      <td>Divisibility</td>
+      <td>Divisibility can be set from 0-8</td>
+    </tr>
+    <tr>
+      <td>Associated Data</td>
+      <td>This asset can have associated data</td>
+    </tr>
+  </table> 
+  
+  <p>The ownership asset of a main asset is required to create the following two assets.</p>
+
+  <br/>
+
+  <h4>Sub-assets</h4>
+  <p>A sub-asset can be likened to a website's path. Creating a sub asset requires a main asset ownership token.</p>
+
+  <table>
+    <tr>
+      <th>Metadata</th>
+      <th>Information</th>
+    </tr>
+    <tr>
+      <td>Asset Name</td>
+      <td><p>The sub-portion of the name must be at least 1 capital letter. '.' and '_' are also allowed, but they cannot be at the beginning or end of the sub-portion. More than one of these special characters also cannot be next to one another.</p>
+      <p>The full sub-asset name takes the form [main asset name]/[sub-portion]. This full name must be 30 or less characters.</p></td>
+    </tr>
+    <tr>
+      <td>Ownership Asset</td>
+      <td>Sub-assets have an associated ownership asset</td>
+    </tr>
+    <tr>
+      <td>Prerequisites</td>
+      <td>A main asset's ownership asset</td>
+    </tr>
+    <tr>
+      <td>Asset Amount</td>
+      <td>1 - 21,000,000,000 of this asset can be created</td>
+    </tr>
+    <tr>
+      <td>Cost</td>
+      <td>20 YERB</td>
+    </tr>
+    <tr>
+      <td>Reissuability</td>
+      <td>This asset can be set to be reissued</td>
+    </tr>
+    <tr>
+      <td>Divisibility</td>
+      <td>Divisibility can be set from 0-8</td>
+    </tr>
+    <tr>
+      <td>Associated Data</td>
+      <td>This asset can have associated data</td>
+    </tr>
+  </table> 
+
+  <br/>
+
+  <h4>Unique assets</h4>
+  <p>A unique asset can be likened to a file on a website. Creating a unique asset requires a main asset ownership token or a sub-asset ownership token. There can only be 1 of a unique asset.</p>
+
+  <table>
+    <tr>
+      <th>Metadata</th>
+      <th>Information</th>
+    </tr>
+    <tr>
+      <td>Asset Name</td>
+      <td>The unique portion of the name must be at least 1 character. The full unique asset name takes the form [main or sub asset name]#[unique portion]. This full name must be 30 or less characters.</td>
+    </tr>
+    <tr>
+      <td>Ownership Asset</td>
+      <td>Unique assets have no associated ownership asset</td>
+    </tr>
+    <tr>
+      <td>Prerequisites</td>
+      <td>A main asset or sub-asset's ownership asset</td>
+    </tr>
+    <tr>
+      <td>Asset Amount</td>
+      <td>1 of this asset can be created</td>
+    </tr>
+    <tr>
+      <td>Cost</td>
+      <td>0.2 YERB</td>
+    </tr>
+    <tr>
+      <td>Reissuability</td>
+      <td>This asset cannot be reissued</td>
+    </tr>
+    <tr>
+      <td>Divisibility</td>
+      <td>Divisibility is 0</td>
+    </tr>
+    <tr>
+      <td>Associated Data</td>
+      <td>This asset can have associated data</td>
+    </tr>
+  </table>
+  </div>

@@ -1,0 +1,54 @@
+---
+sidebar_position: 8
+title: Broadcasts and Message Channels
+---
+ 
+ 
+  <p>Our next asset type is a message channel, and we cannot talk about message channels without first talking about broadcasts, and we can't talk about broadcasts without talking about messages. It is important to note that asset broadcasts and message channels are rarely used and their use-case has not been solidified by the community.</p>
+  <h4>Asset Messages</h4>
+  <p>Any user can send an asset message on any asset that they own. An asset message is 34 bytes long and is seen as directed to the asset recipient.</p>
+  <h4>Asset Broadcasts</h4>
+  <p>In an asset transaction, if the sending address is the same as the receiving address, this is seen as a broadcast. Only message channels can broadcast messages. It is important to note that the user interface for message broadcasts do not seem to be fully implemented in the core wallet yet.</p>
+  <h4>Message Channels</h4>
+  <p>A message channel requires a main or sub-asset's ownership asset. A message channel is an asset specifically made for broadcasting messages. Their purpose is to add more control to whoever
+  might be subscribed to the message channel's parent.</p>
+  <table>
+    <tr>
+      <th>Metadata</th>
+      <th>Information</th>
+    </tr>
+    <tr>
+      <td>Asset Name</td>
+      <td><p>The message channel portion of the name must at most 12 characters. It can contain letters, numbers, and '_'. '_' cannot be at the beginning or end of the message channel portion and two or more '_''s cannot be next to each other.</p>
+      <p>The message channel asset name takes the form [main or sub asset name]~[message channel portion]. This full name must be 30 or less characters.</p></td>
+    </tr>
+    <tr>
+      <td>Ownership Asset</td>
+      <td>Message channel assets have no associated ownership asset</td>
+    </tr>
+    <tr>
+      <td>Prerequisites</td>
+      <td>A main asset or sub-asset's ownership asset</td>
+    </tr>
+    <tr>
+      <td>Asset Amount</td>
+      <td>1 of this asset can be created</td>
+    </tr>
+    <tr>
+      <td>Cost</td>
+      <td>4 YERB</td>
+    </tr>
+    <tr>
+      <td>Reissuability</td>
+      <td>This asset cannot be reissued</td>
+    </tr>
+    <tr>
+      <td>Divisibility</td>
+      <td>Divisibility is 0</td>
+    </tr>
+    <tr>
+      <td>Associated Data</td>
+      <td>This asset cannot have associated data</td>
+    </tr>
+  </table>
+  

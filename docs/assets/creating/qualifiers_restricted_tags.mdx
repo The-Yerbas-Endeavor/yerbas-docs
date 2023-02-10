@@ -1,0 +1,165 @@
+---
+sidebar_position: 9
+title: Qualifiers, restricted assets, addresses, and tags
+---
+
+  <p>This is where things really start to get complicated. First you should know that qualifier assets, or simply qualifiers, dictate what addresses can hold a restricted asset by "qualifying" them with a null asset tag. A restricted asset can be associated with 0 or more qualifiers. The main factor in deciding whether or not an address can recieve a restricted asset is whether that address has been qualifier by all of the qualifiers associated with the said restricted asset.</p>
+  <p>This means you DO NOT WANT TO SEND QUALIFIERS to addresses you do not trust! Qualifiers are an administrative asset much like ownership assets.</p>
+  <p>*phew*</p>
+  <p>Lets start out with some definitions.</p>
+  <ul>
+    <li>
+    <h4>Asset Tags</h4>
+    <p>An asset tag determines whether or not an address is able to receive a restricted asset. It costs 0.1 YERB to create an asset tag. There are three types of asset tags:</p>
+    <ul>
+    <li><h5>Null Asset Tag</h5>
+    <p>A null asset tag has two sub-types:</p>
+    <ul>
+    <li>Qualifying Null Asset Tag: This type of null asset tag can be created with a qualifier asset. It qualifies or unqualifies some address.</li>
+    <li>Restricted Null Asset Tag: This type of null asset tag can be created with a restricted asset's ownership asset. It can add or remove an address from being blacklisted from receiving this restricted asset
+     no matter the address's qualifications.</li>
+    </ul>
+    </li>
+    <li>
+    <h5>Verifier Asset Tag</h5>
+    <p>A verifier asset tag can be created with a restricted asset's ownership asset. It associates this restricted asset with one or more qualifiers. (This
+   means that to recieve this restricted asset, an address must be qualified by all of the qualifiers defined in this tag).</p>
+    </li>
+    <li>
+    <h5>Restricted Asset Tag</h5>
+    <p>Also known as a global freeze tag, a restricted asset tag can be created with a restricted asset's ownership asset. This tag
+     can freeze or unfreeze all movements across all addresses of this restricted asset.</p>
+    </li>
+    </ul>
+    </li>
+    <li>
+    <h4>Qualifier Asset</h4>
+    <p>Qualifier assets are administrative assets (in the same group as ownership assets) used to determine what addresses can receive restricted assets. Simply owning a qualifier asset gives a user this power.</p>
+    <table>
+    <tr>
+      <th>Metadata</th>
+      <th>Information</th>
+    </tr>
+    <tr>
+      <td>Asset Name</td>
+      <td><p>The qualifier portion of the name has the same naming rules as a main asset.</p>
+      <p>The qualifier asset name takes the form #[qualifier portion]. Note how this is differentiated from unique assets with the fact that a qualifier has no parent. This full name must be less than 30 characters.</p></td>
+    </tr>
+    <tr>
+      <td>Ownership Asset</td>
+      <td>Qualifier assets have no associated ownership asset</td>
+    </tr>
+    <tr>
+      <td>Prerequisites</td>
+      <td>None</td>
+    </tr>
+    <tr>
+      <td>Asset Amount</td>
+      <td>1 - 10 of this asset can be created</td>
+    </tr>
+    <tr>
+      <td>Cost</td>
+      <td>40 YERB</td>
+    </tr>
+    <tr>
+      <td>Reissuability</td>
+      <td>This asset cannot be reissued</td>
+    </tr>
+    <tr>
+      <td>Divisibility</td>
+      <td>Divisibility is 0</td>
+    </tr>
+    <tr>
+      <td>Associated Data</td>
+      <td>This asset can have associated data. Note: because qualifiers cannot be reissued, if you choose to have associated data, it cannot be changed in the future.</td>
+    </tr>
+    </table>
+    </li>
+    <li>
+    <h4>Sub-qualifier Asset</h4>
+    <p>Currently, sub-qualifiers have exactly the same powers as their parents. Sub-qualifiers use a parent qualifier asset in lieu of a parent ownership asset in its creation.</p>
+    <table>
+    <tr>
+      <th>Metadata</th>
+      <th>Information</th>
+    </tr>
+    <tr>
+      <td>Asset Name</td>
+      <td><p>The sub-qualifier portion of the name has the same naming rules as a sub-asset.</p>
+      <p>The sub-qualifier asset name takes the form #[qualifier portion]/#[sub-qualifier]. Note how this is differentiated from unique assets with the fact the the intermediary characters are '/#' This full name must be less than 30 characters.</p></td>
+    </tr>
+    <tr>
+      <td>Ownership Asset</td>
+      <td>Qualifier assets have no associated ownership asset</td>
+    </tr>
+    <tr>
+      <td>Prerequisites</td>
+      <td>A qualifier</td>
+    </tr>
+    <tr>
+      <td>Asset Amount</td>
+      <td>1 - 10 of this asset can be created</td>
+    </tr>
+    <tr>
+      <td>Cost</td>
+      <td>4 YERB</td>
+    </tr>
+    <tr>
+      <td>Reissuability</td>
+      <td>This asset cannot be reissued</td>
+    </tr>
+    <tr>
+      <td>Divisibility</td>
+      <td>Divisibility is 0</td>
+    </tr>
+    <tr>
+      <td>Associated Data</td>
+      <td>This asset can have associated data. Note: because qualifiers cannot be reissued, if you choose to have associated data, it cannot be changed in the future.</td>
+    </tr>
+    </table>
+    </li>
+    <li>
+    <h4>Restricted Asset</h4>
+    <p>Restricted assets are comparable to main assets except for the fact that they are, well, restricted. Currently restricted assets can only be associated with main qualifiers (not sub-qualifiers). If a restricted asset is not associated with any qualifier, it cannot be transfered. 
+    Restricted assets are also somewhat unique in the fact that if they can be reissued, they are able to change what qualifiers they are associated with.</p>
+    <table>
+    <tr>
+      <th>Metadata</th>
+      <th>Information</th>
+    </tr>
+    <tr>
+      <td>Asset Name</td>
+      <td><p>The restricted portion of the name has the same naming rules as a main asset.</p>
+      <p>The restricted asset name takes the form $[restricted protion]. This full name must be less than 30 characters.</p></td>
+    </tr>
+    <tr>
+      <td>Ownership Asset</td>
+      <td>Restricted assets have an associated ownership asset</td>
+    </tr>
+    <tr>
+      <td>Prerequisites</td>
+      <td>A qualifier</td>
+    </tr>
+    <tr>
+      <td>Asset Amount</td>
+      <td>1 - 21,000,000,000 of this asset can be created</td>
+    </tr>
+    <tr>
+      <td>Cost</td>
+      <td>69 YERB</td>
+    </tr>
+    <tr>
+      <td>Reissuability</td>
+      <td>This asset can be reissued</td>
+    </tr>
+    <tr>
+      <td>Divisibility (Units)</td>
+      <td>Divisibility (Units) can be 0 - 8</td>
+    </tr>
+    <tr>
+      <td>Associated Data</td>
+      <td>This asset can have associated data.</td>
+    </tr>
+    </table>
+    </li>
+  </ul>

@@ -1,0 +1,52 @@
+---
+sidebar_position: 5
+title: Jargon
+---
+
+
+<div>
+
+  <h3 id="the_jargon">The jargon...</h3>
+  <p>When dealing with assets, it is inevitable that you will eventually come across some strange words denoting strange concepts. Before we move on, you should familiarize yourself with these concepts.</p>
+  <ul>
+    <li>
+      <h4>Reissuability</h4>
+      <p>This is a metadata flag that denotes whether or not an asset can be reissued. Once this flag is set to false it CANNOT be changed back! If you want (or have even a sliver of belief) that you want to change your asset's information in the future, ensure that you asset is reissuable when you create it!</p>
+    </li>
+    <li>
+      <h4>Divisibility (Units)</h4>
+      <p>Units is a metadata value from zero to eight that denotes how much an asset can be broken up. Specifically this number is how many digits past the decimal this asset can be divided into (a minimum size of 10<sup>-d</sup> where d is the divisibility).</p>. Units=0 means the tokens are not divisible at all -- whole tokens only can be transferred.  Units=2 would be two decimal places like cents on a dollar it would be possible to transfer 0.01.   Units=8 is the most divisible and allows tokens to be tranferred in increments of 0.00000001.
+    </li>
+    <li>
+      <h4>Reissuing</h4>
+      <p>Reissuing an asset is an act that does one or both of the following:</p>
+      <ul>
+        <li>Changing the metadata associated with an asset.</li>
+        <li>Creating more of an asset.</li>
+      </ul>
+      <br/>
+      <p>In order to reissue an asset, the asset must be reissuable and you must have the associated ownership asset.</p>
+      <br/>
+      <p>When changing divisibility during a reissuance, the divisibility can only go up. (What would happen if you changed divisibility to zero when users had fractions of an asset?)</p>
+      <br/>
+      <p>When increasing divisibility, you cannot use the new lowest asset amount when creating more of the asset; the asset still has the old divisibility amount until the reissue transaction exits the mempool.</p>
+    </li>
+    <li>
+      <h4>Ownership Assets</h4>
+      <p>When creating certain types of assets, you will also receive an ownership asset. Ownship assets allow a user to reissue an asset and create "child assets" which we will explore in the next section. Ownership assets always come in the form of an exclamation point (!) coming after whatever you named your asset. For instance, say we create an asset named "ASSET". The associated ownership asset would be "ASSET!". If an asset A requires the ownership asset of asset B to be created, asset B is said to be asset A's "parent" and asset A is said to be asset B's "child".</p>
+    </li>
+    <li>
+      <h4>Associated Data</h4>
+      <p>Or IPFS hash or associated TXID. 32 bytes of user-decided information. Generally this is used with an IPFS hash or a TXID, but it can be anything.</p>
+    </li>
+    <li>
+      <h4>Message Broadcasts</h4>
+      <p>Any owner of any asset can broadcast a 32 byte message associated with that asset. We will go more in-depth with broadcasts later.</p>
+    </li>
+    <li>
+      <h4>Null Asset Tags</h4>
+      <p>These are special <a href="https://en.bitcoin.it/wiki/Script">scripts</a> used by holders of qualifier assets and restricted ownership assets to define behavior between restricted assets and addresses. The relationship between qualifiers, restricted assets, tags, and addresses is fairly complicated. We will go more in-depth further down the page.</p>
+    </li>
+  </ul>
+
+ </div>

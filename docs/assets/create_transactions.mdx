@@ -1,0 +1,262 @@
+---
+sidebar_position: 13
+title: Asset transaction structures
+---
+ 
+ 
+  <p>Similar to normal Yerbas (and bitcoin) transactions, the amount of an asset from the VINS must equal the amount in the VOUTS (Not including created assets).</p>
+  <p>A YERB fee must be paid for asset-only transactions just like any other.</p>
+  <p>All of the protocols pertaining to transactions are the same. The only thing that changes is the scripts.</p>
+  <p>The order of the VOUTS <i>does</i> matter when creating and reissuing assets.</p>
+  <p>When creating transactions the created ownership asset (if there is one) must be sent to the same address as the created asset.</p>
+  <h4>Transfer asset transaction</h4>
+  <table>
+  <tr>
+      <th>VINS</th>
+      <th>VOUTS</th>
+    </tr>
+    <tr>
+      <td>
+      <p>YERB outpoint(s) for fee</p>
+      <p>Asset outpoint(s) for transfer</p>
+      </td>
+      <td>
+      <p>YERB change address(s)</p>
+      <p>Asset transfer script(s)</p>
+      </td>
+    </tr>
+  </table>
+  <p>On chain example: <a href="https://yerb.cryptoscope.io/api/getrawtransaction/?txid=bae95f349f15effe42e75134ee7f4560f53462ddc19c47efdd03f85ef4ab8f40&decode=1">bae95f349f15effe42e75134ee7f4560f53462ddc19c47efdd03f85ef4ab8f40</a></p>
+  
+  <h4>Creating a main asset transaction</h4>
+  Note that when creating assets, you get to freely determine what address to send the assets and ownership asset to.
+  <table>
+  <tr>
+      <th>VINS</th>
+      <th>VOUTS</th>
+    </tr>
+    <tr>
+      <td>
+      <p>YERB outpoint(s) for fees</p>
+      </td>
+      <td>
+      <p>Issue asset fee address</p>
+      <p>YERB change address(s)</p>
+      <p>Ownership asset script</p>
+      <p>New asset script</p>
+      </td>
+    </tr>
+  </table>
+  <p>On chain example: <a href="https://yerb.cryptoscope.io/api/getrawtransaction/?txid=8eefce8d264d723b6b8f3cf87bcb400a009d01c2771f94e5cc07af252851aa96&decode=1">8eefce8d264d723b6b8f3cf87bcb400a009d01c2771f94e5cc07af252851aa96</a></p>
+
+  <h4>Creating a sub-asset transaction</h4>
+  <table>
+  <tr>
+      <th>VINS</th>
+      <th>VOUTS</th>
+    </tr>
+    <tr>
+      <td>
+      <p>YERB outpoint(s) for fees</p>
+      <p>Parent ownership asset outpoint</p>
+      </td>
+      <td>
+      <p>Issue sub-asset fee address</p>
+      <p>YERB change address(s)</p>
+      <p>Transfer asset script (For parent ownership asset)</p>
+      <p>Ownership asset script</p>
+      <p>New asset script</p>
+      </td>
+    </tr>
+  </table>
+  <p>On chain example: <a href="https://yerb.cryptoscope.io/api/getrawtransaction/?txid=15127b9ea4c21c323dde1f2dd64b24b12efef2adec43b0b5f2e2377ad4aea369&decode=1">15127b9ea4c21c323dde1f2dd64b24b12efef2adec43b0b5f2e2377ad4aea369</a></p>
+
+  <h4>Creating a unique asset transaction</h4>
+  <table>
+  <tr>
+      <th>VINS</th>
+      <th>VOUTS</th>
+    </tr>
+    <tr>
+      <td>
+      <p>YERB outpoint(s) for fees</p>
+      <p>Parent ownership asset outpoint</p>
+      </td>
+      <td>
+      <p>Issue unique asset fee address</p>
+      <p>YERB change address(s)</p>
+      <p>Transfer asset script (For parent ownership asset)</p>
+      <p>New asset script</p>
+      </td>
+    </tr>
+  </table>
+  <p>On chain example: <a href="https://yerb.cryptoscope.io/api/getrawtransaction/?txid=12f39ab78609e312e80c86d1ed3f25937120cbdeee6fc81b1068c400eb1c8518&decode=1">12f39ab78609e312e80c86d1ed3f25937120cbdeee6fc81b1068c400eb1c8518</a></p>
+
+  <h4>Creating a reissue asset transaction</h4>
+  <table>
+  <tr>
+      <th>VINS</th>
+      <th>VOUTS</th>
+    </tr>
+    <tr>
+      <td>
+      <p>YERB outpoint(s) for fees</p>
+      <p>Ownership asset outpoint</p>
+      </td>
+      <td>
+      <p>Reissue asset fee address</p>
+      <p>YERB change address(s)</p>
+      <p>Transfer asset script (For ownership asset)</p>
+      <p>Reissue asset script</p>
+      </td>
+    </tr>
+  </table>
+  <p>On chain example: <a href="https://yerb.cryptoscope.io/api/getrawtransaction/?txid=1370040248ba64a2676f125e645a83421adb2859c8c2aacc74017d738309ebda&decode=1">1370040248ba64a2676f125e645a83421adb2859c8c2aacc74017d738309ebda</a></p>
+
+  <h4>Creating a message channel asset transaction</h4>
+  <table>
+  <tr>
+      <th>VINS</th>
+      <th>VOUTS</th>
+    </tr>
+    <tr>
+      <td>
+      <p>YERB outpoint(s) for fees</p>
+      <p>Parent ownership asset outpoint</p>
+      </td>
+      <td>
+      <p>Issue message channel asset fee address</p>
+      <p>YERB change address(s)</p>
+      <p>Transfer asset script (For parent ownership asset)</p>
+      <p>New asset script</p>
+      </td>
+    </tr>
+  </table>
+  <p>On chain example: <a href="https://yerb.cryptoscope.io/api/getrawtransaction/?txid=d5a13003bff69513b1bb172164ba015afd9bd5afc0a2d654cf10daf1ae470a8c&decode=1">d5a13003bff69513b1bb172164ba015afd9bd5afc0a2d654cf10daf1ae470a8c</a></p>
+
+  
+  <h4>Creating a qualifier asset transaction</h4>
+  <table>
+  <tr>
+      <th>VINS</th>
+      <th>VOUTS</th>
+    </tr>
+    <tr>
+      <td>
+      <p>YERB outpoint(s) for fees</p>
+      </td>
+      <td>
+      <p>Issue qualifier asset fee address</p>
+      <p>YERB change address(s)</p>
+      <p>New asset script</p>
+      </td>
+    </tr>
+  </table>
+  <p>On chain example: <a href="https://yerb.cryptoscope.io/tx/?txid=748c7e0996e0a4f599c51635c8fce8ddd6ae0e625be640fa4074f51f2574d7a1">748c7e0996e0a4f599c51635c8fce8ddd6ae0e625be640fa4074f51f2574d7a1</a></p>
+
+  <h4>Creating a sub-qualifier asset transaction</h4>
+  <table>
+  <tr>
+      <th>VINS</th>
+      <th>VOUTS</th>
+    </tr>
+    <tr>
+      <td>
+      <p>YERB outpoint(s) for fees</p>
+      <p>Parent asset outpoint</p>
+      </td>
+      <td>
+      <p>Issue sub-qualifier asset fee address</p>
+      <p>YERB change address(s)</p>
+      <p>Transfer asset script (For parent asset)</p>
+      <p>New asset script</p>
+      </td>
+    </tr>
+  </table>
+  <p>On chain example: <a href="https://yerb.cryptoscope.io/tx/?txid=748c7e0996e0a4f599c51635c8fce8ddd6ae0e625be640fa4074f51f2574d7a1">748c7e0996e0a4f599c51635c8fce8ddd6ae0e625be640fa4074f51f2574d7a1</a></p>
+
+  <h4>Creating a restricted asset transaction</h4>
+  <table>
+  <tr>
+      <th>VINS</th>
+      <th>VOUTS</th>
+    </tr>
+    <tr>
+      <td>
+      <p>YERB outpoint(s) for fees</p>
+      </td>
+      <td>
+      <p>Issue restricted asset fee address</p>
+      <p>YERB change address(s)</p>
+      <p>Verifier asset tag script</p>
+      <p>Ownership asset script</p>
+      <p>New asset script</p>
+      </td>
+    </tr>
+  </table>
+  <p>On chain example: <a href="https://yerb.cryptoscope.io/api/getrawtransaction/?txid=c1e61a69bfb3a02f15c44b530a76fee8d69c8b54b0cc69c0fab81a583e3e5c33&decode=1">c1e61a69bfb3a02f15c44b530a76fee8d69c8b54b0cc69c0fab81a583e3e5c33</a></p>
+
+  
+  <h4>Creating a reissue restricted asset with new qualifiers transaction</h4>
+  <table>
+  <tr>
+      <th>VINS</th>
+      <th>VOUTS</th>
+    </tr>
+    <tr>
+      <td>
+      <p>YERB outpoint(s) for fees</p>
+      <p>Ownership asset outpoint</p>
+      </td>
+      <td>
+      <p>Reissue asset fee address</p>
+      <p>YERB change address(s)</p>
+      <p>Verifier asset tag script</p>
+      <p>Transfer asset script (For ownership asset)</p>
+      <p>Reissue asset script</p>
+      </td>
+    </tr>
+  </table>
+  <p>On chain example: <a href="https://yerbt.cryptoscope.io/api/getrawtransaction/?txid=a2b634e160974348647484302501a64bc80a841d4a9ea833498a47e72e987628&decode=1">a2b634e160974348647484302501a64bc80a841d4a9ea833498a47e72e987628 (testnet)</a></p>
+
+  <h4>Creating a null asset script transaction</h4>
+  <table>
+  <tr>
+      <th>VINS</th>
+      <th>VOUTS</th>
+    </tr>
+    <tr>
+      <td>
+      <p>YERB outpoint(s) for fees</p>
+      <p>Qualifier or restricted ownership asset outpoint</p>
+      </td>
+      <td>
+      <p>Tag fee address</p>
+      <p>YERB change address(s)</p>
+      <p>Transfer asset script (For qualifier or restricted ownership asset)</p>
+      <p>Null asset tag script</p>
+      </td>
+    </tr>
+  </table>
+  <p>On chain example: <a href="https://yerb.cryptoscope.io/api/getrawtransaction/?txid=0332beef9c76cf300b166cf5f56e8acd83788201eae1fc93f05364c28cd882f2&decode=1">0332beef9c76cf300b166cf5f56e8acd83788201eae1fc93f05364c28cd882f2</a></p>
+
+  <h4>Creating a freeze restricted asset transaction</h4>
+  <table>
+  <tr>
+      <th>VINS</th>
+      <th>VOUTS</th>
+    </tr>
+    <tr>
+      <td>
+      <p>YERB outpoint(s) for fees</p>
+      <p>Restricted ownership asset outpoint</p>
+      </td>
+      <td>
+      <p>Tag fee address</p>
+      <p>YERB change address(s)</p>
+      <p>Transfer asset script (For restricted ownership asset)</p>
+      <p>Global restriction asset tag script</p>
+      </td>
+    </tr>
+  </table>
+  <p>On chain example: <a href="https://yerb.cryptoscope.io/api/getrawtransaction/?txid=cb6f7a7cf7d65d532101a259ef37cebff77ccb1e9f86823910537d6580071668&decode=1">cb6f7a7cf7d65d532101a259ef37cebff77ccb1e9f86823910537d6580071668</a></p>

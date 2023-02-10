@@ -112,6 +112,11 @@ const config = {
             to: 'docs/mining/',
           },
           {
+            label: 'Assets',
+            position: 'left',
+            to: 'docs/assets/',
+          },
+          {
             label: 'More...',
             position: 'left',
             to: 'docs/yerbas/',

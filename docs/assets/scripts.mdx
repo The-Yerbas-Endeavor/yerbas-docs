@@ -1,0 +1,339 @@
+---
+sidebar_position: 12
+title: Asset Scripts
+---
+
+  <p>Here is where the technical protocol-ly stuff starts.</p>
+  <p>The following sections assume that you are familiar with <a href="https://en.bitcoin.it/wiki/Script">script</a> and
+   <a href="https://en.bitcoin.it/wiki/Transaction">transactions</a>.</p>
+  <p>We do not endorse any of the assets shown in examples.</p>
+  <p>There are 4 types of asset transfer scripts and 3 types of asset tag scripts. All asset scripts must be in a VOUT with a YERB value of 0.</p>
+  <p>If you are looking to use this as a guide to parse the yerbas chain, please see a note at the end of this section.</p>
+  <h4>New asset script</h4>
+  <p>New asset scripts are used to transfer an amount of an asset into and address during an asset create as well as associate metadata
+   with the created asset.</p>
+  <table>
+    <tr>
+      <th>Script portion</th>
+      <th>Number of bytes</th>
+    </tr>
+    <tr>
+      <td>Standard vout script (P2PKH)</td>
+      <td>Var bytes</td>
+    </tr>
+    <tr>
+      <td>OP_YERB_ASSET (C0)</td>
+      <td>1 byte</td>
+    </tr>
+    <tr>
+      <td>Length of the asset data (OP_PUSH) (Not including OP_DROP)</td>
+      <td>1 or 2 bytes</td>
+    </tr>
+    <tr>
+      <td>'yerb' in ascii (72766E)</td>
+      <td>3 bytes</td>
+    </tr>
+    <tr>
+      <td>Asset script type 'q' (71)</td>
+      <td>1 byte</td>
+    </tr>
+    <tr>
+      <td>Length of asset name (OP_PUSH)</td>
+      <td>1 byte</td>
+    </tr>
+    <tr>
+      <td>Asset name in ascii</td>
+      <td>Var bytes</td>
+    </tr>
+    <tr>
+      <td>Amount in sats (little endian)</td>
+      <td>8 bytes</td>
+    </tr>
+    <tr>
+      <td>Divisions (00-08)</td>
+      <td>1 byte</td>
+    </tr>
+    <tr>
+      <td>Reissuability (00-01)</td>
+      <td>1 byte</td>
+    </tr>
+    <tr>
+      <td>Has associated data (00-01)</td>
+      <td>1 byte</td>
+    </tr>
+    <tr>
+      <td>Associated data (Optional; only if previous byte is 01)</td>
+      <td>0x12 and 0x20 if IPFS data in which case API will encode/decode as IPFS content identifier 32 bytes of user defined data</td>
+    </tr>
+    <tr>
+      <td>OP_DROP (75)</td>
+      <td>1 byte</td>
+    </tr>
+  </table>
+  <p>On chain example: <a href="https://yerb.cryptoscope.io/api/getrawtransaction/?txid=8eefce8d264d723b6b8f3cf87bcb400a009d01c2771f94e5cc07af252851aa96&decode=1">8eefce8d264d723b6b8f3cf87bcb400a009d01c2771f94e5cc07af252851aa96</a> VOUT 3</p>
+  
+  <h4>Ownership asset script</h4>
+  <p>Ownership asset scripts are used in tandem with a new asset script if the new asset has an associated ownership asset.
+   Notice how ownership assets have no extra information, not even an amount.</p>
+  <table>
+    <tr>
+      <th>Script portion</th>
+      <th>Number of bytes</th>
+    </tr>
+    <tr>
+      <td>Standard vout script (P2PKH)</td>
+      <td>Var bytes</td>
+    </tr>
+    <tr>
+      <td>OP_YERB_ASSET (C0)</td>
+      <td>1 byte</td>
+    </tr>
+    <tr>
+      <td>Length of the asset data (OP_PUSH) (Not including OP_DROP)</td>
+      <td>1 or 2 bytes</td>
+    </tr>
+    <tr>
+      <td>'yerb' in ascii (72766E)</td>
+      <td>3 bytes</td>
+    </tr>
+    <tr>
+      <td>Asset script type 'o' (6F)</td>
+      <td>1 byte</td>
+    </tr>
+    <tr>
+      <td>Length of asset name (OP_PUSH)</td>
+      <td>1 byte</td>
+    </tr>
+    <tr>
+      <td>Asset name in ascii</td>
+      <td>Var bytes</td>
+    </tr>
+    <tr>
+      <td>OP_DROP (75)</td>
+      <td>1 byte</td>
+    </tr>
+  </table>
+  <p>On chain example: <a href="https://yerb.cryptoscope.io/api/getrawtransaction/?txid=8eefce8d264d723b6b8f3cf87bcb400a009d01c2771f94e5cc07af252851aa96&decode=1">8eefce8d264d723b6b8f3cf87bcb400a009d01c2771f94e5cc07af252851aa96</a> VOUT 2</p>
+  <h4>Reissue asset script</h4>
+  <p>Reissue asset scripts are used to change an asset's metadata. If the amount is not zero, that amount of the asset is created for the pubkey in the standard script.</p>
+  <table>
+    <tr>
+      <th>Script portion</th>
+      <th>Number of bytes</th>
+    </tr>
+    <tr>
+      <td>Standard vout script (P2PKH)</td>
+      <td>Var bytes</td>
+    </tr>
+    <tr>
+      <td>OP_YERB_ASSET (C0)</td>
+      <td>1 byte</td>
+    </tr>
+    <tr>
+      <td>Length of the asset data (OP_PUSH) (Not including OP_DROP)</td>
+      <td>1 or 2 bytes</td>
+    </tr>
+    <tr>
+      <td>'yerb' in ascii (72766E)</td>
+      <td>3 bytes</td>
+    </tr>
+    <tr>
+      <td>Asset script type 'r' (72)</td>
+      <td>1 byte</td>
+    </tr>
+    <tr>
+      <td>Length of asset name (OP_PUSH)</td>
+      <td>1 byte</td>
+    </tr>
+    <tr>
+      <td>Asset name in ascii</td>
+      <td>Var bytes</td>
+    </tr>
+    <tr>
+      <td>Amount in sats (little endian) (Amount to add into circulation)</td>
+      <td>8 bytes</td>
+    </tr>
+    <tr>
+      <td>Divisions (00-08) (FF for unchanged; can only increase)</td>
+      <td>1 byte</td>
+    </tr>
+    <tr>
+      <td>Reissuability (00-01)</td>
+      <td>1 byte</td>
+    </tr>
+    <tr>
+      <td>Associated data (Optional; only if associating new data)</td>
+      <td>1 type byte, 1 length byte, 32 bytes user data</td>
+    </tr>
+    <tr>
+      <td>OP_DROP (75)</td>
+      <td>1 byte</td>
+    </tr>
+  </table>
+  <p>On chain example: <a href="https://yerb.cryptoscope.io/api/getrawtransaction/?txid=b9d3ba355acbf58e44e893dccbcad06a10af88727adc340eeacd10d11b026f52&decode=1">b9d3ba355acbf58e44e893dccbcad06a10af88727adc340eeacd10d11b026f52</a> VOUT 3</p>
+  
+  <h4>Transfer asset script</h4>
+  <p>Transfer asset scripts are used to transfer an amount of an asset to another address. If transfering an ownership asset, use 100,000,000 (00:E1:F5:05:00:00:00:00) for the sat value.</p>
+  <table>
+    <tr>
+      <th>Script portion</th>
+      <th>Number of bytes</th>
+    </tr>
+    <tr>
+      <td>Standard vout script (P2PKH)</td>
+      <td>Var bytes</td>
+    </tr>
+    <tr>
+      <td>OP_YERB_ASSET (C0)</td>
+      <td>1 byte</td>
+    </tr>
+    <tr>
+      <td>Length of the asset data (OP_PUSH) (Not including OP_DROP)</td>
+      <td>1 or 2 bytes</td>
+    </tr>
+    <tr>
+      <td>'yerb' in ascii (72766E)</td>
+      <td>3 bytes</td>
+    </tr>
+    <tr>
+      <td>Asset script type 't' (74)</td>
+      <td>1 byte</td>
+    </tr>
+    <tr>
+      <td>Length of asset name (OP_PUSH)</td>
+      <td>1 byte</td>
+    </tr>
+    <tr>
+      <td>Asset name in ascii</td>
+      <td>Var bytes</td>
+    </tr>
+    <tr>
+      <td>Amount in sats (little endian)</td>
+      <td>8 bytes</td>
+    </tr>
+    <tr>
+      <td>Associated data (Optional; only if a broadcast)</td>
+      <td>1 type byte, 1 length byte, 32 bytes user data</td>
+    </tr>
+    <tr>
+      <td>OP_DROP (75)</td>
+      <td>1 byte</td>
+    </tr>
+  </table>
+  <p>On chain example: <a href="https://yerb.cryptoscope.io/api/getrawtransaction/?txid=bae95f349f15effe42e75134ee7f4560f53462ddc19c47efdd03f85ef4ab8f40&decode=1">bae95f349f15effe42e75134ee7f4560f53462ddc19c47efdd03f85ef4ab8f40</a> VOUT 0</p>
+  
+  <h4>Null asset tag script</h4>
+  <p>Dictates if an address is qualified for a restricted asset.</p>
+  <p>If the asset is a qualifier, a flag of 1 denotes a qualification. A flag of 0 denotes a revocation.</p>
+  <p>If the asset is a restricted asset, a flag of 1 denotes blacklisting the address. A flag of 0 denotes unblacklisting the address.</p>
+  <table>
+    <tr>
+      <th>Script portion</th>
+      <th>Number of bytes</th>
+    </tr>
+    <tr>
+      <td>OP_YERB_ASSET (C0)</td>
+      <td>1 byte</td>
+    </tr>
+    <tr>
+      <td>Length of the pubkey h160 (OP_PUSH)</td>
+      <td>1 byte</td>
+    </tr>
+    <tr>
+      <td>Pubkey h160</td>
+      <td>20 bytes</td>
+    </tr>
+    <tr>
+      <td>Length of the asset portion (OP_PUSH)</td>
+      <td>1 byte</td>
+    </tr>
+    <tr>
+      <td>Length of the asset name (OP_PUSH)</td>
+      <td>1 byte</td>
+    </tr>
+    <tr>
+      <td>Qualifier or restricted asset name</td>
+      <td>Var bytes</td>
+    </tr>
+    <tr>
+      <td>Flag (00-01)</td>
+      <td>1 byte</td>
+    </tr>
+  </table>
+  <p>On chain example: <a href="https://yerb.cryptoscope.io/api/getrawtransaction/?txid=4ea3369ef6fb57fc26e176ad5903d4684a8c64f641aa0e1f02e5c7428609e060&decode=1">4ea3369ef6fb57fc26e176ad5903d4684a8c64f641aa0e1f02e5c7428609e060</a> VOUT 1</p>
+  
+  <h4>Verifier asset tag script</h4>
+  <p>This script must be sent with a new asset script or a reissue asset script for a restricted asset. It associates qualifiers with the restricted asset.</p>
+  <p>An asset name portion of 'true' in ascii is the default to denote no associated qualifiers.</p>
+  <table>
+    <tr>
+      <th>Script portion</th>
+      <th>Number of bytes</th>
+    </tr>
+    <tr>
+      <td>OP_YERB_ASSET (C0)</td>
+      <td>1 byte</td>
+    </tr>
+    <tr>
+      <td>OP_RESERVED (50)</td>
+      <td>1 byte</td>
+    </tr>
+    <tr>
+      <td>Length of the asset portion (OP_PUSH)</td>
+      <td>1 byte</td>
+    </tr>
+    <tr>
+      <td>Length of the qualifier name(s) (OP_PUSH)</td>
+      <td>1 byte</td>
+    </tr>
+    <tr>
+      <td>Qualifier name(s) (joined with & in ascii)</td>
+      <td>Var bytes</td>
+    </tr>
+  </table>
+  <p>On chain example: <a href="https://yerb.cryptoscope.io/api/getrawtransaction/?txid=477a0b2214475d11e316524b500e29837c6763fec256594c2ca7aa369b15888b&decode=1">477a0b2214475d11e316524b500e29837c6763fec256594c2ca7aa369b15888b</a> VOUT 2</p>
+  
+  <h4>Global restriction asset tag script</h4>
+  <p>If the flag is 1, this stops all movement of the restricted asset. A flag of 0 re-enables movement.</p>
+  <table>
+    <tr>
+      <th>Script portion</th>
+      <th>Number of bytes</th>
+    </tr>
+    <tr>
+      <td>OP_YERB_ASSET (C0)</td>
+      <td>1 byte</td>
+    </tr>
+    <tr>
+      <td>OP_RESERVED (50)</td>
+      <td>1 byte</td>
+    </tr>
+    <tr>
+      <td>OP_RESERVED (50)</td>
+      <td>1 byte</td>
+    </tr>
+    <tr>
+      <td>Length of the asset portion (OP_PUSH)</td>
+      <td>1 byte</td>
+    </tr>
+    <tr>
+      <td>Length of the asset name (OP_PUSH)</td>
+      <td>1 byte</td>
+    </tr>
+    <tr>
+      <td>Restricted asset name</td>
+      <td>Var bytes</td>
+    </tr>
+    <tr>
+      <td>Flag (00-01)</td>
+      <td>1 byte</td>
+    </tr>
+  </table>
+  <p>On chain example: <a href="https://yerb.cryptoscope.io/api/getrawtransaction/?txid=2fc0bb7e3a33d12ca08f72add0effc3d059cf63382bebcad96e8923e91c3c537&decode=1">2fc0bb7e3a33d12ca08f72add0effc3d059cf63382bebcad96e8923e91c3c537</a> VOUT 2</p>
+
+  <br/>
+
+  <p id="chain_parsing_note">**Chain parsing note**</p>
+  <p>Just like the pirate by-laws, the OP_PUSH after OP_YERB_ASSET can be seen more as a suggestion rather than a rule-of-thumb. Currently nodes accept assets based on whether or not the ‘yerb’ is within 1 or 2 bytes after OP_YERB_ASSET instead of actually reading the OP_PUSH after OP_YERB_ASSET. Because of this, there are some transactions on the chain that have non-standard bytes after OP_YERB_ASSET. (Including lengths that are greater or less than the asset data or bytes that are greater than OP_PUSHDATA4).</p>
+  <p>If you only want to track ‘good’ transactions you can ignore these, as the vast majority of transactions follow proper serialization protocols. However, these malformed transactions are in fact ‘valid’ outpoints (for now) and if you want an all-encompassing tracking of the chain, you will need to check for these edge cases.</p>
+  <p>See <a href="https://github.com/Electrum-YERB-SIG/electrumx-yerbas/blob/0dbe9496196c529ed2a92c202d6b6bc45e917a73/electrumx/server/block_processor.py#L673">here</a> for an example of a full chain parsing or <a href="https://github.com/Electrum-YERB-SIG/electrumx-yerbas/blob/9acf5dd1d9af7ca038a895b674bad39f0d612807/electrumx/server/mempool.py#L320">here</a> for a best-effort parsing.</p>
