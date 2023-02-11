@@ -1,0 +1,9 @@
+---
+sidebar_position: 2
+---
+import Link from '@docusaurus/Link';
+import PDFReader from '@site/src/components/PDFReader';
+
+# X16R Whitepaper
+
+<PDFReader url="/pdf/X16R-Whitepaper.pdf" />
