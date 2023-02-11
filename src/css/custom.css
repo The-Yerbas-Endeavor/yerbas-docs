@@ -17,6 +17,10 @@
   --ifm-code-font-size: 95%;
 }
 
+body {
+  background-color: black;
+}
+
 .docusaurus-highlight-code-line {
   background-color: rgba(0, 0, 0, 0.1);
   display: block;
@@ -47,8 +51,8 @@ html[data-theme='dark'] {
   background: rgb(223, 117, 20);
 }
 
-.main-wrapper[data-theme='dark'] {
-  background-color: #242526;
+.main-wrapper {
+  background-color: #000000;
 }
 
 .footer {
