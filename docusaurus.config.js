@@ -135,10 +135,10 @@ const config = {
       announcementBar: {
         id: 'new-wallet-release',
         content:
-          'Release <b>v3.0.0.1</b>: There is a new version of the wallet! Updating is required to keep your wallet functioning after the <a href="https://yerbas.org/assets/" >Assets</a> release!',
+          'Release <b>v3.0.0.1</b>: There is a new version of the wallet! Updating is required to keep your wallet functioning after the <a href="/docs/assets/" >Assets</a> release!',
         backgroundColor: 'var(--ifm-color-success)',
         textColor: 'var(--ifm-color-secondary)',
-        isCloseable: false,
+        isCloseable: true,
       },
       footer: {
         style: 'dark',

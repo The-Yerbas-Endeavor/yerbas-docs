@@ -64,6 +64,10 @@ html[data-theme='dark'] {
   color: #0892d0;
 }
 
+.navbar {
+  background-color: #4F7942;
+}
+
 .menu__link:hover {
   color: #0892d0;
 }
