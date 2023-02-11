@@ -12,13 +12,13 @@ Syncing without the bootstrap can take a significant amount of time.
 
 <div>
   <div className="container padding--sm">
-    <h2>v1.3.17.00 or up</h2>
+    <h2>v3.0.0.1 or up</h2>
     <div className="row padding--sm">
       <div className="col col--4">POW Cache</div>
       <div className="col col--6">
         <a
           class="button button--primary"
-          href="https://bootstrap.yerbas.com/powcaches/powcache.dat"
+          href="https://github.com/The-Yerbas-Endeavor/yerbas/releases/download/v2.1.1.4/powcache.dat"
           download
         >
           💾 POW Cache (.dat)
@@ -30,7 +30,7 @@ Syncing without the bootstrap can take a significant amount of time.
       <div className="col col--6">
         <a
           class="button button--primary"
-          href="https://bootstrap.yerbas.com/bootstraps_for_v1.3.17.00/bootstrap.tar.xz"
+          href="https://github.com/The-Yerbas-Endeavor/yerbas/releases/download/v2.1.1.4/powcache.dat"
           download
         >
           💾 Bootstrap without indexes (.tar.gz)
