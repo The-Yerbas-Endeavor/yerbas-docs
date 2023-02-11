@@ -74,7 +74,7 @@ apt install ufw -y
 ufw default deny incoming
 ufw default allow outgoing
 ufw allow ssh
-ufw allow 10226/tcp
+ufw allow 15420/tcp
 ufw enable
 ```
 
@@ -114,18 +114,15 @@ adduser <username_here>
 Get Yerbas wallet / daemon and bootstrap:
 
 ```bash
-mkdir -p rtm_latest
-cd rtm_latest
-wget https://github.com/The-Yerbas-Endeavor/yerbas/releases/download/1.3.17.01/yerbas-ubuntu20-1.3.17.01.tar.gz
-tar -xvf yerbas-ubuntu20-1.3.17.01.tar.gz
+wget https://github.com/The-Yerbas-Endeavor/yerbas/releases/download/v2.1.1.4/yerbas-ubuntu20-2.1.1.4.tar.gz
+tar -xvf yerbas-ubuntu20-2.1.1.4.tar.gz
 cd ..
-wget https://bootstrap.yerbas.com/bootstraps_for_v1.3.17.00/bootstrap.zip
-unzip bootstrap.zip
 mkdir ~/.yerbascore && touch ~/.yerbascore/yerbas.conf
-cp -R blocks chainstate evodb llmq ~/.yerbascore
 echo "daemon=1" >> ~/.yerbascore/yerbas.conf
-~/rtm_latest/yerbas-ubuntu20-1.3.17.01/./yerbasd
-echo all done!
+cd .yerbascore
+wget https://github.com/The-Yerbas-Endeavor/yerbas/releases/download/v3.0.0.1/powcache.dat
+cd ~/yerbas-build
+./yerbasd
 ```
 
 :::tip Info
@@ -174,7 +171,7 @@ walletpassphrase password time (in seconds)
 dumpprivkey "address" (address is the receiving address you sent the 1 million YERB to)
 ```
 
-- Send 1 million YERB to self (this is current collateral amount)
+- Send 28,000 YERB to self (this is current collateral amount)
 - Wait for 2 confirmations
 
 :::note
@@ -188,7 +185,7 @@ The private key only allows you to restore the matching receiving address. If yo
 Here is an example protx quick_setup command:
 
 ```bash
-protx quick_setup "c4bbcde9771668fa640c263d4b964f688b0f039f7b684e715d92e4012369fea6" "1" "194.113.73.87:10226" "RFbWv94ZfueciwVVpHLMdqFayaXAS4sBxP"
+d7898f44c6bdc39a49b0917d5c6bcb61455270ddb9e7eb1168a6b745434daf26 1 194.113.73.87:15420 yaDfcdCupB1T5YoVRjYr8fXCvB8U5AuNX8
 ```
 
 The structure from left to right is:
@@ -237,11 +234,3 @@ Your Smartnode should now be running!
 :::
 
 ## Video guides
-
-<ReactPlayer
-  playing
-  controls
-  url="https://www.youtube.com/watch?v=55ot-iT2GFc"
-  playing={false}
-/>
-<sub>Video Guide - credit @dk808</sub>
