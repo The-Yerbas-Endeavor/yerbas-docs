@@ -136,7 +136,7 @@ const config = {
         id: 'new-wallet-release',
         content:
           'Release <b>v3.0.0.1</b>: There is a new version of the wallet! Updating is required to keep your wallet functioning after the <a href="/docs/assets/" >Assets</a> release!',
-        backgroundColor: 'var(--ifm-color-success)',
+        backgroundColor: 'var(--ifm-color-danger)',
         textColor: 'var(--ifm-color-secondary)',
         isCloseable: true,
       },
