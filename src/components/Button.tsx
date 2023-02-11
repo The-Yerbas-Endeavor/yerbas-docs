@@ -103,6 +103,18 @@ const Button = (props: any) => {
       buttonURL = 'docs/yerbas/papers/yerbaswhitepaper';
       description = 'Read proposals and developmental plans';
       break;
+      case 'assets':
+        buttonText = 'Assets';
+        emoji = (
+          <DocumentTextIcon
+            className={`${
+              isDarkTheme ? styles.svg_wrap_dark : styles.svg_wrap_light
+            }`}
+          />
+        );
+        buttonURL = 'docs/assets/';
+        description = 'Creating custom end-user generated information';
+        break;
     default:
       break;
   }

@@ -87,7 +87,7 @@ function NavMenu() {
             <Button type="wallet" />
           </div>
           <div className="col col--2 padding-top--lg margin-top--sm">
-            <Button type="mining" />
+            <Button type="assets" />
           </div>
           <div className="col col--2 padding-top--lg margin-top--sm">
             <Button type="papers" />
