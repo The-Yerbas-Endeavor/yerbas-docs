@@ -15,11 +15,6 @@ overlooked. If you come across any problems or believe information needs to be c
   <p>This webpage will attempt to cover all aspects of Yerbas assets from what they are to their on-chain encodings.
  As you read on, this document will become increasingly technical.</p>
  
- <h2>All About Assets</h2>
-
-  <p>This webpage will attempt to cover all aspects of Yerbas assets from what they are to their on-chain encodings.
- As you read on, this document will become increasingly technical.</p>
-
   <h2>Table of Contents</h2>
   <ul>
     <li><a href="/docs/assets/whatisanasset">What is an asset?</a></li>
