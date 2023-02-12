@@ -16,8 +16,7 @@
     "typecheck": "tsc",
     "lint": "yarn lint:js && yarn lint:style",
     "lint:js": "eslint --cache \"**/*.{js,jsx,ts,tsx}\"",
-    "lint:style": "stylelint \"**/*.css\"",
-    "predeploy": "npm run build"
+    "lint:style": "stylelint \"**/*.css\""
   },
   "dependencies": {
     "@docusaurus/core": "^2.3.1",

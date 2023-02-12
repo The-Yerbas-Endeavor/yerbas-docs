@@ -24,4 +24,5 @@ Downloads are at: [The Yerbas Github](https://github.com/The-Yerbas-Endeavor/yer
 2. Extract the contents of the .zip file
 3. Run: `yerbas-qt.exe`
 4. The wallet will startup and begin to Sync
+
    ![Launch Screen](/img/wallets/gui/setup/startup_splash.png)
