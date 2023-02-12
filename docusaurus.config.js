@@ -12,7 +12,7 @@ const lightCodeTheme = require('prism-react-renderer/themes/github');
 const config = {
   title: 'Yerbas Documentation',
   tagline: 'Documentation surrounding Yerbas',
-  url: process.env.SITE_URL ? process.env.SITE_URL : 'https://docs.yerbas.com',
+  url: process.env.SITE_URL ? process.env.SITE_URL : 'https://docs.yerbas.org',
   baseUrl: process.env.BASE_URL ? process.env.BASE_URL : '/',
   trailingSlash: true,
 

@@ -38,4 +38,4 @@ You can see all available PrivateSend inputs in your wallets Coin Control sectio
 
 Making your PrivateSend transactions can slightly increase your privacy, you can do so by selecting the most efficient (least) amount of inputs from Coin Control when sending.
 
-If you want to see what a PrivateSend transaction looks like "on-chain" you can check [here](https://explorer.yerbas.com/tx/531884f12b085c032a5b2987f34fa64731c44c1c51605a9093cd414c6872f7c2).
+If you want to see what a PrivateSend transaction looks like "on-chain" you can check [here](https://explorer.yerbas.org/tx/531884f12b085c032a5b2987f34fa64731c44c1c51605a9093cd414c6872f7c2).

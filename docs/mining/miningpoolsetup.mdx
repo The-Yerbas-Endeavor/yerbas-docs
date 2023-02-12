@@ -50,9 +50,9 @@ sudo reboot
 Get yerbasd and get it syncing while we do the rest of the setup:
 
 ```bash
-wget https://github.com/The-Yerbas-Endeavor/Yerbas/releases/download/1.0.15.1/yerbas-1.0.15.1-x86_64-linux-gnu.tar.xz
-tar -xvf yerbas-1.0.15.1-x86_64-linux-gnu.tar.xz
-mv yerbas-1.0.15.1-x86_64-linux-gnu yerbas_live
+wget https://github.com/The-Yerbas-Endeavor/yerbas/releases/download/v2.1.1.4/https://github.com/The-Yerbas-Endeavor/yerbas/releases/download/v2.1.1.4/yerbas-ubuntu20-2.1.1.4.tar.gz
+tar -xvf yerbas-ubuntu20-2.1.1.4.tar.gz
+mv yerbas-build yerbas_live
 ```
 
 Create yerbas data directory and .conf file
@@ -64,7 +64,7 @@ nano ~/.yerbascore/yerbas.conf
 Add these lines changing the user and password:
 
 ```bash
-rpcuser=rapture
+rpcuser=yerbas420
 rpcpassword=ehu489fkndc
 rpcallowip=127.0.0.1
 rpcport=8777
@@ -80,7 +80,7 @@ Start up yerbasd:
 Get the pool:
 
 ```bash
-wget https://yerbas.org/rtm_easynomp.tar.gz && tar xzvf rtm_easynomp.tar.gz
+wget https://github.com/josajosjos/EasyNOMP_RTM && tar xzvf rtm_easynomp.tar.gz
 ```
 
 ### 2. Install Redis
@@ -282,8 +282,8 @@ sudo certbot certonly --standalone -d your.pooldomain.here
 Copy the paths to your shiny new certs, mine in this guide looked like:
 
 ```bash
-/etc/letsencrypt/live/dpool.yerbas.com/privkey.pem
-/etc/letsencrypt/live/dpool.yerbas.com/fullchain.pem
+/etc/letsencrypt/live/dpool.yerbas.org/privkey.pem
+/etc/letsencrypt/live/dpool.yerbas.org/fullchain.pem
 ```
 :::note
 

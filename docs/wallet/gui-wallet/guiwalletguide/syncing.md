@@ -14,7 +14,7 @@ If this is the first time running the YERB wallet,it may take several minutes to
 
 :::note
 
-The wallet must sync fully to the current network block height before you can see your current balance or send funds from it! You can always check the network's current block height at the [Yerbas Explorer](https://explorer.yerbas.com)
+The wallet must sync fully to the current network block height before you can see your current balance or send funds from it! You can always check the network's current block height at the [Yerbas Explorer](https://explorer.yerbas.org)
 
 ![Yerbas Explorer](/img/wallets/gui/setup/explorer_height.png)
 

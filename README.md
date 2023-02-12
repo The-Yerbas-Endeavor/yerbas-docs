@@ -1,6 +1,6 @@
 # Yerbas Docs
 
-This repository holds the Docusaurus instance that hosts the Yerbas Docs (https://docs.yerbas.com). Development is also done here.
+This repository holds the Docusaurus instance that hosts the Yerbas Docs (https://docs.yerbas.org). Development is also done here.
 
 ## Contributors
 
