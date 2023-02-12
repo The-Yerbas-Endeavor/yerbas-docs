@@ -5,7 +5,7 @@ pagination_next: wallet/bootstrap
 
 import ReactPlayer from 'react-player';
 
-# Manual Setup
+# Smartnode Setup
 
 :::note
 
@@ -66,8 +66,6 @@ echo vm.swappiness = 10 | tee -a /etc/sysctl.conf
 </div>
 
 ### 3. Enable UFW & Open Ports
-
-(Optional)
 
 ```bash
 apt install ufw -y
@@ -143,9 +141,9 @@ This part of the guide is to get your local wallet or control wallet setup. If y
 
 For this step, you will need the YerbasCore wallet installed. 
 
-Follow our [YerbasCore Wallet](docs/wallet/) guides for detailed instructions on how to do this.
+Follow our [YerbasCore Wallet](/docs/wallet/) guides for detailed instructions on how to do this.
 
-To speed up the synchronization, use our POWCache or Bootstrap packages: [Using Powcache & Bootstrap](docs/wallet/bootstrap)
+To speed up the synchronization, use our POWCache or Bootstrap packages: [Using Powcache & Bootstrap](/docs/wallet/bootstrap)
 
 Grab bootstrap from github release and unpack in the above directory (highly recommended as reduces sync time drastically)
 
@@ -168,7 +166,7 @@ To use the bootstrap <code>right click > unzip</code>. Copy contents to the new 
 
 ```
 walletpassphrase password time (in seconds)
-dumpprivkey "address" (address is the receiving address you sent the 1 million YERB to)
+dumpprivkey "address" (address is the receiving address you sent the 28000 YERB to)
 ```
 
 - Send 28,000 YERB to self (this is current collateral amount)
@@ -198,7 +196,7 @@ The structure from left to right is:
 - <code>Your smartnode server IP and port</code>. Replace example IP with your
   Smartnode server IP, leave port as is.
 - <code>Fee address</code>: This is any address in your wallet which contains
-  enough YERB to pay the fee (cannot be the address which you sent the 1 million
+  enough YERB to pay the fee (cannot be the address which you sent the 28,000
   YERB to). When you enter the protx quick_setup command it is a transaction and
   needs to be paid for. It is a very small amount 1/2 an YERB is more than
   enough. In Debug console do "listaddressbalances" to show all addresses with a
@@ -206,7 +204,7 @@ The structure from left to right is:
 
 :::info
 
-Enter the protx quick_setup command in Debug console. This will create a .conf file for that node in the same directory you ran the wallet from. Open it and copy the contents. <u>[See this part in the video guide.](https://youtu.be/55ot-iT2GFc?t=1196)</u>
+Enter the protx quick_setup command in Debug console. This will create a .conf file for that node in the same directory you ran the wallet from. Open it and copy the contents.
 
 :::
 
