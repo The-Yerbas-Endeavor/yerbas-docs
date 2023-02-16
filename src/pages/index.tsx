@@ -90,10 +90,10 @@ function NavMenu() {
             <Button type="assets" />
           </div>
           <div className="col col--2 padding-top--lg margin-top--sm">
-            <Button type="papers" />
+            <Button type="smartnodes" />
           </div>
           <div className="col col--2 padding-top--lg margin-top--sm">
-            <Button type="smartnodes" />
+            <Button type="papers" />
           </div>
         </div>
         <div className="col col--2 padding-top--lg margin-top--sm" />
