@@ -12,7 +12,7 @@ Syncing without the bootstrap can take a significant amount of time.
 
 <div>
   <div className="container padding--sm">
-    <h2>v3.0.0.1 or up</h2>
+    <h2>v3.1.1.5 or up</h2>
     <div className="row padding--sm">
       <div className="col col--4">POW Cache</div>
       <div className="col col--6">
