@@ -7,7 +7,7 @@ title: About Assets
 
   <p>This page is a work in progress. While almost all of the information is correct, there may be some nuance that is 
 overlooked. If you come across any problems or believe information needs to be corrected or added, please make a pull request on
-<a href="https://github.com/The-Yerbas-Endeavor/The-Yerbas-Endeavor.github.io"> this website's github source</a> or visit us at our 
+<a href="https://github.com/The-Yerbas-Endeavor/yerbas-docs"> this website's github source</a> or visit us at our 
 <a href="https://discord.gg/XGEp2cKSKF"> discord server</a>.</p>
 
   <h2></h2>
