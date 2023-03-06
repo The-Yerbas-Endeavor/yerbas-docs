@@ -108,7 +108,7 @@ export default function Home(): JSX.Element {
   return (
     <Layout
       title={`${siteConfig.title}`}
-      description="Site description"
+      description="Yerbas Blockchain Documents"
     >
       <main>
         <HomepageHeader />
