@@ -10,6 +10,10 @@ Exbitron YERB/USDT: <https://www.exbitron.com/trading/yerbusdt>
 
 Bitoreum YERB/USDT: <https://www.bitoreum.exchange/market/yerbusdt>
 
+Xeggex.com Yerb/USDT https://xeggex.com/market/YERB_USDT
+
+Xeggex.com Yerb/BTC https://xeggex.com/market/YERB_BTC
+
 ## wYERB Bridges & Swaps
 
 ### wYERB on BSC
