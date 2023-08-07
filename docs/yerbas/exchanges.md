@@ -6,8 +6,6 @@ Yerbas can be bought, sold or traded on a variety of platforms.
 
 ### YERB/USDT
 
-Bitoreum YERB/USDT: <https://www.bitoreum.exchange/market/yerbusdt>
-
 Xeggex.com Yerb/USDT https://xeggex.com/market/YERB_USDT
 
 Xeggex.com Yerb/BTC https://xeggex.com/market/YERB_BTC
