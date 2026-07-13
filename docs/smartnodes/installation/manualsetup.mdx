@@ -9,6 +9,7 @@ import ReactPlayer from 'react-player';
 
 :::note
 
+Using Ubuntu 26 for the example
 For the following part of the guide you need to be root. depending on your VPS provider they may have only provided you with a "sudo" user. You can change to root by doing:
 
 ```bash
@@ -112,12 +113,12 @@ adduser <username_here>
 Get Yerbas wallet / daemon and bootstrap:
 
 ```bash
-wget https://github.com/The-Yerbas-Endeavor/yerbas/releases/download/v3.2.0.14/yerbas-ubuntu26-v3.2.0.14.tar.gz
+wget https://github.com/The-Yerbas-Endeavor/yerbas/releases/download/v3.2.0.15/yerbas-ubuntu-26.04-x86-release-3.2.0.15.tar.gz
 tar -xvf yerbas-ubuntu20-v3.2.0.14.tar.gz
 mkdir ~/.yerbascore && touch ~/.yerbascore/yerbas.conf
 echo "daemon=1" >> ~/.yerbascore/yerbas.conf
 cd .yerbascore
-wget https://github.com/The-Yerbas-Endeavor/yerbas/releases/download/v3.2.0.14/powcache.dat
+wget https://github.com/The-Yerbas-Endeavor/yerbas/releases/download/v3.2.0.15/yerbas-ubuntu-26.04-x86-release-3.2.0.15.tar.gz
 cd ~/yerbas-build
 ./yerbasd
 ```

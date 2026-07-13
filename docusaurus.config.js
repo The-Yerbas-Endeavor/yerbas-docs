@@ -135,7 +135,7 @@ const config = {
       announcementBar: {
         id: 'new-wallet-release',
         content:
-          'Release <b>v3.1.4.20</b>: There is a new version of the wallet! Updating is required to keep your wallet functioning after the <a href="/docs/assets/" >Assets</a> release!',
+          'Release <b>v3.2.0.15</b>: There is a new version of the wallet! Updating is required to keep your wallet functioning ',
         backgroundColor: 'var(--ifm-color-danger)',
         textColor: 'var(--ifm-color-secondary)',
         isCloseable: true,
@@ -158,10 +158,6 @@ const config = {
               {
                 label: 'Discord',
                 href: 'https://discord.gg/XGEp2cKSKF',
-              },
-              {
-                label: 'Telegram',
-                href: 'https://t.me/Yerbas420',
               },
               {
                 label: 'Reddit',
