@@ -1,0 +1,40 @@
+name: Published documentation checks
+on:
+  pull_request:
+    branches: [gh-pages]
+  push:
+    branches: [gh-pages]
+  workflow_dispatch:
+permissions:
+  contents: read
+concurrency:
+  group: published-docs-${{ github.ref }}
+  cancel-in-progress: true
+jobs:
+  build-and-links:
+    name: Build and link checks
+    runs-on: ubuntu-24.04
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+        with:
+          persist-credentials: false
+      - uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020
+        with:
+          node-version: '22'
+          cache: npm
+          cache-dependency-path: _source/package-lock.json
+      - name: Install locked source dependencies
+        working-directory: _source
+        run: npm ci --ignore-scripts --no-audit --no-fund
+      - name: Test checker and build source snapshot
+        working-directory: _source
+        run: npm run test:links && npm run build && npm run check:links
+      - name: Check the actual published files
+        shell: bash
+        run: |
+          site_dir="$(mktemp -d)"
+          git archive HEAD -- . ':!_source' ':!.github' | tar -x -C "$site_dir"
+          python3 _source/tools/check-links.py "$site_dir"
+          test -f "$site_dir/.nojekyll"
+          test "$(cat "$site_dir/CNAME")" = "docs.yerbas.org"
