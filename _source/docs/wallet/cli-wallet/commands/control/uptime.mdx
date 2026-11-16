@@ -1,0 +1,18 @@
+# uptime
+
+RPC help captured from **Yerbas Core 4.0.1.4** (`f0e2dde`).
+
+Use `./yerbas-cli help uptime` on your node for help. In the GUI console omit `yerbas-cli`. HTTP examples use mainnet RPC port 15419; network-specific defaults and availability can differ.
+
+```text
+uptime
+
+Returns the total uptime of the server.
+
+Result:
+ttt        (numeric) The number of seconds that the server has been running
+
+Examples:
+> yerbas-cli uptime
+> curl --user myusername --data-binary '{"jsonrpc": "1.0", "id":"curltest", "method": "uptime", "params": [] }' -H 'content-type: text/plain;' http://127.0.0.1:15419/
+```

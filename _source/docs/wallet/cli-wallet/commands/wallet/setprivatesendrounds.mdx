@@ -1,0 +1,17 @@
+# setprivatesendrounds
+
+RPC help captured from **Yerbas Core 4.0.1.4** (`f0e2dde`).
+
+Use `./yerbas-cli help setprivatesendrounds` on your node for help. In the GUI console omit `yerbas-cli`. HTTP examples use mainnet RPC port 15419; network-specific defaults and availability can differ.
+
+```text
+setprivatesendrounds rounds
+
+Set the number of rounds for PrivateSend mixing.
+
+Arguments:
+1. rounds         (numeric, required) The default number of rounds is 4 Cannot be more than 16 nor less than 2
+Examples:
+> yerbas-cli setprivatesendrounds 4
+> curl --user myusername --data-binary '{"jsonrpc": "1.0", "id":"curltest", "method": "setprivatesendrounds", "params": [16] }' -H 'content-type: text/plain;' http://127.0.0.1:15419/
+```

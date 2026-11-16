@@ -1,0 +1,22 @@
+# unsubscribefromchannel
+
+RPC help captured from **Yerbas Core 4.0.1.4** (`f0e2dde`).
+
+Use `./yerbas-cli help unsubscribefromchannel` on your node for help. In the GUI console omit `yerbas-cli`. HTTP examples use mainnet RPC port 15419; network-specific defaults and availability can differ.
+
+```text
+unsubscribefromchannel
+
+Unsubscribe from a certain message channel
+
+Arguments:
+1. "channel_name"            (string, required) The channel name to unsubscribe from, must end with '!' or have an '~' in the name
+
+Result:[
+
+]
+
+Examples:
+> yerbas-cli unsubscribefromchannel "ASSET_NAME!"
+> curl --user myusername --data-binary '{"jsonrpc": "1.0", "id":"curltest", "method": "unsubscribefromchannel", "params": ["ASSET_NAME!"] }' -H 'content-type: text/plain;' http://127.0.0.1:15419/
+```

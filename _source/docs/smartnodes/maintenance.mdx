@@ -1,0 +1,29 @@
+---
+sidebar_position: 3
+---
+
+# Smartnode maintenance
+
+## Diagnose before changing registration
+
+Check synchronization, peers, daemon logs, public TCP 15420 reachability and available system resources:
+
+```bash
+./yerbas-cli getblockchaininfo
+./yerbas-cli getnetworkinfo
+./yerbas-cli smartnode status
+./yerbas-cli protx info "PROTX_HASH"
+./yerbas-cli quorum recovery status
+```
+
+Replace the registration placeholder. A PoSe ban is an on-chain state, not a condition guaranteed to clear after restarting the daemon. Fix connectivity and resource failures first.
+
+## Updating service information
+
+Inspect `./yerbas-cli help protx update_service` before constructing a transaction. A service update requires the registration hash, address/port, operator secret and any applicable optional arguments. It costs a transaction fee. Keep operator secrets private and wait for confirmation; do not assume a fixed number of minutes until service returns.
+
+## Collateral changes
+
+Consult the [height schedule](/docs/smartnodes/requirements/). Spending a registered collateral output removes that registration. Plan any collateral replacement, backup, new registration and server configuration together. Do not unlock or spend collateral merely to troubleshoot a network problem.
+
+[List and PoSe handling](https://github.com/The-Yerbas-Endeavor/yerbas/blob/f0e2dde5673580d5d5cac9aa21e16ebe6936dd05/src/evo/deterministicmns.cpp) · [Service-update RPC](https://github.com/The-Yerbas-Endeavor/yerbas/blob/f0e2dde5673580d5d5cac9aa21e16ebe6936dd05/src/rpc/rpcevo.cpp)

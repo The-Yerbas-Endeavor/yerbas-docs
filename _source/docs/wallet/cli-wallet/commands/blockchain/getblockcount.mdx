@@ -1,0 +1,18 @@
+# getblockcount
+
+RPC help captured from **Yerbas Core 4.0.1.4** (`f0e2dde`).
+
+Use `./yerbas-cli help getblockcount` on your node for help. In the GUI console omit `yerbas-cli`. HTTP examples use mainnet RPC port 15419; network-specific defaults and availability can differ.
+
+```text
+getblockcount
+
+Returns the number of blocks in the longest blockchain.
+
+Result:
+n    (numeric) The current block count
+
+Examples:
+> yerbas-cli getblockcount
+> curl --user myusername --data-binary '{"jsonrpc": "1.0", "id":"curltest", "method": "getblockcount", "params": [] }' -H 'content-type: text/plain;' http://127.0.0.1:15419/
+```

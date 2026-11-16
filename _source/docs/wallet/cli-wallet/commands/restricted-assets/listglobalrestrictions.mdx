@@ -1,0 +1,20 @@
+# listglobalrestrictions
+
+RPC help captured from **Yerbas Core 4.0.1.4** (`f0e2dde`).
+
+Use `./yerbas-cli help listglobalrestrictions` on your node for help. In the GUI console omit `yerbas-cli`. HTTP examples use mainnet RPC port 15419; network-specific defaults and availability can differ.
+
+```text
+listglobalrestrictions
+
+List all global restricted assets
+
+Result:
+["asset_name", (string) The asset name
+...,
+]
+
+Examples:
+> yerbas-cli listglobalrestrictions
+> curl --user myusername --data-binary '{"jsonrpc": "1.0", "id":"curltest", "method": "listglobalrestrictions", "params": [] }' -H 'content-type: text/plain;' http://127.0.0.1:15419/
+```

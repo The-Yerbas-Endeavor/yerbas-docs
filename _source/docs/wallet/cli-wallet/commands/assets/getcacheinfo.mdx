@@ -1,0 +1,33 @@
+# getcacheinfo
+
+RPC help captured from **Yerbas Core 4.0.1.4** (`f0e2dde`).
+
+Use `./yerbas-cli help getcacheinfo` on your node for help. In the GUI console omit `yerbas-cli`. HTTP examples use mainnet RPC port 15419; network-specific defaults and availability can differ.
+
+```text
+getcacheinfo
+
+THIS COMMAND IS NOT YET ACTIVE!
+https://github.com/The-Yerbas-Endeavor/yerbas
+
+V4 mainnet wallet policy: asset creation, sending, reissuance, ownership transfers, and asset reward payouts
+are locked below tip height 1195400. Receiving/viewing assets and ordinary YERB payments remain available.
+Testnet/regtest are unaffected. This is wallet policy, not a consensus restriction on raw transactions.
+
+Result:
+[
+  uxto cache size:
+  asset total (exclude dirty):
+  asset address map:
+  asset address balance:
+  my unspent asset:
+  reissue data:
+  asset metadata map:
+  asset metadata list (est):
+  dirty cache (est):
+]
+
+Examples:
+> curl --user myusername --data-binary '{"jsonrpc": "1.0", "id":"curltest", "method": "getcacheinfo", "params": [] }' -H 'content-type: text/plain;' http://127.0.0.1:15419/
+> yerbas-cli getcacheinfo
+```

@@ -1,0 +1,14 @@
+# Asset terminology
+
+Mainnet v4 wallet operations are restricted below tip height **1,195,400**. See [availability and backup guidance](/docs/wallet/assets/). This wallet safeguard is distinct from consensus validation.
+
+- **Root asset**: a top-level asset name.
+- **Sub-asset**: an asset under a parent name, using `/`.
+- **Unique asset**: a unique item under a parent, using `#`.
+- **Owner token**: an administrative token, with `!`, used to authorize relevant operations.
+- **Qualifier / restricted asset**: assets used with address qualification and transfer restrictions.
+- **Metadata**: data or a reference attached to an asset; it is not the referenced file itself.
+
+Use the corresponding command's help for exact name and quantity constraints.
+
+[Asset implementation](https://github.com/The-Yerbas-Endeavor/yerbas/blob/f0e2dde5673580d5d5cac9aa21e16ebe6936dd05/src/assets/assets.cpp) · [Asset structures](https://github.com/The-Yerbas-Endeavor/yerbas/blob/f0e2dde5673580d5d5cac9aa21e16ebe6936dd05/src/assets/assets.h) · [RPC implementation](https://github.com/The-Yerbas-Endeavor/yerbas/blob/f0e2dde5673580d5d5cac9aa21e16ebe6936dd05/src/rpc/assets.cpp)

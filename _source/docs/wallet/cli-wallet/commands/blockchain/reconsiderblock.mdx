@@ -1,0 +1,21 @@
+# reconsiderblock
+
+RPC help captured from **Yerbas Core 4.0.1.4** (`f0e2dde`).
+
+Use `./yerbas-cli help reconsiderblock` on your node for help. In the GUI console omit `yerbas-cli`. HTTP examples use mainnet RPC port 15419; network-specific defaults and availability can differ.
+
+```text
+reconsiderblock "blockhash"
+
+Removes invalidity status of a block and its descendants, reconsider them for activation.
+This can be used to undo the effects of invalidateblock.
+
+Arguments:
+1. "blockhash"   (string, required) the hash of the block to reconsider
+
+Result:
+
+Examples:
+> yerbas-cli reconsiderblock "blockhash"
+> curl --user myusername --data-binary '{"jsonrpc": "1.0", "id":"curltest", "method": "reconsiderblock", "params": ["blockhash"] }' -H 'content-type: text/plain;' http://127.0.0.1:15419/
+```

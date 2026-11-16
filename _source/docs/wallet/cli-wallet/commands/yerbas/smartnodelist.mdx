@@ -1,0 +1,32 @@
+# smartnodelist
+
+RPC help captured from **Yerbas Core 4.0.1.4** (`f0e2dde`).
+
+Use `./yerbas-cli help smartnodelist` on your node for help. In the GUI console omit `yerbas-cli`. HTTP examples use mainnet RPC port 15419; network-specific defaults and availability can differ.
+
+```text
+smartnodelist ( "mode" "filter" )
+Get a list of smartnodes in different modes. This call is identical to 'smartnode list' call.
+
+Arguments:
+1. "mode"      (string, optional/required to use filter, defaults = json) The mode to run list in
+2. "filter"    (string, optional) Filter results. Partial match by outpoint by default in all modes,
+                                    additional matches in some modes are also available
+
+Available modes:
+  addr           - Print ip address associated with a smartnode (can be additionally filtered, partial match)
+  full           - Print info in format 'status payee lastpaidtime lastpaidblock IP'
+                   (can be additionally filtered, partial match)
+  info           - Print info in format 'status payee IP'
+                   (can be additionally filtered, partial match)
+  json           - Print info in JSON format (can be additionally filtered, partial match)
+  lastpaidblock  - Print the last block height a node was paid on the network
+  lastpaidtime   - Print the last time a node was paid on the network
+  owneraddress   - Print the smartnode owner Yerbas address
+  payee          - Print the smartnode payout Yerbas address (can be additionally filtered,
+                   partial match)
+  pubKeyOperator - Print the smartnode operator public key
+  status         - Print smartnode status: ENABLED / POSE_BANNED
+                   (can be additionally filtered, partial match)
+  votingaddress  - Print the smartnode voting Yerbas address
+```

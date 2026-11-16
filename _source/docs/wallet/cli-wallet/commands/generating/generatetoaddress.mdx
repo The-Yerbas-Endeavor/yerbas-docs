@@ -1,0 +1,24 @@
+# generatetoaddress
+
+RPC help captured from **Yerbas Core 4.0.1.4** (`f0e2dde`).
+
+Use `./yerbas-cli help generatetoaddress` on your node for help. In the GUI console omit `yerbas-cli`. HTTP examples use mainnet RPC port 15419; network-specific defaults and availability can differ.
+
+```text
+generatetoaddress nblocks address (maxtries)
+
+Mine blocks immediately to a specified address (before the RPC call returns)
+
+Arguments:
+1. nblocks      (numeric, required) How many blocks are generated immediately.
+2. address      (string, required) The address to send the newly generated Yerbas to.
+3. maxtries     (numeric, optional) How many iterations to try (default = 1000000).
+
+Result:
+[ blockhashes ]     (array) hashes of blocks generated
+
+Examples:
+
+Generate 11 blocks to myaddress
+> yerbas-cli generatetoaddress 11 "myaddress"
+```

@@ -1,0 +1,344 @@
+{
+  "internal": {
+    "pages": 259,
+    "local_links_checked": 17554,
+    "errors": []
+  },
+  "external": [
+    {
+      "url": "https://bitcointalk.org/index.php?topic=1326803.0",
+      "status": 200,
+      "final": "https://bitcointalk.org/index.php?topic=1326803.0"
+    },
+    {
+      "url": "https://bitcointalk.org/index.php?topic=5226770.0",
+      "status": 200,
+      "final": "https://bitcointalk.org/index.php?topic=5226770.0"
+    },
+    {
+      "url": "https://bitcointalk.org/index.php?topic=5398223.msg60105817",
+      "status": 200,
+      "final": "https://bitcointalk.org/index.php?topic=5398223.msg60105817"
+    },
+    {
+      "url": "https://discord.gg/XGEp2cKSKF",
+      "status": 200,
+      "final": "https://discord.com/invite/XGEp2cKSKF"
+    },
+    {
+      "url": "https://discord.gg/yerbas",
+      "status": 200,
+      "final": "https://discord.com/invite/yerbas"
+    },
+    {
+      "url": "https://explorer.yerbas.org/",
+      "status": 200,
+      "final": "https://explorer.yerbas.org/"
+    },
+    {
+      "url": "https://explorer.yerbas.org/tx/531884f12b085c032a5b2987f34fa64731c44c1c51605a9093cd414c6872f7c2",
+      "status": 200,
+      "final": "https://explorer.yerbas.org/tx/531884f12b085c032a5b2987f34fa64731c44c1c51605a9093cd414c6872f7c2"
+    },
+    {
+      "url": "https://github.com/The-Yerbas-Endeavor/YERB-Bootstrap/releases",
+      "status": 200,
+      "final": "https://github.com/The-Yerbas-Endeavor/YERB-Bootstrap/releases"
+    },
+    {
+      "url": "https://github.com/The-Yerbas-Endeavor/yerbas",
+      "status": 200,
+      "final": "https://github.com/The-Yerbas-Endeavor/yerbas"
+    },
+    {
+      "url": "https://github.com/The-Yerbas-Endeavor/yerbas-docs",
+      "status": 200,
+      "final": "https://github.com/The-Yerbas-Endeavor/yerbas-docs"
+    },
+    {
+      "url": "https://github.com/The-Yerbas-Endeavor/yerbas/blob/f0e2dde5673580d5d5cac9aa21e16ebe6936dd05/.github/workflows/build.yaml",
+      "status": 200,
+      "final": "https://github.com/The-Yerbas-Endeavor/yerbas/blob/f0e2dde5673580d5d5cac9aa21e16ebe6936dd05/.github/workflows/build.yaml"
+    },
+    {
+      "url": "https://github.com/The-Yerbas-Endeavor/yerbas/blob/f0e2dde5673580d5d5cac9aa21e16ebe6936dd05/doc/asset-manager.md",
+      "status": 200,
+      "final": "https://github.com/The-Yerbas-Endeavor/yerbas/blob/f0e2dde5673580d5d5cac9aa21e16ebe6936dd05/doc/asset-manager.md"
+    },
+    {
+      "url": "https://github.com/The-Yerbas-Endeavor/yerbas/blob/f0e2dde5673580d5d5cac9aa21e16ebe6936dd05/doc/ci-qt-artifacts.md",
+      "status": 200,
+      "final": "https://github.com/The-Yerbas-Endeavor/yerbas/blob/f0e2dde5673580d5d5cac9aa21e16ebe6936dd05/doc/ci-qt-artifacts.md"
+    },
+    {
+      "url": "https://github.com/The-Yerbas-Endeavor/yerbas/blob/f0e2dde5673580d5d5cac9aa21e16ebe6936dd05/doc/low-llmq-history-migration.md",
+      "status": 200,
+      "final": "https://github.com/The-Yerbas-Endeavor/yerbas/blob/f0e2dde5673580d5d5cac9aa21e16ebe6936dd05/doc/low-llmq-history-migration.md"
+    },
+    {
+      "url": "https://github.com/The-Yerbas-Endeavor/yerbas/blob/f0e2dde5673580d5d5cac9aa21e16ebe6936dd05/doc/signed-spork-release-checklist.txt",
+      "status": 200,
+      "final": "https://github.com/The-Yerbas-Endeavor/yerbas/blob/f0e2dde5673580d5d5cac9aa21e16ebe6936dd05/doc/signed-spork-release-checklist.txt"
+    },
+    {
+      "url": "https://github.com/The-Yerbas-Endeavor/yerbas/blob/f0e2dde5673580d5d5cac9aa21e16ebe6936dd05/doc/wallet-asset-storage.md",
+      "status": 200,
+      "final": "https://github.com/The-Yerbas-Endeavor/yerbas/blob/f0e2dde5673580d5d5cac9aa21e16ebe6936dd05/doc/wallet-asset-storage.md"
+    },
+    {
+      "url": "https://github.com/The-Yerbas-Endeavor/yerbas/blob/f0e2dde5673580d5d5cac9aa21e16ebe6936dd05/src/amount.h",
+      "status": 200,
+      "final": "https://github.com/The-Yerbas-Endeavor/yerbas/blob/f0e2dde5673580d5d5cac9aa21e16ebe6936dd05/src/amount.h"
+    },
+    {
+      "url": "https://github.com/The-Yerbas-Endeavor/yerbas/blob/f0e2dde5673580d5d5cac9aa21e16ebe6936dd05/src/assets/assets.cpp",
+      "status": 200,
+      "final": "https://github.com/The-Yerbas-Endeavor/yerbas/blob/f0e2dde5673580d5d5cac9aa21e16ebe6936dd05/src/assets/assets.cpp"
+    },
+    {
+      "url": "https://github.com/The-Yerbas-Endeavor/yerbas/blob/f0e2dde5673580d5d5cac9aa21e16ebe6936dd05/src/assets/assets.h",
+      "status": 200,
+      "final": "https://github.com/The-Yerbas-Endeavor/yerbas/blob/f0e2dde5673580d5d5cac9aa21e16ebe6936dd05/src/assets/assets.h"
+    },
+    {
+      "url": "https://github.com/The-Yerbas-Endeavor/yerbas/blob/f0e2dde5673580d5d5cac9aa21e16ebe6936dd05/src/chainparams.cpp",
+      "status": 200,
+      "final": "https://github.com/The-Yerbas-Endeavor/yerbas/blob/f0e2dde5673580d5d5cac9aa21e16ebe6936dd05/src/chainparams.cpp"
+    },
+    {
+      "url": "https://github.com/The-Yerbas-Endeavor/yerbas/blob/f0e2dde5673580d5d5cac9aa21e16ebe6936dd05/src/chainparamsbase.cpp",
+      "status": 200,
+      "final": "https://github.com/The-Yerbas-Endeavor/yerbas/blob/f0e2dde5673580d5d5cac9aa21e16ebe6936dd05/src/chainparamsbase.cpp"
+    },
+    {
+      "url": "https://github.com/The-Yerbas-Endeavor/yerbas/blob/f0e2dde5673580d5d5cac9aa21e16ebe6936dd05/src/evo/deterministicmns.cpp",
+      "status": 200,
+      "final": "https://github.com/The-Yerbas-Endeavor/yerbas/blob/f0e2dde5673580d5d5cac9aa21e16ebe6936dd05/src/evo/deterministicmns.cpp"
+    },
+    {
+      "url": "https://github.com/The-Yerbas-Endeavor/yerbas/blob/f0e2dde5673580d5d5cac9aa21e16ebe6936dd05/src/llmq/quorums_recovery.cpp",
+      "status": 200,
+      "final": "https://github.com/The-Yerbas-Endeavor/yerbas/blob/f0e2dde5673580d5d5cac9aa21e16ebe6936dd05/src/llmq/quorums_recovery.cpp"
+    },
+    {
+      "url": "https://github.com/The-Yerbas-Endeavor/yerbas/blob/f0e2dde5673580d5d5cac9aa21e16ebe6936dd05/src/qt/askpassphrasedialog.cpp",
+      "status": 200,
+      "final": "https://github.com/The-Yerbas-Endeavor/yerbas/blob/f0e2dde5673580d5d5cac9aa21e16ebe6936dd05/src/qt/askpassphrasedialog.cpp"
+    },
+    {
+      "url": "https://github.com/The-Yerbas-Endeavor/yerbas/blob/f0e2dde5673580d5d5cac9aa21e16ebe6936dd05/src/rpc/assets.cpp",
+      "status": 200,
+      "final": "https://github.com/The-Yerbas-Endeavor/yerbas/blob/f0e2dde5673580d5d5cac9aa21e16ebe6936dd05/src/rpc/assets.cpp"
+    },
+    {
+      "url": "https://github.com/The-Yerbas-Endeavor/yerbas/blob/f0e2dde5673580d5d5cac9aa21e16ebe6936dd05/src/rpc/rpcevo.cpp",
+      "status": 200,
+      "final": "https://github.com/The-Yerbas-Endeavor/yerbas/blob/f0e2dde5673580d5d5cac9aa21e16ebe6936dd05/src/rpc/rpcevo.cpp"
+    },
+    {
+      "url": "https://github.com/The-Yerbas-Endeavor/yerbas/blob/f0e2dde5673580d5d5cac9aa21e16ebe6936dd05/src/rpc/rpcquorums.cpp",
+      "status": 200,
+      "final": "https://github.com/The-Yerbas-Endeavor/yerbas/blob/f0e2dde5673580d5d5cac9aa21e16ebe6936dd05/src/rpc/rpcquorums.cpp"
+    },
+    {
+      "url": "https://github.com/The-Yerbas-Endeavor/yerbas/blob/f0e2dde5673580d5d5cac9aa21e16ebe6936dd05/src/smartnode/smartnode-collaterals.cpp",
+      "status": 200,
+      "final": "https://github.com/The-Yerbas-Endeavor/yerbas/blob/f0e2dde5673580d5d5cac9aa21e16ebe6936dd05/src/smartnode/smartnode-collaterals.cpp"
+    },
+    {
+      "url": "https://github.com/The-Yerbas-Endeavor/yerbas/blob/f0e2dde5673580d5d5cac9aa21e16ebe6936dd05/src/validation.cpp",
+      "status": 200,
+      "final": "https://github.com/The-Yerbas-Endeavor/yerbas/blob/f0e2dde5673580d5d5cac9aa21e16ebe6936dd05/src/validation.cpp"
+    },
+    {
+      "url": "https://github.com/The-Yerbas-Endeavor/yerbas/blob/f0e2dde5673580d5d5cac9aa21e16ebe6936dd05/src/version.h",
+      "status": 200,
+      "final": "https://github.com/The-Yerbas-Endeavor/yerbas/blob/f0e2dde5673580d5d5cac9aa21e16ebe6936dd05/src/version.h"
+    },
+    {
+      "url": "https://github.com/The-Yerbas-Endeavor/yerbas/blob/f0e2dde5673580d5d5cac9aa21e16ebe6936dd05/src/wallet/assetissuance.h",
+      "status": 200,
+      "final": "https://github.com/The-Yerbas-Endeavor/yerbas/blob/f0e2dde5673580d5d5cac9aa21e16ebe6936dd05/src/wallet/assetissuance.h"
+    },
+    {
+      "url": "https://github.com/The-Yerbas-Endeavor/yerbas/blob/f0e2dde5673580d5d5cac9aa21e16ebe6936dd05/src/wallet/wallet.cpp",
+      "status": 200,
+      "final": "https://github.com/The-Yerbas-Endeavor/yerbas/blob/f0e2dde5673580d5d5cac9aa21e16ebe6936dd05/src/wallet/wallet.cpp"
+    },
+    {
+      "url": "https://github.com/The-Yerbas-Endeavor/yerbas/releases/download/v4.0.1.4/BUILD-NOTICES-4.0.1.4.zip",
+      "status": 200,
+      "final": "https://release-assets.githubusercontent.com/github-production-release-asset/490911907/11c44fbf-5840-47fd-890a-b11ed964e924?sp=r&sv=2018-11-09&sr=b&spr=https&se=2026-11-16T03%3A34%3A27Z&rscd=attachment%3B+filename%3DBUILD-NOTICES-4.0.1.4.zip&rsct=application%2Foctet-stream&skoid=96c2d410-5711-43a1-aedd-ab1947aa7ab0&sktid=398a6654-997b-47e9-b12b-9515b896b4de&skt=2026-11-16T02%3A33%3A36Z&ske=2026-11-16T03%3A34%3A27Z&sks=b&skv=2018-11-09&sig=dNzZh7vrqrOgibTJYrzo6aBH3MYpQtRvN6RA%2BKT70qk%3D&jwt=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmVsZWFzZS1hc3NldHMuZ2l0aHVidXNlcmNvbnRlbnQuY29tIiwia2V5Ijoia2V5MSIsImV4cCI6MTc5NDc5NzQ4MiwibmJmIjoxNzk0Nzk3MTgyLCJwYXRoIjoicmVsZWFzZWFzc2V0cHJvZHVjdGlvbi5ibG9iLmNvcmUud2luZG93cy5uZXQifQ.GEzKQS5Ll2mCnfeim7teeWHTXUeXL4BMiZEMETab514&response-content-disposition=attachment%3B%20filename%3DBUILD-NOTICES-4.0.1.4.zip&response-content-type=application%2Foctet-stream"
+    },
+    {
+      "url": "https://github.com/The-Yerbas-Endeavor/yerbas/releases/download/v4.0.1.4/BUILD-PROVENANCE.json",
+      "status": 200,
+      "final": "https://release-assets.githubusercontent.com/github-production-release-asset/490911907/0a70af54-7f8f-4030-b472-126a55f1f1ed?sp=r&sv=2018-11-09&sr=b&spr=https&se=2026-11-16T03%3A34%3A18Z&rscd=attachment%3B+filename%3DBUILD-PROVENANCE.json&rsct=application%2Foctet-stream&skoid=96c2d410-5711-43a1-aedd-ab1947aa7ab0&sktid=398a6654-997b-47e9-b12b-9515b896b4de&skt=2026-11-16T02%3A34%3A12Z&ske=2026-11-16T03%3A34%3A18Z&sks=b&skv=2018-11-09&sig=FcHTT8F6HZAAo178VsI3mE96kVxjC1tPnpVSQHn37Hg%3D&jwt=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmVsZWFzZS1hc3NldHMuZ2l0aHVidXNlcmNvbnRlbnQuY29tIiwia2V5Ijoia2V5MSIsImV4cCI6MTc5NDc5NzQ4MiwibmJmIjoxNzk0Nzk3MTgyLCJwYXRoIjoicmVsZWFzZWFzc2V0cHJvZHVjdGlvbi5ibG9iLmNvcmUud2luZG93cy5uZXQifQ.GEzKQS5Ll2mCnfeim7teeWHTXUeXL4BMiZEMETab514&response-content-disposition=attachment%3B%20filename%3DBUILD-PROVENANCE.json&response-content-type=application%2Foctet-stream"
+    },
+    {
+      "url": "https://github.com/The-Yerbas-Endeavor/yerbas/releases/download/v4.0.1.4/SHA256SUMS",
+      "status": 200,
+      "final": "https://release-assets.githubusercontent.com/github-production-release-asset/490911907/b042632f-0e0f-495e-bae5-3d7675a5f74f?sp=r&sv=2018-11-09&sr=b&spr=https&se=2026-11-16T03%3A44%3A03Z&rscd=attachment%3B+filename%3DSHA256SUMS&rsct=application%2Foctet-stream&skoid=96c2d410-5711-43a1-aedd-ab1947aa7ab0&sktid=398a6654-997b-47e9-b12b-9515b896b4de&skt=2026-11-16T02%3A43%3A05Z&ske=2026-11-16T03%3A44%3A03Z&sks=b&skv=2018-11-09&sig=nwbnnPx3c8rPFwMuWMucD11c%2B2P4RwB3yn6k7StSwBk%3D&jwt=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmVsZWFzZS1hc3NldHMuZ2l0aHVidXNlcmNvbnRlbnQuY29tIiwia2V5Ijoia2V5MSIsImV4cCI6MTc5NDc5NzQ4MiwibmJmIjoxNzk0Nzk3MTgyLCJwYXRoIjoicmVsZWFzZWFzc2V0cHJvZHVjdGlvbi5ibG9iLmNvcmUud2luZG93cy5uZXQifQ.GEzKQS5Ll2mCnfeim7teeWHTXUeXL4BMiZEMETab514&response-content-disposition=attachment%3B%20filename%3DSHA256SUMS&response-content-type=application%2Foctet-stream"
+    },
+    {
+      "url": "https://github.com/The-Yerbas-Endeavor/yerbas/releases/download/v4.0.1.4/yerbas-debian-13-x86-release-4.0.1.4.tar.gz",
+      "status": 200,
+      "final": "https://release-assets.githubusercontent.com/github-production-release-asset/490911907/0a9a2dd9-758c-4815-8b03-95ca9740cb4e?sp=r&sv=2018-11-09&sr=b&spr=https&se=2026-11-16T03%3A35%3A03Z&rscd=attachment%3B+filename%3Dyerbas-debian-13-x86-release-4.0.1.4.tar.gz&rsct=application%2Foctet-stream&skoid=96c2d410-5711-43a1-aedd-ab1947aa7ab0&sktid=398a6654-997b-47e9-b12b-9515b896b4de&skt=2026-11-16T02%3A34%3A09Z&ske=2026-11-16T03%3A35%3A03Z&sks=b&skv=2018-11-09&sig=8243GHiCU%2Fm0hd8xR9odoJR%2BlnolbgLKgzM1TPWQj%2F8%3D&jwt=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmVsZWFzZS1hc3NldHMuZ2l0aHVidXNlcmNvbnRlbnQuY29tIiwia2V5Ijoia2V5MSIsImV4cCI6MTc5NDc5ODk4MiwibmJmIjoxNzk0Nzk3MTgyLCJwYXRoIjoicmVsZWFzZWFzc2V0cHJvZHVjdGlvbi5ibG9iLmNvcmUud2luZG93cy5uZXQifQ.FVxBTbA_Pc4Lvr_qSFV-efuyLoiUb9N2vntNTgkfAKw&response-content-disposition=attachment%3B%20filename%3Dyerbas-debian-13-x86-release-4.0.1.4.tar.gz&response-content-type=application%2Foctet-stream"
+    },
+    {
+      "url": "https://github.com/The-Yerbas-Endeavor/yerbas/releases/download/v4.0.1.4/yerbas-macOS15-x86-release-4.0.1.4.tar.gz",
+      "status": 200,
+      "final": "https://release-assets.githubusercontent.com/github-production-release-asset/490911907/15f4cc95-9819-47ef-9cf2-0d572fb2c0ac?sp=r&sv=2018-11-09&sr=b&spr=https&se=2026-11-16T03%3A36%3A12Z&rscd=attachment%3B+filename%3Dyerbas-macOS15-x86-release-4.0.1.4.tar.gz&rsct=application%2Foctet-stream&skoid=96c2d410-5711-43a1-aedd-ab1947aa7ab0&sktid=398a6654-997b-47e9-b12b-9515b896b4de&skt=2026-11-16T02%3A35%3A47Z&ske=2026-11-16T03%3A36%3A12Z&sks=b&skv=2018-11-09&sig=r9kCzZEA7e%2BbJ1eqtLnzI1WlccvmRNHhLIVUNS6tWxI%3D&jwt=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmVsZWFzZS1hc3NldHMuZ2l0aHVidXNlcmNvbnRlbnQuY29tIiwia2V5Ijoia2V5MSIsImV4cCI6MTc5NDc5ODk4MiwibmJmIjoxNzk0Nzk3MTgyLCJwYXRoIjoicmVsZWFzZWFzc2V0cHJvZHVjdGlvbi5ibG9iLmNvcmUud2luZG93cy5uZXQifQ.FVxBTbA_Pc4Lvr_qSFV-efuyLoiUb9N2vntNTgkfAKw&response-content-disposition=attachment%3B%20filename%3Dyerbas-macOS15-x86-release-4.0.1.4.tar.gz&response-content-type=application%2Foctet-stream"
+    },
+    {
+      "url": "https://github.com/The-Yerbas-Endeavor/yerbas/releases/download/v4.0.1.4/yerbas-ubuntu-22.04-x86-release-4.0.1.4.tar.gz",
+      "status": 200,
+      "final": "https://release-assets.githubusercontent.com/github-production-release-asset/490911907/be94970d-8516-4bbf-afdf-7544d96518b6?sp=r&sv=2018-11-09&sr=b&spr=https&se=2026-11-16T03%3A37%3A02Z&rscd=attachment%3B+filename%3Dyerbas-ubuntu-22.04-x86-release-4.0.1.4.tar.gz&rsct=application%2Foctet-stream&skoid=96c2d410-5711-43a1-aedd-ab1947aa7ab0&sktid=398a6654-997b-47e9-b12b-9515b896b4de&skt=2026-11-16T02%3A37%3A02Z&ske=2026-11-16T03%3A37%3A02Z&sks=b&skv=2018-11-09&sig=wn8YC720UAGAAhGgRjSCqrFJ3PODpv%2B6Q0VCpnWcusw%3D&jwt=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmVsZWFzZS1hc3NldHMuZ2l0aHVidXNlcmNvbnRlbnQuY29tIiwia2V5Ijoia2V5MSIsImV4cCI6MTc5NDc5ODk4MiwibmJmIjoxNzk0Nzk3MTgyLCJwYXRoIjoicmVsZWFzZWFzc2V0cHJvZHVjdGlvbi5ibG9iLmNvcmUud2luZG93cy5uZXQifQ.FVxBTbA_Pc4Lvr_qSFV-efuyLoiUb9N2vntNTgkfAKw&response-content-disposition=attachment%3B%20filename%3Dyerbas-ubuntu-22.04-x86-release-4.0.1.4.tar.gz&response-content-type=application%2Foctet-stream"
+    },
+    {
+      "url": "https://github.com/The-Yerbas-Endeavor/yerbas/releases/download/v4.0.1.4/yerbas-ubuntu-24.04-arm64-release-4.0.1.4.tar.gz",
+      "status": 200,
+      "final": "https://release-assets.githubusercontent.com/github-production-release-asset/490911907/499a30a4-b7ef-41e8-bbce-8838a93c3b9d?sp=r&sv=2018-11-09&sr=b&spr=https&se=2026-11-16T03%3A34%3A06Z&rscd=attachment%3B+filename%3Dyerbas-ubuntu-24.04-arm64-release-4.0.1.4.tar.gz&rsct=application%2Foctet-stream&skoid=96c2d410-5711-43a1-aedd-ab1947aa7ab0&sktid=398a6654-997b-47e9-b12b-9515b896b4de&skt=2026-11-16T02%3A33%3A52Z&ske=2026-11-16T03%3A34%3A06Z&sks=b&skv=2018-11-09&sig=%2ByFFpJ2CRE3lnZMZyraT8yX0OPVdIVUb7QVmDP9ubec%3D&jwt=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmVsZWFzZS1hc3NldHMuZ2l0aHVidXNlcmNvbnRlbnQuY29tIiwia2V5Ijoia2V5MSIsImV4cCI6MTc5NDc5ODk4MiwibmJmIjoxNzk0Nzk3MTgyLCJwYXRoIjoicmVsZWFzZWFzc2V0cHJvZHVjdGlvbi5ibG9iLmNvcmUud2luZG93cy5uZXQifQ.FVxBTbA_Pc4Lvr_qSFV-efuyLoiUb9N2vntNTgkfAKw&response-content-disposition=attachment%3B%20filename%3Dyerbas-ubuntu-24.04-arm64-release-4.0.1.4.tar.gz&response-content-type=application%2Foctet-stream"
+    },
+    {
+      "url": "https://github.com/The-Yerbas-Endeavor/yerbas/releases/download/v4.0.1.4/yerbas-ubuntu-24.04-x86-release-4.0.1.4.tar.gz",
+      "status": 200,
+      "final": "https://release-assets.githubusercontent.com/github-production-release-asset/490911907/f6e75025-d082-44c6-8d85-b886df20f282?sp=r&sv=2018-11-09&sr=b&spr=https&se=2026-11-16T03%3A39%3A01Z&rscd=attachment%3B+filename%3Dyerbas-ubuntu-24.04-x86-release-4.0.1.4.tar.gz&rsct=application%2Foctet-stream&skoid=96c2d410-5711-43a1-aedd-ab1947aa7ab0&sktid=398a6654-997b-47e9-b12b-9515b896b4de&skt=2026-11-16T02%3A38%3A47Z&ske=2026-11-16T03%3A39%3A01Z&sks=b&skv=2018-11-09&sig=4zieWbuA%2BiDA8hplhEWUntZnrtQQQqVjRWQ36E7oeIM%3D&jwt=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmVsZWFzZS1hc3NldHMuZ2l0aHVidXNlcmNvbnRlbnQuY29tIiwia2V5Ijoia2V5MSIsImV4cCI6MTc5NDc5ODk4MiwibmJmIjoxNzk0Nzk3MTgyLCJwYXRoIjoicmVsZWFzZWFzc2V0cHJvZHVjdGlvbi5ibG9iLmNvcmUud2luZG93cy5uZXQifQ.FVxBTbA_Pc4Lvr_qSFV-efuyLoiUb9N2vntNTgkfAKw&response-content-disposition=attachment%3B%20filename%3Dyerbas-ubuntu-24.04-x86-release-4.0.1.4.tar.gz&response-content-type=application%2Foctet-stream"
+    },
+    {
+      "url": "https://github.com/The-Yerbas-Endeavor/yerbas/releases/download/v4.0.1.4/yerbas-ubuntu-26.04-x86-release-4.0.1.4.tar.gz",
+      "status": 200,
+      "final": "https://release-assets.githubusercontent.com/github-production-release-asset/490911907/15708073-380e-488d-8778-6f9c75e334af?sp=r&sv=2018-11-09&sr=b&spr=https&se=2026-11-16T03%3A28%3A15Z&rscd=attachment%3B+filename%3Dyerbas-ubuntu-26.04-x86-release-4.0.1.4.tar.gz&rsct=application%2Foctet-stream&skoid=96c2d410-5711-43a1-aedd-ab1947aa7ab0&sktid=398a6654-997b-47e9-b12b-9515b896b4de&skt=2026-11-16T02%3A27%3A49Z&ske=2026-11-16T03%3A28%3A15Z&sks=b&skv=2018-11-09&sig=RY57WZv3oVcIpqi5YnS5J3YK2CMqJexeVOaWZgcFAsU%3D&jwt=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmVsZWFzZS1hc3NldHMuZ2l0aHVidXNlcmNvbnRlbnQuY29tIiwia2V5Ijoia2V5MSIsImV4cCI6MTc5NDc5ODk4MiwibmJmIjoxNzk0Nzk3MTgyLCJwYXRoIjoicmVsZWFzZWFzc2V0cHJvZHVjdGlvbi5ibG9iLmNvcmUud2luZG93cy5uZXQifQ.FVxBTbA_Pc4Lvr_qSFV-efuyLoiUb9N2vntNTgkfAKw&response-content-disposition=attachment%3B%20filename%3Dyerbas-ubuntu-26.04-x86-release-4.0.1.4.tar.gz&response-content-type=application%2Foctet-stream"
+    },
+    {
+      "url": "https://github.com/The-Yerbas-Endeavor/yerbas/releases/download/v4.0.1.4/yerbas-win64-x86-release-4.0.1.4.zip",
+      "status": 200,
+      "final": "https://release-assets.githubusercontent.com/github-production-release-asset/490911907/695b6d71-d989-4b5f-bd8e-5a0eea679aef?sp=r&sv=2018-11-09&sr=b&spr=https&se=2026-11-16T03%3A36%3A46Z&rscd=attachment%3B+filename%3Dyerbas-win64-x86-release-4.0.1.4.zip&rsct=application%2Foctet-stream&skoid=96c2d410-5711-43a1-aedd-ab1947aa7ab0&sktid=398a6654-997b-47e9-b12b-9515b896b4de&skt=2026-11-16T02%3A36%3A24Z&ske=2026-11-16T03%3A36%3A46Z&sks=b&skv=2018-11-09&sig=bzbOKBq%2BjvXkKkskWoUuMO4CvjRV4SMCzNVi3r9i620%3D&jwt=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmVsZWFzZS1hc3NldHMuZ2l0aHVidXNlcmNvbnRlbnQuY29tIiwia2V5Ijoia2V5MSIsImV4cCI6MTc5NDc5ODk4MywibmJmIjoxNzk0Nzk3MTgzLCJwYXRoIjoicmVsZWFzZWFzc2V0cHJvZHVjdGlvbi5ibG9iLmNvcmUud2luZG93cy5uZXQifQ.E6yrkoQG2Roq7wZBj-SeWV1eqxxFTCFc_OCDW4N6Tfw&response-content-disposition=attachment%3B%20filename%3Dyerbas-win64-x86-release-4.0.1.4.zip&response-content-type=application%2Foctet-stream"
+    },
+    {
+      "url": "https://github.com/The-Yerbas-Endeavor/yerbas/releases/tag/v4.0.1.4",
+      "status": 200,
+      "final": "https://github.com/The-Yerbas-Endeavor/yerbas/releases/tag/v4.0.1.4"
+    },
+    {
+      "url": "https://github.com/The-Yerbas-Endeavor/yerbas/tree/f0e2dde5673580d5d5cac9aa21e16ebe6936dd05",
+      "status": 200,
+      "final": "https://github.com/The-Yerbas-Endeavor/yerbas/tree/f0e2dde5673580d5d5cac9aa21e16ebe6936dd05"
+    },
+    {
+      "url": "https://github.com/WyvernTKC/cpuminer-gr-avx2",
+      "status": 200,
+      "final": "https://github.com/WyvernTKC/cpuminer-gr-avx2"
+    },
+    {
+      "url": "https://github.com/michal-zurkowski/cpuminer-gr",
+      "status": 200,
+      "final": "https://github.com/michal-zurkowski/cpuminer-gr"
+    },
+    {
+      "url": "https://github.com/npq7721/gr_pool",
+      "status": 200,
+      "final": "https://github.com/npq7721/gr_pool"
+    },
+    {
+      "url": "https://github.com/the-yerbas-endeavor/yerbas/releases",
+      "status": 200,
+      "final": "https://github.com/the-yerbas-endeavor/yerbas/releases"
+    },
+    {
+      "url": "https://github.com/xmrig/xmrig",
+      "status": 200,
+      "final": "https://github.com/xmrig/xmrig"
+    },
+    {
+      "url": "https://t.me/Yerbas420",
+      "status": 200,
+      "final": "https://t.me/Yerbas420"
+    },
+    {
+      "url": "https://twitter.com/Yerbas_Endeavor",
+      "status": 200,
+      "final": "https://twitter.com/Yerbas_Endeavor"
+    },
+    {
+      "url": "https://www.facebook.com/yerbas/",
+      "status": 200,
+      "final": "https://www.facebook.com/yerbas/"
+    },
+    {
+      "url": "https://www.reddit.com/r/Yerbas/",
+      "status": 200,
+      "final": "https://www.reddit.com/r/Yerbas/"
+    },
+    {
+      "url": "https://yerbas.org",
+      "status": 200,
+      "final": "https://yerbas.org"
+    },
+    {
+      "url": "https://youtu.be/9ggB5VjveYQ",
+      "status": 200,
+      "final": "https://www.youtube.com/watch?v=9ggB5VjveYQ&feature=youtu.be"
+    },
+    {
+      "url": "https://zelcore.io/",
+      "status": 200,
+      "final": "https://zelcore.io/"
+    }
+  ],
+  "browser": {
+    "checks": [
+      {
+        "route": "/",
+        "title": "Yerbas",
+        "horizontalOverflow": false
+      },
+      {
+        "route": "/docs/wallet/quick-start/",
+        "title": "Yerbas Core 4.0.1.4: download and upgrade",
+        "horizontalOverflow": false
+      },
+      {
+        "route": "/docs/wallet/gui-wallet/guiwalletguide/encryptbackup/",
+        "title": "Encrypt and back up your wallet",
+        "horizontalOverflow": false
+      },
+      {
+        "route": "/docs/wallet/gui-wallet/guiwalletguide/syncing/",
+        "title": "Synchronization",
+        "horizontalOverflow": false
+      },
+      {
+        "route": "/docs/smartnodes/recovery/",
+        "title": "Recorded quorum recovery in 4.0.1.4",
+        "horizontalOverflow": false
+      },
+      {
+        "route": "/docs/yerbas/consensus/",
+        "title": "Mainnet facts verified against 4.0.1.4",
+        "horizontalOverflow": false
+      },
+      {
+        "route": "/docs/wallet/cli-wallet/commands/evo/protx-quick_setup/",
+        "title": "protx quick_setup",
+        "horizontalOverflow": false
+      },
+      {
+        "navigation": "Assets in Core 4.0.1.4"
+      },
+      {
+        "mobileHorizontalOverflow": false
+      },
+      {
+        "mobileNavigation": true
+      }
+    ],
+    "errors": []
+  },
+  "release_archive_sha256": "4d3cd6d74d6a8a84e74069143922893adffc654e73260786091953c62b704cfa",
+  "core_source": "f0e2dde5673580d5d5cac9aa21e16ebe6936dd05",
+  "link_checker_regressions": {
+    "tests": 5,
+    "passed": 5
+  }
+}

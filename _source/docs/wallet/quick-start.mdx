@@ -1,0 +1,80 @@
+---
+sidebar_position: 2
+---
+
+# Yerbas Core 4.0.1.4: download and upgrade
+
+Use the [4.0.1.4 release](https://github.com/The-Yerbas-Endeavor/yerbas/releases/tag/v4.0.1.4) for this guide. This is a mandatory mainnet upgrade.
+
+## Downloads
+
+| Platform | Architecture | Archive |
+| --- | --- | --- |
+| Debian 13 | x86-64 | [yerbas-debian-13-x86-release-4.0.1.4.tar.gz](https://github.com/The-Yerbas-Endeavor/yerbas/releases/download/v4.0.1.4/yerbas-debian-13-x86-release-4.0.1.4.tar.gz) |
+| Ubuntu 22.04 | x86-64 | [yerbas-ubuntu-22.04-x86-release-4.0.1.4.tar.gz](https://github.com/The-Yerbas-Endeavor/yerbas/releases/download/v4.0.1.4/yerbas-ubuntu-22.04-x86-release-4.0.1.4.tar.gz) |
+| Ubuntu 24.04 | x86-64 | [yerbas-ubuntu-24.04-x86-release-4.0.1.4.tar.gz](https://github.com/The-Yerbas-Endeavor/yerbas/releases/download/v4.0.1.4/yerbas-ubuntu-24.04-x86-release-4.0.1.4.tar.gz) |
+| Ubuntu 24.04 | ARM64 | [yerbas-ubuntu-24.04-arm64-release-4.0.1.4.tar.gz](https://github.com/The-Yerbas-Endeavor/yerbas/releases/download/v4.0.1.4/yerbas-ubuntu-24.04-arm64-release-4.0.1.4.tar.gz) |
+| Ubuntu 26.04 | x86-64 | [yerbas-ubuntu-26.04-x86-release-4.0.1.4.tar.gz](https://github.com/The-Yerbas-Endeavor/yerbas/releases/download/v4.0.1.4/yerbas-ubuntu-26.04-x86-release-4.0.1.4.tar.gz) |
+| Windows | x86-64 | [yerbas-win64-x86-release-4.0.1.4.zip](https://github.com/The-Yerbas-Endeavor/yerbas/releases/download/v4.0.1.4/yerbas-win64-x86-release-4.0.1.4.zip) |
+| macOS 15 | Intel x86-64 | [yerbas-macOS15-x86-release-4.0.1.4.tar.gz](https://github.com/The-Yerbas-Endeavor/yerbas/releases/download/v4.0.1.4/yerbas-macOS15-x86-release-4.0.1.4.tar.gz) |
+
+Filenames marked `x86` contain **64-bit x86** builds. These are archives, not `.deb`, `.msi`, `.exe` setup or `.dmg` installers.
+Download [SHA256SUMS](https://github.com/The-Yerbas-Endeavor/yerbas/releases/download/v4.0.1.4/SHA256SUMS), [BUILD-PROVENANCE.json](https://github.com/The-Yerbas-Endeavor/yerbas/releases/download/v4.0.1.4/BUILD-PROVENANCE.json), and [build notices](https://github.com/The-Yerbas-Endeavor/yerbas/releases/download/v4.0.1.4/BUILD-NOTICES-4.0.1.4.zip) from the same release.
+
+For example, with the Ubuntu 22.04 archive and SHA256SUMS in the same directory:
+
+```bash
+sha256sum --check --ignore-missing SHA256SUMS
+tar -xzf yerbas-ubuntu-22.04-x86-release-4.0.1.4.tar.gz
+cd yerbas-build
+./yerbasd --version
+```
+
+Check that your downloaded archive is explicitly reported **OK** before extracting it. On Windows use `Get-FileHash -Algorithm SHA256` and compare with SHA256SUMS; on macOS use `shasum -a 256`.
+
+## Package layout
+
+Archives extract to `yerbas-build/`.
+
+- Debian 13: `yerbas-cli`, `yerbasd`, and an AppImage named `yerbas-qt`. Run `./yerbas-qt`; no FUSE or additional Qt packages are needed on supported Debian 13 systems. A graphical display and writable executable temporary storage are required. XCB is the default unless `QT_QPA_PLATFORM` explicitly selects another backend.
+- Ubuntu 22.04 / 24.04 (including 24.04 ARM64): the three executable files include Qt linked into `yerbas-qt`. No separate launcher, Qt library or plugin directories are required. Normal operating-system libraries are still required.
+- Windows: `yerbas-cli.exe`, `yerbasd.exe`, `yerbas-qt.exe`, with Qt and compiler runtimes linked statically.
+- macOS 15 Intel: preserve the complete `Yerbas-Qt.app` bundle alongside `yerbas-cli` and `yerbasd`.
+- Ubuntu 26.04: uses system Qt. Keep the archive layout intact and install the GUI runtime:
+
+```bash
+sudo apt-get install libqt6widgets6 libqt6network6 libqt6core5compat6 qt6-qpa-plugins
+```
+
+## Upgrade safely
+
+1. Back up every wallet using **File → Backup Wallet** or `backupwallet`. Keep the complete wallet backup: private keys alone do not preserve all local asset reward and payout-job records.
+2. Stop the old GUI or run `./yerbas-cli stop` and wait for the process to exit. Retain a backup of your configuration and data directory.
+3. Verify the correct archive, then extract to a new **application** folder. Do not extract application files over wallet data.
+4. Start either the GUI **or** the daemon with the existing data directory and configuration. Never run both against the same data directory.
+5. Confirm `v4.0.1.4` in Help → About or `./yerbasd --version`. Allow synchronization and automatic history indexing to finish; check peers, balances, and smartnode status if applicable.
+
+Routine upgrades do not require reindexing. If diagnostics report missing history or indexes, follow [troubleshooting](/docs/wallet/troubleshooting/). A bootstrap is optional and must be compatible with the recorded recovery history.
+
+## First start
+
+GUI users run `yerbas-qt.exe` (Windows), open `Yerbas-Qt.app` (macOS), or run `./yerbas-qt` (Linux). The GUI runs its own node.
+
+For a Linux/macOS command-line node:
+
+```bash
+./yerbasd -daemon
+./yerbas-cli getblockchaininfo
+./yerbas-cli getnetworkinfo
+./yerbas-cli getwalletinfo
+```
+
+On Windows run `yerbasd.exe` in a separate terminal and use `yerbas-cli.exe` in another. Use `./yerbas-cli stop` for a clean shutdown (omit `./` and use `.exe` as appropriate on Windows).
+
+See [assets](/docs/wallet/assets/) for the mainnet wallet safeguard and [recovery](/docs/smartnodes/recovery/) for validator upgrade requirements.
+
+## Exact source
+
+The refreshed binaries use commit `f0e2dde5673580d5d5cac9aa21e16ebe6936dd05`. The existing `v4.0.1.4` tag remains at `f939795`; GitHub's automatic source attachments follow that older tag. Use the [binary source commit](https://github.com/The-Yerbas-Endeavor/yerbas/tree/f0e2dde5673580d5d5cac9aa21e16ebe6936dd05) to reproduce the downloads.
+
+[Packaging source](https://github.com/The-Yerbas-Endeavor/yerbas/blob/f0e2dde5673580d5d5cac9aa21e16ebe6936dd05/doc/ci-qt-artifacts.md) · [Build workflow](https://github.com/The-Yerbas-Endeavor/yerbas/blob/f0e2dde5673580d5d5cac9aa21e16ebe6936dd05/.github/workflows/build.yaml)

@@ -1,0 +1,27 @@
+---
+sidebar_position: 7
+---
+
+# Troubleshooting 4.0.1.4
+
+## Synchronization and startup
+
+Confirm the executable reports 4.0.1.4, the correct network/data directory is selected, the disk has space, and only one process is using the directory. Inspect `debug.log`, peer connections and the exact error message.
+
+```bash
+./yerbas-cli getblockchaininfo
+./yerbas-cli getnetworkinfo
+./yerbas-cli getpeerinfo
+```
+
+Automatic recovery-history indexing may take time. A routine upgrade does not require `-reindex`. Missing block history or recovery indexes can require restoring compatible history or reindexing; follow the diagnostic and retain your original data and wallet backups first. Pruned nodes may not have the blocks needed for migration.
+
+Do not delete `sporks.dat`, `evodb`, `llmq`, wallet files or all `.dat` files as a generic repair. See [recorded recovery](/docs/smartnodes/recovery/).
+
+## Wallet history or balances
+
+Check synchronization and the selected wallet first. A rescan rebuilds wallet transaction history from available blocks; it is different from rebuilding chainstate. After backing up and stopping the node, `./yerbasd -rescan` is the startup rescan option. Keep the same data directory; do not run a second process against it. Pruned blocks may need restoration.
+
+A seed/private-key restore does not recover every local asset reward or payout-job record. Use a complete wallet backup where available. Never share your wallet file, seed, passphrase, operator secret or signing key when requesting support.
+
+[History/index diagnostics](https://github.com/The-Yerbas-Endeavor/yerbas/blob/f0e2dde5673580d5d5cac9aa21e16ebe6936dd05/doc/low-llmq-history-migration.md) · [Wallet recovery](https://github.com/The-Yerbas-Endeavor/yerbas/blob/f0e2dde5673580d5d5cac9aa21e16ebe6936dd05/doc/wallet-asset-storage.md)

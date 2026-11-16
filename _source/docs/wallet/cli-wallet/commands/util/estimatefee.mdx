@@ -1,0 +1,27 @@
+# estimatefee
+
+RPC help captured from **Yerbas Core 4.0.1.4** (`f0e2dde`).
+
+Use `./yerbas-cli help estimatefee` on your node for help. In the GUI console omit `yerbas-cli`. HTTP examples use mainnet RPC port 15419; network-specific defaults and availability can differ.
+
+```text
+estimatefee nblocks
+
+DEPRECATED. Please use estimatesmartfee for more intelligent estimates.
+Estimates the approximate fee per kilobyte needed for a transaction to begin
+confirmation within nblocks blocks.
+
+Arguments:
+1. nblocks     (numeric, required)
+
+Result:
+n              (numeric) estimated fee-per-kilobyte
+
+A negative value is returned if not enough transactions and blocks
+have been observed to make an estimate.
+-1 is always returned for nblocks == 1 as it is impossible to calculate
+a fee that is high enough to get reliably included in the next block.
+
+Example:
+> yerbas-cli estimatefee 6
+```

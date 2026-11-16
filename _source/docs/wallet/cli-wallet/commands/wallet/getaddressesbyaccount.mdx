@@ -1,0 +1,24 @@
+# getaddressesbyaccount
+
+RPC help captured from **Yerbas Core 4.0.1.4** (`f0e2dde`).
+
+Use `./yerbas-cli help getaddressesbyaccount` on your node for help. In the GUI console omit `yerbas-cli`. HTTP examples use mainnet RPC port 15419; network-specific defaults and availability can differ.
+
+```text
+getaddressesbyaccount "account"
+
+DEPRECATED. Returns the list of addresses for the given account.
+
+Arguments:
+1. "account"        (string, required) The account name.
+
+Result:
+[                     (json array of string)
+  "address"         (string) a yerbas address associated with the given account
+  ,...
+]
+
+Examples:
+> yerbas-cli getaddressesbyaccount "tabby"
+> curl --user myusername --data-binary '{"jsonrpc": "1.0", "id":"curltest", "method": "getaddressesbyaccount", "params": ["tabby"] }' -H 'content-type: text/plain;' http://127.0.0.1:15419/
+```

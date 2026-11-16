@@ -1,0 +1,53 @@
+---
+sidebar_position: 1
+---
+
+# Manual setup
+
+Use a synced Core 4.0.1.4 control wallet and a separate server running the matching daemon. Read [requirements and collateral](/docs/smartnodes/requirements/) first. Keep collateral keys in the control wallet; the server needs the operator BLS key, not the spending keys.
+
+## Server
+
+Install and verify the correct archive using [download and upgrade](/docs/wallet/quick-start/). Run the daemon as a dedicated non-root user. Allow inbound TCP **15420** while retaining your SSH access. Keep RPC local. From `yerbas-build/`:
+
+```bash
+./yerbasd -daemon
+./yerbas-cli getblockchaininfo
+./yerbas-cli getnetworkinfo
+```
+
+Allow synchronization to complete before registering. Default Linux data is in `~/.yerbascore`; configuration is `yerbas.conf` there. A compatible bootstrap is optional; see [bootstrap guidance](/docs/wallet/bootstrap/).
+
+## Control wallet and registration {#build-protx}
+
+1. Encrypt and back up the complete control wallet.
+2. Create a dedicated receiving address and send the [height-appropriate collateral](/docs/smartnodes/requirements/) as one output. Maintain separate funds to pay the registration fee.
+3. Identify the collateral transaction ID and output index with `smartnode outputs`. Confirm the output and its amount before registration.
+4. Inspect help before constructing the registration transaction:
+
+```bash
+./yerbas-cli help protx
+./yerbas-cli help protx quick_setup
+```
+
+Template only; replace every uppercase placeholder with your own value:
+
+```text
+protx quick_setup "COLLATERAL_TXID" "OUTPUT_INDEX" "SERVER_IP:15420" "FEE_SOURCE_ADDRESS"
+```
+
+Run this in the control wallet's console (or prepend `./yerbas-cli` in a shell). This command **submits a fee-paying registration transaction**, creates owner/voting/payout addresses and an operator key, and returns configuration information. Its result includes `operatorSecret` and `yerbas.conf`; protect them and do not post them in support messages. Back up the control wallet again after registration.
+
+## Server activation
+
+Stop the server daemon cleanly, wait for it to exit, and apply the returned operator configuration to its `yerbas.conf`. Preserve existing settings; check the advertised address and port. Start the daemon and inspect:
+
+```bash
+./yerbasd -daemon
+./yerbas-cli smartnode status
+./yerbas-cli protx info "PROTX_HASH"
+```
+
+Replace `PROTX_HASH` with the registration hash. Registration confirmation, synchronization, and quorum participation are separate conditions; no fixed readiness or payment time is guaranteed.
+
+[Registration implementation](https://github.com/The-Yerbas-Endeavor/yerbas/blob/f0e2dde5673580d5d5cac9aa21e16ebe6936dd05/src/rpc/rpcevo.cpp) · [Mainnet settings](https://github.com/The-Yerbas-Endeavor/yerbas/blob/f0e2dde5673580d5d5cac9aa21e16ebe6936dd05/src/chainparams.cpp)

@@ -1,0 +1,23 @@
+# viewmytaggedaddresses
+
+RPC help captured from **Yerbas Core 4.0.1.4** (`f0e2dde`).
+
+Use `./yerbas-cli help viewmytaggedaddresses` on your node for help. In the GUI console omit `yerbas-cli`. HTTP examples use mainnet RPC port 15419; network-specific defaults and availability can differ.
+
+```text
+viewmytaggedaddresses
+
+View all addresses this wallet owns that have been tagged
+
+Result:
+{
+"Address:"                        (string) The address that was tagged
+"Tag Name:"                       (string) The asset name
+"[Assigned|Removed]:"             (Date) The UTC datetime of the assignment or removal of the tag in the format (YY-mm-dd HH:MM:SS)
+                                         (Only the most recent tagging/untagging event will be returned for each address)
+}...
+
+Examples:
+> yerbas-cli viewmytaggedaddresses
+> curl --user myusername --data-binary '{"jsonrpc": "1.0", "id":"curltest", "method": "viewmytaggedaddresses", "params": [] }' -H 'content-type: text/plain;' http://127.0.0.1:15419/
+```

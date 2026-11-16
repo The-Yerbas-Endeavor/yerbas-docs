@@ -1,0 +1,24 @@
+# getdistributestatus
+
+RPC help captured from **Yerbas Core 4.0.1.4** (`f0e2dde`).
+
+Use `./yerbas-cli help getdistributestatus` on your node for help. In the GUI console omit `yerbas-cli`. HTTP examples use mainnet RPC port 15419; network-specific defaults and availability can differ.
+
+```text
+getdistributestatus "asset_name" snapshot_height "distribution_asset_name" gross_distribution_amount ( "exception_addresses" )
+
+Give information about the status of the distribution
+
+Arguments:
+1. "asset_name"                 (string, required) The reward will be distributed all owners of this asset
+2. "snapshot_height"            (number, required) The block height of the ownership snapshot
+3. "distribution_asset_name"    (string, required) The name of the asset that will be distributed, or YERB
+4. "gross_distribution_amount"  (number, required) The amount of the distribution asset that will be split amongst all owners
+5. "exception_addresses"        (string, optional) Ownership addresses that should be excluded
+
+Examples:
+> yerbas-cli getdistributestatus "TRONCO" 12345 "YERB" 1000
+> yerbas-cli getdistributestatus "PHATSTACKS" 12345 "DIVIDENDS" 1000 "mwN7xC3yomYdvJuVXkVC7ymY9wNBjWNduD,n4Rf18edydDaRBh7t6gHUbuByLbWEoWUTg"
+> curl --user myusername --data-binary '{"jsonrpc": "1.0", "id":"curltest", "method": "getdistributestatus", "params": ["TRONCO" 34987 "DIVIDENDS" 100000] }' -H 'content-type: text/plain;' http://127.0.0.1:15419/
+> curl --user myusername --data-binary '{"jsonrpc": "1.0", "id":"curltest", "method": "getdistributestatus", "params": ["PHATSTACKS" 34987 "YERB" 100000 "mwN7xC3yomYdvJuVXkVC7ymY9wNBjWNduD,n4Rf18edydDaRBh7t6gHUbuByLbWEoWUTg"] }' -H 'content-type: text/plain;' http://127.0.0.1:15419/
+```

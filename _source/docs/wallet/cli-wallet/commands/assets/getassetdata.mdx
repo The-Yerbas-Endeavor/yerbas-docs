@@ -1,0 +1,37 @@
+# getassetdata
+
+RPC help captured from **Yerbas Core 4.0.1.4** (`f0e2dde`).
+
+Use `./yerbas-cli help getassetdata` on your node for help. In the GUI console omit `yerbas-cli`. HTTP examples use mainnet RPC port 15419; network-specific defaults and availability can differ.
+
+```text
+getassetdata "asset_name"
+
+THIS COMMAND IS NOT YET ACTIVE!
+https://github.com/The-Yerbas-Endeavor/yerbas
+
+V4 mainnet wallet policy: asset creation, sending, reissuance, ownership transfers, and asset reward payouts
+are locked below tip height 1195400. Receiving/viewing assets and ordinary YERB payments remain available.
+Testnet/regtest are unaffected. This is wallet policy, not a consensus restriction on raw transactions.
+
+Returns assets metadata if that asset exists
+
+Arguments:
+1. "asset_name"               (string, required) the name of the asset
+
+Result:
+{
+  name: (string),
+  amount: (number),
+  units: (number),
+  reissuable: (number),
+  has_ipfs: (number),
+  ipfs_hash: (hash), (only if has_ipfs = 1 and that data is a ipfs hash)
+  txid_hash: (hash), (only if has_ipfs = 1 and that data is a txid hash)
+  verifier_string: (string)
+}
+
+Examples:
+> yerbas-cli getassetdata "ASSET_NAME"
+> curl --user myusername --data-binary '{"jsonrpc": "1.0", "id":"curltest", "method": "getassetdata", "params": ["ASSET_NAME"] }' -H 'content-type: text/plain;' http://127.0.0.1:15419/
+```

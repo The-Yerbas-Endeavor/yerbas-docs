@@ -1,0 +1,25 @@
+# getmempoolinfo
+
+RPC help captured from **Yerbas Core 4.0.1.4** (`f0e2dde`).
+
+Use `./yerbas-cli help getmempoolinfo` on your node for help. In the GUI console omit `yerbas-cli`. HTTP examples use mainnet RPC port 15419; network-specific defaults and availability can differ.
+
+```text
+getmempoolinfo
+
+Returns details on the active state of the TX memory pool.
+
+Result:
+{
+  "size": xxxxx,               (numeric) Current tx count
+  "bytes": xxxxx,              (numeric) Sum of all tx sizes
+  "usage": xxxxx,              (numeric) Total memory usage for the mempool
+  "maxmempool": xxxxx,         (numeric) Maximum memory usage for the mempool
+  "mempoolminfee": xxxxx       (numeric) Minimum feerate (YERB per KB) for tx to be accepted
+  "instantsendlocks": xxxxx,   (numeric) Number of unconfirmed instant send locks
+}
+
+Examples:
+> yerbas-cli getmempoolinfo
+> curl --user myusername --data-binary '{"jsonrpc": "1.0", "id":"curltest", "method": "getmempoolinfo", "params": [] }' -H 'content-type: text/plain;' http://127.0.0.1:15419/
+```

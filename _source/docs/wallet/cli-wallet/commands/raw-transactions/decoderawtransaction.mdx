@@ -1,0 +1,58 @@
+# decoderawtransaction
+
+RPC help captured from **Yerbas Core 4.0.1.4** (`f0e2dde`).
+
+Use `./yerbas-cli help decoderawtransaction` on your node for help. In the GUI console omit `yerbas-cli`. HTTP examples use mainnet RPC port 15419; network-specific defaults and availability can differ.
+
+```text
+decoderawtransaction "hexstring"
+
+Return a JSON object representing the serialized, hex-encoded transaction.
+
+Arguments:
+1. "hexstring"      (string, required) The transaction hex string
+
+Result:
+{
+  "txid" : "id",        (string) The transaction id
+  "size" : n,             (numeric) The transaction size
+  "version" : n,          (numeric) The version
+  "type" : n,             (numeric) The type
+  "locktime" : ttt,       (numeric) The lock time
+  "vin" : [               (array of json objects)
+     {
+       "txid": "id",    (string) The transaction id
+       "vout": n,         (numeric) The output number
+       "scriptSig": {     (json object) The script
+         "asm": "asm",  (string) asm
+         "hex": "hex"   (string) hex
+       },
+       "sequence": n     (numeric) The script sequence number
+     }
+     ,...
+  ],
+  "vout" : [             (array of json objects)
+     {
+       "value" : x.xxx,            (numeric) The value in YERB
+       "n" : n,                    (numeric) index
+       "scriptPubKey" : {          (json object)
+         "asm" : "asm",          (string) the asm
+         "hex" : "hex",          (string) the hex
+         "reqSigs" : n,            (numeric) The required sigs
+         "type" : "pubkeyhash",  (string) The type, eg 'pubkeyhash'
+         "addresses" : [           (json array of string)
+           "XwnLY9Tf7Zsef8gMGL2fhWA9ZmMjt4KPwG"   (string) Yerbas address
+           ,...
+         ]
+       }
+     }
+     ,...
+  ],
+  "extraPayloadSize" : n           (numeric) Size of DIP2 extra payload. Only present if it's a special TX
+  "extraPayload" : "hex"           (string) Hex encoded DIP2 extra payload data. Only present if it's a special TX
+}
+
+Examples:
+> yerbas-cli decoderawtransaction "hexstring"
+> curl --user myusername --data-binary '{"jsonrpc": "1.0", "id":"curltest", "method": "decoderawtransaction", "params": ["hexstring"] }' -H 'content-type: text/plain;' http://127.0.0.1:15419/
+```

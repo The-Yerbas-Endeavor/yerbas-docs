@@ -1,0 +1,55 @@
+# listmyassets
+
+RPC help captured from **Yerbas Core 4.0.1.4** (`f0e2dde`).
+
+Use `./yerbas-cli help listmyassets` on your node for help. In the GUI console omit `yerbas-cli`. HTTP examples use mainnet RPC port 15419; network-specific defaults and availability can differ.
+
+```text
+listmyassets "( asset )" ( verbose ) ( count ) ( start ) (confs)
+
+THIS COMMAND IS NOT YET ACTIVE!
+https://github.com/The-Yerbas-Endeavor/yerbas
+
+V4 mainnet wallet policy: asset creation, sending, reissuance, ownership transfers, and asset reward payouts
+are locked below tip height 1195400. Receiving/viewing assets and ordinary YERB payments remain available.
+Testnet/regtest are unaffected. This is wallet policy, not a consensus restriction on raw transactions.
+
+Returns a list of all asset that are owned by this wallet
+
+Arguments:
+1. "asset"                    (string, optional, default="*") filters results -- must be an asset name or a partial asset name followed by '*' ('*' matches all trailing characters)
+2. "verbose"                  (boolean, optional, default=false) when false results only contain balances -- when true results include outpoints
+3. "count"                    (integer, optional, default=ALL) truncates results to include only the first _count_ assets found
+4. "start"                    (integer, optional, default=0) results skip over the first _start_ assets found (if negative it skips back from the end)
+5. "confs"                    (integet, optional, default=0) results are skipped if they don't have this number of confirmations
+
+Result (verbose=false):
+{
+  (asset_name): balance,
+  ...
+}
+
+Result (verbose=true):
+{
+  (asset_name):
+    {
+      "balance": balance,
+      "outpoints":
+        [
+          {
+            "txid": txid,
+            "vout": vout,
+            "amount": amount
+          }
+          {...}, {...}
+        ]
+    }
+}
+{...}, {...}
+
+Examples:
+> curl --user myusername --data-binary '{"jsonrpc": "1.0", "id":"curltest", "method": "listmyassets", "params": [] }' -H 'content-type: text/plain;' http://127.0.0.1:15419/
+> yerbas-cli listmyassets ASSET
+> yerbas-cli listmyassets "ASSET*" true 10 20
+> yerbas-cli listmyassets "ASSET*" true 10 20 1
+```

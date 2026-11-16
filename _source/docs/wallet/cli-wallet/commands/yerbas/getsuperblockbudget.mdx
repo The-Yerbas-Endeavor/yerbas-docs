@@ -1,0 +1,21 @@
+# getsuperblockbudget
+
+RPC help captured from **Yerbas Core 4.0.1.4** (`f0e2dde`).
+
+Use `./yerbas-cli help getsuperblockbudget` on your node for help. In the GUI console omit `yerbas-cli`. HTTP examples use mainnet RPC port 15419; network-specific defaults and availability can differ.
+
+```text
+getsuperblockbudget index
+
+Returns the absolute maximum sum of superblock payments allowed.
+
+Arguments:
+1. index         (numeric, required) The block index
+
+Result:
+n                (numeric) The absolute maximum sum of superblock payments allowed, in YERB
+
+Examples:
+> yerbas-cli getsuperblockbudget 1000
+> curl --user myusername --data-binary '{"jsonrpc": "1.0", "id":"curltest", "method": "getsuperblockbudget", "params": [1000] }' -H 'content-type: text/plain;' http://127.0.0.1:15419/
+```

@@ -1,0 +1,19 @@
+# walletpassphrasechange
+
+RPC help captured from **Yerbas Core 4.0.1.4** (`f0e2dde`).
+
+Use `./yerbas-cli help walletpassphrasechange` on your node for help. In the GUI console omit `yerbas-cli`. HTTP examples use mainnet RPC port 15419; network-specific defaults and availability can differ.
+
+```text
+walletpassphrasechange "oldpassphrase" "newpassphrase"
+
+Changes the wallet passphrase from 'oldpassphrase' to 'newpassphrase'.
+
+Arguments:
+1. "oldpassphrase"      (string) The current passphrase
+2. "newpassphrase"      (string) The new passphrase
+
+Examples:
+> yerbas-cli walletpassphrasechange "old one" "new one"
+> curl --user myusername --data-binary '{"jsonrpc": "1.0", "id":"curltest", "method": "walletpassphrasechange", "params": ["old one", "new one"] }' -H 'content-type: text/plain;' http://127.0.0.1:15419/
+```

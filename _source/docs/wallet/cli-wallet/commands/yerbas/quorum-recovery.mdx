@@ -1,0 +1,17 @@
+# quorum recovery
+
+Help captured from Core 4.0.1.4 (`f0e2dde`). HTTP examples use the mainnet RPC port.
+
+```text
+quorum recovery on|off|status
+Manually enable or disable LOW_LLMQ with a signed chain record.
+Uses sporkkey from yerbas.conf and the selected wallet for transaction fees.
+ON has no automatic expiry. Confirmation precedes activation at a quorum boundary.
+An unconfirmed request must be included by last_inclusion_height or resubmitted.
+Status reports confirmed authorization separately from pending_authorization.
+The first ON cutover uses a 720-block boundary; later transitions use 30-block boundaries.
+Validators must upgrade before the first record is mined, not only before its effective height.
+OFF does not undo cutover or permit downgrade to legacy software.
+The legacy SPORK_21 command does not create a recovery transaction.
+Requires signed recovery support in the network software.
+```

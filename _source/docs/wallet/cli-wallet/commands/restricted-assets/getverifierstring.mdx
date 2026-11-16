@@ -1,0 +1,21 @@
+# getverifierstring
+
+RPC help captured from **Yerbas Core 4.0.1.4** (`f0e2dde`).
+
+Use `./yerbas-cli help getverifierstring` on your node for help. In the GUI console omit `yerbas-cli`. HTTP examples use mainnet RPC port 15419; network-specific defaults and availability can differ.
+
+```text
+getverifierstring restricted_name
+
+Retrieve the verifier string that belongs to the given restricted asset
+
+Arguments:
+1. "restricted_name"          (string, required) the asset_name
+
+Result:
+"verifier_string", (string) The verifier for the asset
+
+Examples:
+> yerbas-cli getverifierstring "restricted_name"
+> curl --user myusername --data-binary '{"jsonrpc": "1.0", "id":"curltest", "method": "getverifierstring", "params": ["restricted_name"] }' -H 'content-type: text/plain;' http://127.0.0.1:15419/
+```
