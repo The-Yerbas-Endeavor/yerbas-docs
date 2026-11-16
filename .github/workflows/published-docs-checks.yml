@@ -24,6 +24,8 @@ jobs:
           node-version: '22'
           cache: npm
           cache-dependency-path: _source/package-lock.json
+      - name: Test post-deployment verifier
+        run: python3 -m unittest discover -s .github/scripts -p 'test_*.py'
       - name: Install locked source dependencies
         working-directory: _source
         run: npm ci --ignore-scripts --no-audit --no-fund
@@ -38,3 +40,37 @@ jobs:
           python3 _source/tools/check-links.py "$site_dir"
           test -f "$site_dir/.nojekyll"
           test "$(cat "$site_dir/CNAME")" = "docs.yerbas.org"
+
+  verify-live:
+    name: Verify live 4.0.1.4 docs
+    needs: build-and-links
+    if: github.ref == 'refs/heads/gh-pages' && (github.event_name == 'push' || github.event_name == 'workflow_dispatch')
+    runs-on: ubuntu-24.04-arm
+    timeout-minutes: 30
+    permissions:
+      contents: read
+      actions: read
+    steps:
+      - name: Check out exact publishing commit
+        uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+        with:
+          ref: ${{ github.sha }}
+          persist-credentials: false
+      - name: Wait for Pages and verify every public file
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: >-
+          python3 .github/scripts/verify_deployment.py
+          --sha "$GITHUB_SHA"
+          --repository "$GITHUB_REPOSITORY"
+          --wait-for-pages
+          --report "$RUNNER_TEMP/deployment-verification.json"
+      - name: Save verification report
+        if: always()
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4
+        with:
+          name: live-verification-${{ github.sha }}
+          path: ${{ runner.temp }}/deployment-verification.json
+          if-no-files-found: error
+          retention-days: 14
+
