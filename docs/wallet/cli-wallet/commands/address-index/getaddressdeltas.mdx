@@ -1,35 +1,14 @@
----
-sidebar_position: 2
----
-
-import ReactPlayer from 'react-player';
-
 # getaddressdeltas
 
-Get balance of specific address
+RPC help captured from **Yerbas Core 4.0.1.4** (`f0e2dde`).
 
-`yerbas-cli getaddressdeltas '{"addresses": ["XwnLY9Tf7Zsef8gMGL2fhWA9ZmMjt4KPwg"]}'`
+Use `./yerbas-cli help getaddressdeltas` on your node for help. In the GUI console omit `yerbas-cli`. HTTP examples use mainnet RPC port 15419; network-specific defaults and availability can differ.
 
-<ReactPlayer
-  playing
-  controls
-  url={[
-    {
-      src: `${require('./assets/getaddressdeltas.webm').default}`,
-      type: 'video/webm',
-    },
-  ]}
-/>
+```text
+getaddressdeltas
 
-## Arguments
+Returns all changes for an address (requires addressindex to be enabled).
 
-| Argument    | Type     | Description                              |
-| ----------- | -------- | ---------------------------------------- |
-| "addresses" | (string) | (string) The base58check encoded address |
-| "start"     | (number) | The start block height                   |
-| "end"       | (number) | The end block height                     |
-
-```bash
 Arguments:
 {
   "addresses"
@@ -40,20 +19,7 @@ Arguments:
   "start" (number) The start block height
   "end" (number) The end block height
 }
-```
 
-## Output
-
-| Result       | Type     | Description                       |
-| ------------ | -------- | --------------------------------- |
-| "satoshis"   | (number) | The current balance in duffs      |
-| "txid"       | (string) | The related txid                  |
-| "index"      | (number) | The related input or output index |
-| "blockindex" | (number) | The related block index           |
-| "height"     | (number) | The block height                  |
-| "address"    | (string) | The base58check encoded address   |
-
-```bash
 Result:
 [
   {
@@ -65,10 +31,8 @@ Result:
     "address"  (string) The base58check encoded address
   }
 ]
-```
 
-## Examples
-
-```bash
-curl --user myusername --data-binary '{"jsonrpc": "1.0", "id":"curltest", "method": "getaddressdeltas", "params": [{"addresses": ["XwnLY9Tf7Zsef8gMGL2fhWA9ZmMjt4KPwg"]}] }' -H 'content-type: text/plain;' http://127.0.0.1:9998/
+Examples:
+> yerbas-cli getaddressdeltas '{"addresses": ["XwnLY9Tf7Zsef8gMGL2fhWA9ZmMjt4KPwg"]}'
+> curl --user myusername --data-binary '{"jsonrpc": "1.0", "id":"curltest", "method": "getaddressdeltas", "params": [{"addresses": ["XwnLY9Tf7Zsef8gMGL2fhWA9ZmMjt4KPwg"]}] }' -H 'content-type: text/plain;' http://127.0.0.1:15419/
 ```

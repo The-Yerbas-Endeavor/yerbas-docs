@@ -4,12 +4,10 @@ sidebar_position: 1
 
 # Smartnodes
 
-Smartnodes are responsible for storing and executing smart contracts. They function through the use of nodes handle contracts rather than adding the smart contracts directly to blocks. Using Smartnodes for storing and executing smartnodes greatly reduces the chances of scaling issues, like Ethereum has been experiencing.
+Yerbas Core 4.0.1.4 uses deterministic smartnodes for quorum services, including InstantSend and ChainLocks, and for PrivateSend coordination. Registration, eligible collateral, network connectivity, and quorum participation matter; registration alone does not guarantee payments or service availability.
 
-Yerbas's Smartnodes benefit from a few key optimizations:
+This release does **not** execute arbitrary smart contracts. Historical whitepapers describe proposals, not implemented release features.
 
-- Improved scaling
-- Stronger security
-- Better resistance against 51% attacks
-- Larger smart contracts
-- Wider variety of languages used to create smart contracts
+Start with [requirements](/docs/smartnodes/requirements/), [manual setup](/docs/smartnodes/installation/manualsetup/), and [recovery behavior](/docs/smartnodes/recovery/).
+
+[Network and quorum parameters](https://github.com/The-Yerbas-Endeavor/yerbas/blob/f0e2dde5673580d5d5cac9aa21e16ebe6936dd05/src/chainparams.cpp) · [Deterministic smartnode implementation](https://github.com/The-Yerbas-Endeavor/yerbas/blob/f0e2dde5673580d5d5cac9aa21e16ebe6936dd05/src/evo/deterministicmns.cpp)

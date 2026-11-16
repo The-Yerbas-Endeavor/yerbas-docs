@@ -2,63 +2,27 @@
 sidebar_position: 1
 ---
 
-# Requirements
+# Smartnode requirements
 
-In order to run a Yerbas Smartnode, you need a server that is capable of running and maintaining the software and connections to the network. While there are no maximum recommended resources, there are some minimum and required specifications in order to allow smooth running of a Smartnode.
+Use a continuously available server with enough CPU, memory, disk and bandwidth for synchronization and quorum participation. Disk usage grows; measure your data directory and leave room for growth and recovery. Historical fixed disk-size recommendations are not a guarantee for 4.0.1.4.
 
-In both situations, it is recommended to host a Smartnode with a high-performance VPS provider or on a bare-metal server. 
+Choose a matching [4.0.1.4 platform archive](/docs/wallet/quick-start/). Mainnet P2P uses **TCP 15420**. Preserve SSH access when configuring a firewall and keep RPC port **15419** private. Do not assume older installation scripts support this release.
 
-## Hardware
+## Mainnet collateral schedule
 
-### Minimum specifications
+The code selects the first row whose inclusive upper height is at least the queried height:
 
-- 1 CPU core with [SMT][SMT] or [hyperthreading][HT]
-- 3 GiB of RAM
-- 15 GiB of hard drive space
-- 6 GiB of swap disk space
-- Fast Ethernet connection
+| Height | Required collateral (YERB) |
+| --- | ---: |
+| 0–69,420 | 10,000 |
+| 69,421–100,420 | 16,000 |
+| 100,421–200,420 | 22,000 |
+| 200,421–302,420 | 28,000 |
+| 302,421–420,420 | 34,000 |
+| 420,421–1,096,420 | 42,000 |
+| 1,096,421–1,369,420 | 69,000 |
+| 1,369,421 onward | 100,000 |
 
-**For VPS:** SSH (Secure Shell) connection is required for remote administration.
+Use the collateral required at registration height, in one output you control. Do not substitute testnet/devnet fast-collateral settings. Mainnet sets `nSmartnodeMinimumConfirmations` to 15 for deterministic-list confirmation; this is not a promise that a node becomes ready after two confirmations. Check on-chain registration, synchronization and `smartnode status`.
 
-**Processor:** At a minimum, we recommend an Intel Celeron or equivalently powerful processor.
-
-**Storage:** The storage space required by a Smartnode increases over time. 15 GiB of storage space will only suffice for installing a Smartnode from scratch at the start. For systems with a larger amount of RAM, a smaller swapdisk can be allocated.
-
-### Recommended specifications
-
-- 2 CPU cores without [SMT][SMT] or [hyperthreading][HT]
-- 4 GiB of RAM
-- 20 GiB of hard drive space
-- Appropriate swap disk space
-- 1GBase-T Ethernet connection
-
-Using Solid State Drive powered storage (SATA or [NVMe][NVMe]) is highly recommended.
-
-:::warning Crypto on VPS
-
-Some VPS providers explicitly or implicitly ban use of cryptocurrency software
-
-::: 
-
-## Software
-
-Running a smartnode requires some software to be installed as well. 
-
-### Operating system
-
-Officially supported OS:
-- Ubuntu 20.04
-- ubuntu 22.04 
-
-Using any other OS may result in unexpected behavior and [PoSe][] bans. Installing dependencies VIA Aptitude is only needed if building Yerbascore from source, if using released binaries it should not be needed.
-
-Operating system requirements are fairly simple. 
-
-Some installation scripts use Aptitude for managing packages, and will thus not function without. Debian, Ubuntu, and related distributions of Debian are examples of distributions utilizing Aptitude.
-
-**YerbasCore packages are built on top of Ubuntu 22.02 LTS and is hence supported by default.**
-
-[SMT]: https://en.wikipedia.org/wiki/Simultaneous_multithreading
-[HT]: https://www.intel.com/content/www/us/en/gaming/resources/hyper-threading.html
-[NVMe]: https://en.wikipedia.org/wiki/NVM_Express
-[PoSe]: docs/smartnodes/maintenance/
+[Mainnet parameters](https://github.com/The-Yerbas-Endeavor/yerbas/blob/f0e2dde5673580d5d5cac9aa21e16ebe6936dd05/src/chainparams.cpp) · [Inclusive schedule selection](https://github.com/The-Yerbas-Endeavor/yerbas/blob/f0e2dde5673580d5d5cac9aa21e16ebe6936dd05/src/smartnode/smartnode-collaterals.cpp) · [Confirmation handling](https://github.com/The-Yerbas-Endeavor/yerbas/blob/f0e2dde5673580d5d5cac9aa21e16ebe6936dd05/src/evo/deterministicmns.cpp)

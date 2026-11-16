@@ -1,18 +1,20 @@
----
-sidebar_position: 2
----
-
-import ReactPlayer from 'react-player';
-
 # protx
 
-_protx "command" ..._
+RPC help captured from **Yerbas Core 4.0.1.4** (`f0e2dde`).
 
+Use `./yerbas-cli help protx` on your node for help. In the GUI console omit `yerbas-cli`. HTTP examples use mainnet RPC port 15419; network-specific defaults and availability can differ.
+
+The `quick_setup` implementation returns `operatorPublic` and `operatorSecret`; older names in its help result description are inconsistent with the implementation. Keep the secret private.
+
+```text
+protx "command" ...
 Set of commands to execute ProTx related actions.
 To get help on individual commands, use "help protx command".
 
-```bash
-# Available commands:
+Arguments:
+1. "command"        (string, required) The command to execute
+
+Available commands:
   register          - Create and send ProTx to network
   register_fund     - Fund, create and send ProTx to network
   register_prepare  - Create an unsigned ProTx
@@ -24,42 +26,4 @@ To get help on individual commands, use "help protx command".
   update_registrar  - Create and send ProUpRegTx to network
   revoke            - Create and send ProUpRevTx to network
   diff              - Calculate a diff and a proof between two smartnode lists
-```
-
-<ReactPlayer
-  playing
-  controls
-  url={[
-    { src: `${require('./assets/protx.webm').default}`, type: 'video/webm' },
-  ]}
-/>
-
-## Arguments
-
-| Argument  | Type     | Description            |
-| --------- | -------- | ---------------------- |
-| "command" | (string) | The command to execute |
-
-```bash
-Arguments:
-1. "command"        (string, required) The command to execute
-```
-
-## Output
-
-| Result | Type | Description |
-| ------ | ---- | ----------- |
-| ...    | ...  | ...         |
-
-```bash
-Result:
-{
-  ...
-}
-```
-
-## Examples
-
-```bash
-curl --user myusername --data-binary '{"jsonrpc": "1.0", "id": "curltest", "method": "protx_register", "params": ["1075db55d416d3ca199f55b6084e2115b9345e16c5cf302fc80e9d5fbf5d48d", 0, "173.249.49.9:15420", "tsys1q2j57a4rtserh9022a63pvk3jqmg7un55stux0v", "003bc97fcd6023996f8703b4da34dedd1641bd45ed12ac7a4d74a529dd533ecb99d4fb8ddb04853bb110f0d747ee8e63", "tsys1qxh8am0c9w0q9kv7h7f9q2c4jrfjg63yawrgm0r", 5, "tsys1qxh8am0c9w0q9kv7h7f9q2c4jrfjg63yawrgm0r"]}' -H 'content-type: text/plain;' http://127.0.0.1:8370/
 ```

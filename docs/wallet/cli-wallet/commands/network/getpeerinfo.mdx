@@ -1,35 +1,14 @@
----
-sidebar_position: 8
----
-
-import ReactPlayer from 'react-player';
-
 # getpeerinfo
 
+RPC help captured from **Yerbas Core 4.0.1.4** (`f0e2dde`).
+
+Use `./yerbas-cli help getpeerinfo` on your node for help. In the GUI console omit `yerbas-cli`. HTTP examples use mainnet RPC port 15419; network-specific defaults and availability can differ.
+
+```text
 getpeerinfo
 
 Returns data about each connected network node as a json array of objects.
 
-`yerbas-cli getpeerinfo`
-
-<ReactPlayer
-  playing
-  controls
-  url={[
-    {
-      src: `${require('./assets/getpeerinfo.webm').default}`,
-      type: 'video/webm',
-    },
-  ]}
-/>
-
-## Output
-
-| Result | Type     | Description |
-| ------ | -------- | ----------- |
-| "id"   | (number) | Peer index  |
-
-```bash
 Result:
 [
   {
@@ -63,6 +42,8 @@ Result:
        n,                        (numeric) The heights of blocks we're currently asking from this peer
        ...
     ],
+    "addr_processed": n,       (numeric) The total number of addresses processed, excluding those dropped due to rate limiting
+    "addr_rate_limited": n,    (numeric) The total number of addresses dropped due to rate limiting
     "whitelisted": true|false, (boolean) Whether the peer is whitelisted
     "bytessent_per_msg": {
        "addr": n,              (numeric) The total bytes sent aggregated by message type
@@ -75,10 +56,8 @@ Result:
   }
   ,...
 ]
-```
 
-## Examples
-
-```bash
-curl --user myusername --data-binary '{"jsonrpc": "1.0", "id":"curltest", "method": "getpeerinfo", "params": [] }' -H 'content-type: text/plain;' http://127.0.0.1:9998/
+Examples:
+> yerbas-cli getpeerinfo
+> curl --user myusername --data-binary '{"jsonrpc": "1.0", "id":"curltest", "method": "getpeerinfo", "params": [] }' -H 'content-type: text/plain;' http://127.0.0.1:15419/
 ```

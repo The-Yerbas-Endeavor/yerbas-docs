@@ -1,17 +1,19 @@
----
-sidebar_position: 9
----
-
-import ReactPlayer from 'react-player';
-
 # smartnodelist
 
-_smartnodelist ( "mode" "filter" )_
+RPC help captured from **Yerbas Core 4.0.1.4** (`f0e2dde`).
 
+Use `./yerbas-cli help smartnodelist` on your node for help. In the GUI console omit `yerbas-cli`. HTTP examples use mainnet RPC port 15419; network-specific defaults and availability can differ.
+
+```text
+smartnodelist ( "mode" "filter" )
 Get a list of smartnodes in different modes. This call is identical to 'smartnode list' call.
 
-```bash
-# Available modes:
+Arguments:
+1. "mode"      (string, optional/required to use filter, defaults = json) The mode to run list in
+2. "filter"    (string, optional) Filter results. Partial match by outpoint by default in all modes,
+                                    additional matches in some modes are also available
+
+Available modes:
   addr           - Print ip address associated with a smartnode (can be additionally filtered, partial match)
   full           - Print info in format 'status payee lastpaidtime lastpaidblock IP'
                    (can be additionally filtered, partial match)
@@ -27,49 +29,4 @@ Get a list of smartnodes in different modes. This call is identical to 'smartnod
   status         - Print smartnode status: ENABLED / POSE_BANNED
                    (can be additionally filtered, partial match)
   votingaddress  - Print the smartnode voting Yerbas address
-```
-
-`yerbas-cli smartnodelist`
-
-<ReactPlayer
-  playing
-  controls
-  url={[
-    {
-      src: `${require('./assets/smartnodelist.webm').default}`,
-      type: 'video/webm',
-    },
-  ]}
-/>
-
-## Arguments
-
-| Argument | Type     | Description                                                                                                            |
-| -------- | -------- | ---------------------------------------------------------------------------------------------------------------------- |
-| "mode"   | (string) | The mode to run list in                                                                                                |
-| "filter" | (string) | Filter results. Partial match by outpoint by default in all modes, additional matches in some modes are also available |
-
-```bash
-Arguments:
-1. "mode"      (string, optional/required to use filter, defaults = json) The mode to run list in
-2. "filter"    (string, optional) Filter results. Partial match by outpoint by default in all modes,
-                                    additional matches in some modes are also available
-```
-
-## Output
-
-| Result | Type | Description |
-| ------ | ---- | ----------- |
-| ...    | ...  | ...         |
-
-```bash
-Result:
-{
-}
-```
-
-## Examples
-
-```bash
-curl --user myusername --data-binary '{"jsonrpc": "1.0", "id":"curltest", "method": "smartnodelist", "params": [] }' -H 'content-type: text/plain;' http://127.0.0.1:9998/
 ```

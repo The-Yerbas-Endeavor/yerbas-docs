@@ -1,34 +1,24 @@
 ---
-title: "Updating"
 sidebar_position: 3
 ---
 
 # Updating your smartnode
 
-Yerbas Smartnodes do require some maintenance to ensure they are up to date, available and providing service to the network. In order to maintain availability and receive consistent payments you should monitor your Smartnode and keep it always up to date.
-
-## Manual update
-
-Login to your Smartnode VIA SSH client.
+Follow the [4.0.1.4 upgrade procedure](/docs/wallet/quick-start/). Back up the control wallet and configuration; stop the daemon cleanly and wait for exit before replacing application files.
 
 ```bash
 ./yerbas-cli stop
 ```
 
-Confirm the daemon has stopped:
+Start the new daemon with the existing data directory and configuration. After synchronization, inspect:
 
 ```bash
-ps aux | grep yerbasd
+./yerbas-cli getnetworkinfo
+./yerbas-cli getblockchaininfo
+./yerbas-cli smartnode status
+./yerbas-cli quorum recovery status
 ```
 
-Obtain update from `https://github.com/the-yerbas=endeavor/latest`
+Check `protx info` for your registration as needed. Do not assume success from a process merely being present. Review any service manager or installation script for its executable paths before restarting it.
 
-## Automatic update
-
-Yerbas community member `dk808` created a great Update Script. If you installed your Smartnode **using `dk808`'s installation script**, this update script is the recommended way of updating.
-
-Login with ssh and from the directory containing update.sh do:
-
-```bash
-./update.sh
-```
+Validators must upgrade before the first recovery record is mined, not just before its effective height. OFF does not undo cutover or make downgrading safe; see [recovery](/docs/smartnodes/recovery/).

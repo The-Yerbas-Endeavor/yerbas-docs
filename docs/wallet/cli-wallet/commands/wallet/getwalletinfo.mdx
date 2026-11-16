@@ -1,35 +1,13 @@
----
-sidebar_position: 19
----
-
-import ReactPlayer from 'react-player';
-
 # getwalletinfo
 
-_getwalletinfo_
+RPC help captured from **Yerbas Core 4.0.1.4** (`f0e2dde`).
 
+Use `./yerbas-cli help getwalletinfo` on your node for help. In the GUI console omit `yerbas-cli`. HTTP examples use mainnet RPC port 15419; network-specific defaults and availability can differ.
+
+```text
+getwalletinfo
 Returns an object containing various wallet state info.
 
-`yerbas-cli getwalletinfo `
-
-<ReactPlayer
-  playing
-  controls
-  url={[
-    {
-      src: `${require('./assets/getwalletinfo.webm').default}`,
-      type: 'video/webm',
-    },
-  ]}
-/>
-
-## Output
-
-| Result       | Type     | Description     |
-| ------------ | -------- | --------------- |
-| "walletname" | (string) | the wallet name |
-
-```bash
 Result:
 {
   "walletname": xxxxx,             (string) the wallet name
@@ -56,10 +34,8 @@ Result:
       ,...
     ]
 }
-```
 
-## Examples
-
-```bash
-curl --user myusername --data-binary '{"jsonrpc": "1.0", "id":"curltest", "method": "getwalletinfo", "params": [] }' -H 'content-type: text/plain;' http://127.0.0.1:9998/
+Examples:
+> yerbas-cli getwalletinfo
+> curl --user myusername --data-binary '{"jsonrpc": "1.0", "id":"curltest", "method": "getwalletinfo", "params": [] }' -H 'content-type: text/plain;' http://127.0.0.1:15419/
 ```

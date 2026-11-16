@@ -1,39 +1,15 @@
----
-sidebar_position: 9
----
-
-import ReactPlayer from 'react-player';
-
 # listbanned
 
-_listbanned_
+RPC help captured from **Yerbas Core 4.0.1.4** (`f0e2dde`).
+
+Use `./yerbas-cli help listbanned` on your node for help. In the GUI console omit `yerbas-cli`. HTTP examples use mainnet RPC port 15419; network-specific defaults and availability can differ.
+
+```text
+listbanned
 
 List all banned IPs/Subnets.
 
-`yerbas-cli listbanned`
-
-<ReactPlayer
-  playing
-  controls
-  url={[
-    { src: `${require('./assets/setban.webm').default}`, type: 'video/webm' },
-  ]}
-/>
-
-## Output
-
-| Result | Type | Description |
-| ------ | ---- | ----------- |
-| ...    | ...  | ...         |
-
-```bash
-Result:
-{
-}
-```
-
-## Examples
-
-```bash
-curl --user myusername --data-binary '{"jsonrpc": "1.0", "id":"curltest", "method": "listbanned", "params": [] }' -H 'content-type: text/plain;' http://127.0.0.1:9998/
+Examples:
+> yerbas-cli listbanned
+> curl --user myusername --data-binary '{"jsonrpc": "1.0", "id":"curltest", "method": "listbanned", "params": [] }' -H 'content-type: text/plain;' http://127.0.0.1:15419/
 ```

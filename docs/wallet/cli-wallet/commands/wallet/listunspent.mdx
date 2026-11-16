@@ -1,0 +1,59 @@
+# listunspent
+
+RPC help captured from **Yerbas Core 4.0.1.4** (`f0e2dde`).
+
+Use `./yerbas-cli help listunspent` on your node for help. In the GUI console omit `yerbas-cli`. HTTP examples use mainnet RPC port 15419; network-specific defaults and availability can differ.
+
+```text
+listunspent ( minconf maxconf  ["addresses",...] [include_unsafe] [query_options])
+
+Returns array of unspent transaction outputs
+with between minconf and maxconf (inclusive) confirmations.
+Optionally filter to only include txouts paid to specified addresses.
+
+Arguments:
+1. minconf          (numeric, optional, default=1) The minimum confirmations to filter
+2. maxconf          (numeric, optional, default=9999999) The maximum confirmations to filter
+3. "addresses"      (string) A json array of yerbas addresses to filter
+    [
+      "address"     (string) yerbas address
+      ,...
+    ]
+4. include_unsafe (bool, optional, default=true) Include outputs that are not safe to spend
+                  See description of "safe" attribute below.
+5. query_options    (json, optional) JSON with query options
+    {
+      "minimumAmount"    (numeric or string, default=0) Minimum value of each UTXO in YERB
+      "maximumAmount"    (numeric or string, default=unlimited) Maximum value of each UTXO in YERB
+      "maximumCount"     (numeric or string, default=unlimited) Maximum number of UTXOs
+      "minimumSumAmount" (numeric or string, default=unlimited) Minimum sum value of all UTXOs in YERB
+    }
+
+Result
+[                   (array of json object)
+  {
+    "txid" : "txid",          (string) the transaction id
+    "vout" : n,               (numeric) the vout value
+    "address" : "address",    (string) the yerbas address
+    "account" : "account",    (string) DEPRECATED. The associated account, or "" for the default account
+    "scriptPubKey" : "key",   (string) the script key
+    "amount" : x.xxx,         (numeric) the transaction output amount in YERB
+    "confirmations" : n,      (numeric) The number of confirmations
+    "redeemScript" : n        (string) The redeemScript if scriptPubKey is P2SH
+    "spendable" : xxx,        (bool) Whether we have the private keys to spend this output
+    "solvable" : xxx,         (bool) Whether we know how to spend this output, ignoring the lack of keys
+    "safe" : xxx              (bool) Whether this output is considered safe to spend. Unconfirmed transactions
+                              from outside keys and unconfirmed replacement transactions are considered unsafe
+                              and are not eligible for spending by fundrawtransaction and sendtoaddress.
+    "ps_rounds" : n           (numeric) The number of PS rounds
+  }
+  ,...
+]
+
+Examples:
+> yerbas-cli listunspent
+> yerbas-cli listunspent 6 9999999 "[\"XwnLY9Tf7Zsef8gMGL2fhWA9ZmMjt4KPwg\",\"XuQQkwA4FYkq2XERzMY2CiAZhJTEDAbtcg\"]"
+> curl --user myusername --data-binary '{"jsonrpc": "1.0", "id":"curltest", "method": "listunspent", "params": [6, 9999999 "[\"XwnLY9Tf7Zsef8gMGL2fhWA9ZmMjt4KPwg\",\"XuQQkwA4FYkq2XERzMY2CiAZhJTEDAbtcg\"]"] }' -H 'content-type: text/plain;' http://127.0.0.1:15419/
+> yerbas-cli listunspent 6 9999999 '[]' true '{ "minimumAmount": 0.005 }'
+> curl --user myusername --data-binary '{"jsonrpc": "1.0", "id":"curltest", "method": "listunspent", "params": [6, 9999999, [] , true, { "minimumAmount": 0.005 } ] }' -H 'content-type: text/plain;' http://127.0.0.1:15419/
+```

@@ -2,28 +2,22 @@
 sidebar_position: 2
 ---
 
-# Syncing
+# Synchronization
 
-:::info Syncing
+Initial synchronization time depends on the chain size, storage, CPU, peers and network connection. There is no guaranteed minutes-to-an-hour completion time. Core 4.0.1.4 may also perform recovery-history indexing during an eligible upgrade.
 
-If this is the first time running the YERB wallet,it may take several minutes to an hour to sync. Sync status will appear in the bottom left of the window.
+Watch the wallet's synchronization indicator and inspect its details. Older screenshots elsewhere in the guide are illustrative; Qt 6 labels and appearance may differ. Until the wallet is caught up, displayed balances and transaction history may be incomplete.
 
-![Syncing Bar](/img/wallets/gui/setup/sync_progress.png)
+For a daemon with RPC enabled, inspect:
 
-:::
+```bash
+./yerbas-cli getblockchaininfo
+./yerbas-cli getnetworkinfo
+./yerbas-cli getpeerinfo
+```
 
-:::note
+In `getblockchaininfo`, review `blocks`, `headers`, `verificationprogress`, and `initialblockdownload` together. A progress estimate alone is not proof that the node has reached the current network tip. Check peer connectivity and startup diagnostics when progress stalls.
 
-The wallet must sync fully to the current network block height before you can see your current balance or send funds from it! You can always check the network's current block height at the [Yerbas Explorer](https://explorer.yerbas.org)
+A bootstrap is optional. Routine upgrades do not require reindexing; missing history or recovery indexes require following the node's specific diagnostic. Do not delete databases or `.dat` files simply because synchronization is slow.
 
-![Yerbas Explorer](/img/wallets/gui/setup/explorer_height.png)
-
-:::
-
-You will see the status if you hover your mouse icon over the the bottom right corner of the wallet:
-
-![Syncing Info](/img/wallets/gui/setup/catching_up.png)
-
-When fully synced, you will see:
-
-![Fully Synced](/img/wallets/gui/setup/sync_complete.png)
+See [troubleshooting](/docs/wallet/troubleshooting/) and [recorded recovery](/docs/smartnodes/recovery/).

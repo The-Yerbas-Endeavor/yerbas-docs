@@ -1,43 +1,20 @@
----
-sidebar_position: 23
----
-
-import ReactPlayer from 'react-player';
-
 # pruneblockchain
 
-_pruneblockchain_
+RPC help captured from **Yerbas Core 4.0.1.4** (`f0e2dde`).
 
-`yerbas-cli pruneblockchain 1000`
+Use `./yerbas-cli help pruneblockchain` on your node for help. In the GUI console omit `yerbas-cli`. HTTP examples use mainnet RPC port 15419; network-specific defaults and availability can differ.
 
-<!-- <ReactPlayer playing controls url={[
-    {src: `${require('./assets/placeholder.webm').default}`, type: 'video/webm'}]} /> -->
+```text
+pruneblockchain
 
-## Arguments
-
-| Argument | Type     | Description                                                                                                                                                                   |
-| -------- | -------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| "height" | (string) | The block height to prune up to. May be set to a discrete height, or a unix timestamp to prune blocks whose block time is at least 2 hours older than the provided timestamp. |
-
-```bash
 Arguments:
 1. "height"       (numeric, required) The block height to prune up to. May be set to a discrete height, or a unix timestamp
                   to prune blocks whose block time is at least 2 hours older than the provided timestamp.
-```
 
-## Output
-
-| Result | Type      | Description                      |
-| ------ | --------- | -------------------------------- |
-| n      | (numeric) | Height of the last block pruned. |
-
-```bash
 Result:
 n    (numeric) Height of the last block pruned.
-```
 
-## Examples
-
-```bash
-curl --user myusername --data-binary '{"jsonrpc": "1.0", "id":"curltest", "method": "pruneblockchain", "params": [1000] }' -H 'content-type: text/plain;' http://127.0.0.1:9998/
+Examples:
+> yerbas-cli pruneblockchain 1000
+> curl --user myusername --data-binary '{"jsonrpc": "1.0", "id":"curltest", "method": "pruneblockchain", "params": [1000] }' -H 'content-type: text/plain;' http://127.0.0.1:15419/
 ```

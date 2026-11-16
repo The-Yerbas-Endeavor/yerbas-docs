@@ -1,12 +1,5 @@
-# YERB Exchanges
+# Exchange and bridge information
 
-Yerbas can be bought, sold or traded on a variety of platforms.
+Exchange listings and bridge availability are external to Core 4.0.1.4. The former list included RTM markets, unrelated token links and unavailable services, so it is not a verified YERB trading directory.
 
-## Pairs & Exchanges
-
-### YERB/USDT
-
-NestEx.com Yerb/USDT https://trade.nestex.one/spot/YERB_USDT
-
-
-
+Confirm the exact asset, chain, deposit/withdrawal support and service status directly with a provider before using it. This documentation update does not validate or recommend an exchange or bridge.

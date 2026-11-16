@@ -1,42 +1,15 @@
----
-sidebar_position: 21
----
-
-import ReactPlayer from 'react-player';
-
 # gettxoutsetinfo
 
-_gettxoutsetinfo_
+RPC help captured from **Yerbas Core 4.0.1.4** (`f0e2dde`).
+
+Use `./yerbas-cli help gettxoutsetinfo` on your node for help. In the GUI console omit `yerbas-cli`. HTTP examples use mainnet RPC port 15419; network-specific defaults and availability can differ.
+
+```text
+gettxoutsetinfo
 
 Returns statistics about the unspent transaction output set.
 Note this call may take some time.
 
-`yerbas-cli gettxoutsetinfo `
-
-```
-Examples:
-yerbas-cli gettxoutproof '["mytxid",...]'
-yerbas-cli gettxoutproof '["mytxid",...]' "blockhash"
-```
-
-<ReactPlayer
-  playing
-  controls
-  url={[
-    {
-      src: `${require('./assets/gettxoutsetinfo.webm').default}`,
-      type: 'video/webm',
-    },
-  ]}
-/>
-
-## Output
-
-| Result | Type      | Description                                |
-| ------ | --------- | ------------------------------------------ |
-| height | (numeric) | (numeric) The current block height (index) |
-
-```bash
 Result:
 {
   "height":n,     (numeric) The current block height (index)
@@ -48,10 +21,8 @@ Result:
   "disk_size": n,         (numeric) The estimated size of the chainstate on disk
   "total_amount": x.xxx          (numeric) The total amount
 }
-```
 
-## Examples
-
-```bash
-curl --user myusername --data-binary '{"jsonrpc": "1.0", "id":"curltest", "method": "gettxoutsetinfo", "params": [] }' -H 'content-type: text/plain;' http://127.0.0.1:9998/
+Examples:
+> yerbas-cli gettxoutsetinfo
+> curl --user myusername --data-binary '{"jsonrpc": "1.0", "id":"curltest", "method": "gettxoutsetinfo", "params": [] }' -H 'content-type: text/plain;' http://127.0.0.1:15419/
 ```

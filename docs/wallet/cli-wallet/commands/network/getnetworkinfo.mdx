@@ -1,35 +1,13 @@
----
-sidebar_position: 7
----
-
-import ReactPlayer from 'react-player';
-
 # getnetworkinfo
 
-_getnetworkinfo_
+RPC help captured from **Yerbas Core 4.0.1.4** (`f0e2dde`).
 
+Use `./yerbas-cli help getnetworkinfo` on your node for help. In the GUI console omit `yerbas-cli`. HTTP examples use mainnet RPC port 15419; network-specific defaults and availability can differ.
+
+```text
+getnetworkinfo
 Returns an object containing various state info regarding P2P networking.
 
-`yerbas-cli getnetworkinfo `
-
-<ReactPlayer
-  playing
-  controls
-  url={[
-    {
-      src: `${require('./assets/getnetworkinfo.webm').default}`,
-      type: 'video/webm',
-    },
-  ]}
-/>
-
-## Output
-
-| Result    | Type     | Description        |
-| --------- | -------- | ------------------ |
-| "version" | (number) | the server version |
-
-```bash
 Result:
 {
   "version": xxxxx,                      (numeric) the server version
@@ -62,10 +40,8 @@ Result:
   ]
   "warnings": "..."                    (string) any network warnings
 }
-```
 
-## Examples
-
-```bash
-curl --user myusername --data-binary '{"jsonrpc": "1.0", "id":"curltest", "method": "getnetworkinfo", "params": [] }' -H 'content-type: text/plain;' http://127.0.0.1:9998/
+Examples:
+> yerbas-cli getnetworkinfo
+> curl --user myusername --data-binary '{"jsonrpc": "1.0", "id":"curltest", "method": "getnetworkinfo", "params": [] }' -H 'content-type: text/plain;' http://127.0.0.1:15419/
 ```

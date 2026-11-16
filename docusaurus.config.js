@@ -19,8 +19,8 @@ const config = {
   favicon: 'img/favicon.ico',
   staticDirectories: ['static'],
 
-  onBrokenLinks: 'warn',
-  onBrokenMarkdownLinks: 'warn',
+  onBrokenLinks: 'throw',
+  onBrokenMarkdownLinks: 'throw',
 
   projectName: 'yerbas-docs', // Usually your repo name.
   organizationName: 'Yerbas', // Usually your GitHub org/user name.
@@ -36,7 +36,6 @@ const config = {
         docs: {
           sidebarPath: require.resolve('./sidebars.js'),
           // Please change this to your repo.
-          editUrl: 'https://github.com/The-Yerbas-Endeavor/yerbas-docs/tree/develop/',
         },
         theme: {
           customCss: require.resolve('./src/css/custom.css'),
@@ -96,6 +95,7 @@ const config = {
           src: 'img/YerbasLogo.png',
         },
         items: [
+          { label: 'Assets', position: 'left', to: 'docs/assets/' },
           {
             label: 'Wallet',
             position: 'left',
@@ -110,11 +110,6 @@ const config = {
             label: 'Mining',
             position: 'left',
             to: 'docs/mining/',
-          },
-          {
-            label: 'Assets',
-            position: 'left',
-            to: 'docs/assets/',
           },
           {
             label: 'More...',
@@ -135,10 +130,10 @@ const config = {
       announcementBar: {
         id: 'new-wallet-release',
         content:
-          'Release <b>v3.2.0.15</b>: There is a new version of the wallet! Updating is required to keep your wallet functioning ',
-        backgroundColor: 'var(--ifm-color-danger)',
+          'Yerbas Core <b>4.0.1.4</b>: mandatory mainnet upgrade. <a href="/docs/wallet/quick-start/">Downloads and upgrade guide</a>.',
+        backgroundColor: 'var(--ifm-color-success)',
         textColor: 'var(--ifm-color-secondary)',
-        isCloseable: true,
+        isCloseable: false,
       },
       footer: {
         style: 'dark',

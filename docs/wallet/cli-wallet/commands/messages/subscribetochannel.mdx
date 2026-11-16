@@ -1,0 +1,22 @@
+# subscribetochannel
+
+RPC help captured from **Yerbas Core 4.0.1.4** (`f0e2dde`).
+
+Use `./yerbas-cli help subscribetochannel` on your node for help. In the GUI console omit `yerbas-cli`. HTTP examples use mainnet RPC port 15419; network-specific defaults and availability can differ.
+
+```text
+subscribetochannel
+
+Subscribe to a certain message channel
+
+Arguments:
+1. "channel_name"            (string, required) The channel name to subscribe to, it must end with '!' or have an '~' in the name
+
+Result:[
+
+]
+
+Examples:
+> yerbas-cli subscribetochannel "ASSET_NAME!"
+> curl --user myusername --data-binary '{"jsonrpc": "1.0", "id":"curltest", "method": "subscribetochannel", "params": ["ASSET_NAME!"] }' -H 'content-type: text/plain;' http://127.0.0.1:15419/
+```

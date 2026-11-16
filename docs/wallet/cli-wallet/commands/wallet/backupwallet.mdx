@@ -1,54 +1,18 @@
----
-sidebar_position: 4
----
-
-import ReactPlayer from 'react-player';
-
 # backupwallet
 
-_backupwallet "destination"_
+RPC help captured from **Yerbas Core 4.0.1.4** (`f0e2dde`).
+
+Use `./yerbas-cli help backupwallet` on your node for help. In the GUI console omit `yerbas-cli`. HTTP examples use mainnet RPC port 15419; network-specific defaults and availability can differ.
+
+```text
+backupwallet "destination"
 
 Safely copies current wallet file to destination, which can be a directory or a path with filename.
 
-`yerbas-cli backupwallet "backup.dat"`
-
-<ReactPlayer
-  playing
-  controls
-  url={[
-    {
-      src: `${require('./assets/backupwallet.webm').default}`,
-      type: 'video/webm',
-    },
-  ]}
-/>
-
-## Arguments
-
-| Argument      | Type     | Description                       |
-| ------------- | -------- | --------------------------------- |
-| "destination" | (string) | The destination directory or file |
-
-```bash
 Arguments:
 1. "destination"   (string) The destination directory or file
-```
 
-## Output
-
-| Result | Type | Description |
-| ------ | ---- | ----------- |
-| ...    | ...  | ...         |
-
-```bash
-Result:
-{
-  ...
-}
-```
-
-## Examples
-
-```bash
-curl --user myusername --data-binary '{"jsonrpc": "1.0", "id":"curltest", "method": "backupwallet", "params": ["backup.dat"] }' -H 'content-type: text/plain;' http://127.0.0.1:9998/
+Examples:
+> yerbas-cli backupwallet "backup.dat"
+> curl --user myusername --data-binary '{"jsonrpc": "1.0", "id":"curltest", "method": "backupwallet", "params": ["backup.dat"] }' -H 'content-type: text/plain;' http://127.0.0.1:15419/
 ```

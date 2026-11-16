@@ -1,45 +1,20 @@
----
-sidebar_position: 3
----
-
-import ReactPlayer from 'react-player';
-
 # getblock
 
-Returns all mempool deltas for an address (requires addressindex to be enabled).
+RPC help captured from **Yerbas Core 4.0.1.4** (`f0e2dde`).
 
-`yerbas-cli getblock "00000000000fd08c2fb661d2fcb0d49abb3a91e5f27082ce64feed3b4dede2e2"`
+Use `./yerbas-cli help getblock` on your node for help. In the GUI console omit `yerbas-cli`. HTTP examples use mainnet RPC port 15419; network-specific defaults and availability can differ.
 
-<ReactPlayer
-  playing
-  controls
-  url={[
-    { src: `${require('./assets/getblock.webm').default}`, type: 'video/webm' },
-  ]}
-/>
+```text
+getblock "blockhash" ( verbosity )
 
-## Arguments
+If verbosity is 0, returns a string that is serialized, hex-encoded data for block 'hash'.
+If verbosity is 1, returns an Object with information about block <hash>.
+If verbosity is 2, returns an Object with information about block <hash> and information about each transaction.
 
-| Argument    | Type      | Description                                                                                        |
-| ----------- | --------- | -------------------------------------------------------------------------------------------------- |
-| "blockhash" | (string)  | The block hash                                                                                     |
-| "verbosity" | (numeric) | 0 for hex-encoded data, 1 for a json object (default), and 2 for json object with transaction data |
-
-```bash
 Arguments:
-{
-  "blockhash" (string, required) The block hash
-  "verbosity" (numeric, optional, default=1) 0 for hex-encoded data, 1 for a json object, and 2 for json object with transaction data
-}
-```
+1. "blockhash"          (string, required) The block hash
+2. verbosity              (numeric, optional, default=1) 0 for hex-encoded data, 1 for a json object, and 2 for json object with transaction data
 
-## Output
-
-| Result | Type     | Description                                                     |
-| ------ | -------- | --------------------------------------------------------------- |
-| "data" | (string) | A string that is serialized, hex-encoded data for block 'hash'. |
-
-```bash
 Result (for verbosity = 0):
 "data"             (string) A string that is serialized, hex-encoded data for block 'hash'.
 
@@ -70,6 +45,7 @@ Result (for verbose = 1):
   "chainwork" : "xxxx",  (string) Expected number of hashes required to produce the chain up to this block (in hex)
   "previousblockhash" : "hash",  (string) The hash of the previous block
   "nextblockhash" : "hash"       (string) The hash of the next block
+  "powhash" : "hash"       (string) The pow hash of the this block
 }
 
 Result (for verbosity = 2):
@@ -81,10 +57,7 @@ Result (for verbosity = 2):
   ,...                     Same output as verbosity = 1.
 }
 
-```
-
-## Examples
-
-```bash
-curl --user myusername --data-binary '{"jsonrpc": "1.0", "id":"curltest", "method": "getblock", "params": ["00000000000fd08c2fb661d2fcb0d49abb3a91e5f27082ce64feed3b4dede2e2"] }' -H 'content-type: text/plain;' http://127.0.0.1:9998/
+Examples:
+> yerbas-cli getblock "00000000000fd08c2fb661d2fcb0d49abb3a91e5f27082ce64feed3b4dede2e2"
+> curl --user myusername --data-binary '{"jsonrpc": "1.0", "id":"curltest", "method": "getblock", "params": ["00000000000fd08c2fb661d2fcb0d49abb3a91e5f27082ce64feed3b4dede2e2"] }' -H 'content-type: text/plain;' http://127.0.0.1:15419/
 ```

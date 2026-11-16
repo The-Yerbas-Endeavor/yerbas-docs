@@ -1,60 +1,13 @@
 ---
 sidebar_position: 4
-title: "Powcache & Bootstrap"
 ---
 
-# Using Powcache & Bootstrap
+# Powcache and bootstrap
 
-The bootstrap data is provided to speed up syncing. Simply download the bootstrap data and extract to your Yerbas data directory.
-Syncing without the bootstrap can take a significant amount of time.
+A bootstrap is optional. Normal peer synchronization remains available; synchronization time depends on hardware, network and chain size.
 
-## Download
+Use the [Yerbas bootstrap repository](https://github.com/The-Yerbas-Endeavor/YERB-Bootstrap/releases) to inspect available snapshots, their network, height, contents and checksums. Do not assume an older bootstrap contains the history/index state needed by 4.0.1.4 recorded recovery.
 
-<div>
-  <div className="container padding--sm">
-    <h2>v3.2.0.15 or up</h2>
-    <div className="row padding--sm">
-      <div className="col col--4">POW Cache</div>
-      <div className="col col--6">
-        <a
-          class="button button--primary"
-          href="https://github.com/The-Yerbas-Endeavor/YERB-Bootstrap/releases/download/1.0.0.0/powcache.dat"
-          download
-        >
-          💾 POW Cache (.dat)
-        </a>
-      </div>
-    </div>
-    <div className="row padding--sm">
-      <div className="col col--4">Classic Bootstrap</div>
-      <div className="col col--6">
-        <a
-          class="button button--primary"
-          href="https://github.com/The-Yerbas-Endeavor/YERB-Bootstrap/releases/download/1.0.0.0/bootstrap.zip"
-          download
-        >
-          💾 Bootstrap without indexes (.zip)
-        </a>
-      </div>
-    </div>
-  </div>
-</div>
+Before restoring any snapshot, back up the complete wallet and configuration, stop the node, and wait for exit. Keep the original data directory intact until a replacement is verified. Never overwrite wallet files with a bootstrap or combine databases from unrelated snapshots.
 
-## Usage
-
-Follow these steps:
-
-- Delete folders and files:
-  - blocks
-  - llmq
-  - chainstate
-  - evodb
-  - powcache.dat
-- Extract to the appropriate data directory:
-  - Unix/Linux: `~/.yerbascore`
-  - Windows: `%AppData%\YerbasCore`
-- Restart Yerbas Daemon (yerbasd) and wait for sync
-
-:::danger Wallet.dat
-Do not delete your wallet.dat file without having a backup! This file holds your access to your wallet data. Losing it can mean losing your funds!
-:::
+`powcache.dat` and blockchain snapshots do not replace wallet backups. Use the [troubleshooting guide](/docs/wallet/troubleshooting/) and the exact startup diagnostic if history or indexes are missing. Do not delete all `.dat` files as a generic repair step.

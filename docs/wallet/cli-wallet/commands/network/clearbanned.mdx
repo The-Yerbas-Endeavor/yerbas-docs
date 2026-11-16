@@ -1,40 +1,15 @@
----
-sidebar_position: 2
----
-
-import ReactPlayer from 'react-player';
-
 # clearbanned
 
-_clearbanned_
+RPC help captured from **Yerbas Core 4.0.1.4** (`f0e2dde`).
+
+Use `./yerbas-cli help clearbanned` on your node for help. In the GUI console omit `yerbas-cli`. HTTP examples use mainnet RPC port 15419; network-specific defaults and availability can differ.
+
+```text
+clearbanned
 
 Clear all banned IPs.
 
-`yerbas-cli clearbanned `
-
-<ReactPlayer
-  playing
-  controls
-  url={[
-    { src: `${require('./assets/setban.webm').default}`, type: 'video/webm' },
-  ]}
-/>
-
-## Output
-
-| Result | Type | Description |
-| ------ | ---- | ----------- |
-| ...    | ...  | ...         |
-
-```bash
-Result:
-{
-  ...
-}
-```
-
-## Examples
-
-```bash
-curl --user myusername --data-binary '{"jsonrpc": "1.0", "id":"curltest", "method": "clearbanned", "params": [] }' -H 'content-type: text/plain;' http://127.0.0.1:9998/
+Examples:
+> yerbas-cli clearbanned
+> curl --user myusername --data-binary '{"jsonrpc": "1.0", "id":"curltest", "method": "clearbanned", "params": [] }' -H 'content-type: text/plain;' http://127.0.0.1:15419/
 ```

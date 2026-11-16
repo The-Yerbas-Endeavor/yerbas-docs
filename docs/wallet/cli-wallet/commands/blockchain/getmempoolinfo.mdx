@@ -1,33 +1,14 @@
----
-sidebar_position: 15
----
-
-import ReactPlayer from 'react-player';
-
 # getmempoolinfo
+
+RPC help captured from **Yerbas Core 4.0.1.4** (`f0e2dde`).
+
+Use `./yerbas-cli help getmempoolinfo` on your node for help. In the GUI console omit `yerbas-cli`. HTTP examples use mainnet RPC port 15419; network-specific defaults and availability can differ.
+
+```text
+getmempoolinfo
 
 Returns details on the active state of the TX memory pool.
 
-`yerbas-cli getmempoolinfo`
-
-<ReactPlayer
-  playing
-  controls
-  url={[
-    {
-      src: `${require('./assets/getmempoolinfo.webm').default}`,
-      type: 'video/webm',
-    },
-  ]}
-/>
-
-## Output
-
-| Result | Type      | Description      |
-| ------ | --------- | ---------------- |
-| "size" | (numeric) | Current tx count |
-
-```bash
 Result:
 {
   "size": xxxxx,               (numeric) Current tx count
@@ -37,10 +18,8 @@ Result:
   "mempoolminfee": xxxxx       (numeric) Minimum feerate (YERB per KB) for tx to be accepted
   "instantsendlocks": xxxxx,   (numeric) Number of unconfirmed instant send locks
 }
-```
 
-## Examples
-
-```bash
-curl --user myusername --data-binary '{"jsonrpc": "1.0", "id":"curltest", "method": "getmempoolinfo", "params": [] }' -H 'content-type: text/plain;' http://127.0.0.1:9998/
+Examples:
+> yerbas-cli getmempoolinfo
+> curl --user myusername --data-binary '{"jsonrpc": "1.0", "id":"curltest", "method": "getmempoolinfo", "params": [] }' -H 'content-type: text/plain;' http://127.0.0.1:15419/
 ```

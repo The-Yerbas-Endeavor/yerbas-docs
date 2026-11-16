@@ -81,19 +81,19 @@ function NavMenu() {
             {  <h1 className="hero__title">Yerbas</h1> }
           </div> 
         </div>
-        <div className="row padding-bottom--lg padding-top--lg">
+        <div className="row padding-bottom--lg padding-top--lg" style={{ marginLeft: 0, marginRight: 0 }}>
           <div className="col col--2 padding-top--lg margin-top--sm" />
           <div className="col col--2 padding-top--lg margin-top--sm">
             <Button type="wallet" />
           </div>
           <div className="col col--2 padding-top--lg margin-top--sm">
-            <Button type="assets" />
-          </div>
-          <div className="col col--2 padding-top--lg margin-top--sm">
-            <Button type="smartnodes" />
+            <Button type="mining" />
           </div>
           <div className="col col--2 padding-top--lg margin-top--sm">
             <Button type="papers" />
+          </div>
+          <div className="col col--2 padding-top--lg margin-top--sm">
+            <Button type="smartnodes" />
           </div>
         </div>
         <div className="col col--2 padding-top--lg margin-top--sm" />
@@ -108,7 +108,7 @@ export default function Home(): JSX.Element {
   return (
     <Layout
       title={`${siteConfig.title}`}
-      description="Yerbas Blockchain Documents"
+      description="Site description"
     >
       <main>
         <HomepageHeader />

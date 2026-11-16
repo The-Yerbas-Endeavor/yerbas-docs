@@ -1,12 +1,11 @@
----
-sidebar_position: 2
----
-
-import ReactPlayer from 'react-player';
-
 # createrawtransaction
 
-_createrawtransaction [{"txid":"id","vout":n},...] {"address":amount,"data":"hex",...} ( locktime )_
+RPC help captured from **Yerbas Core 4.0.1.4** (`f0e2dde`).
+
+Use `./yerbas-cli help createrawtransaction` on your node for help. In the GUI console omit `yerbas-cli`. HTTP examples use mainnet RPC port 15419; network-specific defaults and availability can differ.
+
+```text
+createrawtransaction [{"txid":"id","vout":n},...] {"address":amount,"data":"hex",...} ( locktime )
 
 Create a transaction spending the given inputs and creating new outputs.
 Outputs can be addresses or data.
@@ -14,38 +13,6 @@ Returns hex-encoded raw transaction.
 Note that the transaction's inputs are not signed, and
 it is not stored in the wallet or transmitted to the network.
 
-```bash
-yerbas-cli createrawtransaction "[{\"txid\":\"myid\",\"vout\":0}]" "{\"address\":0.01}"
-yerbas-cli createrawtransaction "[{\"txid\":\"myid\",\"vout\":0}]" "{\"data\":\"00010203\"}"
-```
-
-<ReactPlayer
-  playing
-  controls
-  url={[
-    {
-      src: `${require('./assets/createrawtransaction.webm').default}`,
-      type: 'video/webm',
-    },
-  ]}
-/>
-
-<sub>Video Guide - credit @rocket</sub>
-<ReactPlayer
-  playing
-  controls
-  url="https://www.youtube.com/watch?v=Yd---pu4oTg"
-  muted={true}
-  playing={false}
-/>
-
-## Arguments
-
-| Argument  | Type     | Description                     |
-| --------- | -------- | ------------------------------- |
-| "address" | (string) | The base58check encoded address |
-
-```bash
 Arguments:
 1. "inputs"                (array, required) A json array of json objects
      [
@@ -63,22 +30,13 @@ Arguments:
       ,...
     }
 3. locktime                  (numeric, optional, default=0) Raw locktime. Non-0 value also locktime-activates inputs
-```
 
-## Output
-
-| Result        | Type     | Description                   |
-| ------------- | -------- | ----------------------------- |
-| "transaction" | (string) | hex string of the transaction |
-
-```bash
 Result:
 "transaction"              (string) hex string of the transaction
-```
 
-## Examples
-
-```bash
-curl --user myusername --data-binary '{"jsonrpc": "1.0", "id":"curltest", "method": "createrawtransaction", "params": ["[{\"txid\":\"myid\",\"vout\":0}]", "{\"address\":0.01}"] }' -H 'content-type: text/plain;' http://127.0.0.1:9998/
-curl --user myusername --data-binary '{"jsonrpc": "1.0", "id":"curltest", "method": "createrawtransaction", "params": ["[{\"txid\":\"myid\",\"vout\":0}]", "{\"data\":\"00010203\"}"] }' -H 'content-type: text/plain;' http://127.0.0.1:9998/
+Examples:
+> yerbas-cli createrawtransaction "[{\"txid\":\"myid\",\"vout\":0}]" "{\"address\":0.01}"
+> yerbas-cli createrawtransaction "[{\"txid\":\"myid\",\"vout\":0}]" "{\"data\":\"00010203\"}"
+> curl --user myusername --data-binary '{"jsonrpc": "1.0", "id":"curltest", "method": "createrawtransaction", "params": ["[{\"txid\":\"myid\",\"vout\":0}]", "{\"address\":0.01}"] }' -H 'content-type: text/plain;' http://127.0.0.1:15419/
+> curl --user myusername --data-binary '{"jsonrpc": "1.0", "id":"curltest", "method": "createrawtransaction", "params": ["[{\"txid\":\"myid\",\"vout\":0}]", "{\"data\":\"00010203\"}"] }' -H 'content-type: text/plain;' http://127.0.0.1:15419/
 ```

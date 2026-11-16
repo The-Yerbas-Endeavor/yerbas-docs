@@ -1,46 +1,30 @@
-# Yerbas Docs
+# Yerbas documentation source
 
-This repository holds the Docusaurus instance that hosts the Yerbas Docs (https://docs.yerbas.org). Development is also done here.
+This directory contains the editable Docusaurus source for [docs.yerbas.org](https://docs.yerbas.org). The `main` and `develop` branches contain this source at their root. The `gh-pages` branch contains the generated site and an `_source/` snapshot of the checked source.
 
-## Contributors
+The documentation targets Core 4.0.1.4 binary source `f0e2dde5673580d5d5cac9aa21e16ebe6936dd05`. Read [verification notes](REVIEW-4.0.1.4.md) before changing release, consensus or wallet guidance.
 
-Contributors are always welcome to help us out with anything they can. If you're not proficient in using code or development software, bring us a visit on Discord! (discord.gg/yerbas). You can help us in other ways that don't require coding skills. :)
+## Build and inspect locally
 
-## Notes for developers
+Use Node.js and npm (the checked build used Node 22.23.4). From this directory:
 
-### Commands used for Docusaurus building & local deployment
+```sh
+npm ci --ignore-scripts --no-audit --no-fund
+npm run build
+npm run check:links
+npm run test:links
+npm run serve -- --host 127.0.0.1
+```
 
-- Build local files: `yarn build` (equivalent to `yarn docusaurus build`)
-  Builds the current instance and leaves the built files in `/build/`
-- Host local files: `yarn serve` (equivalent to `yarn docusaurus serve`)
-  Opens a webserver on port 3000
+The existing lockfile needs the checked-in `.npmrc` legacy peer resolution setting. Search indexes are created by the production build. `serve` previews that build locally; it does not deploy it. The historical Dockerfile has not been validated by this documentation update.
 
-Search will not create indexes until `yarn build` is ran.
+## Reviewing changes
 
-A **Docker image** can be built directly from this repository's source. When doing so, the above commands are executed automatically. Note this may take some time to finish.
+- Edit `docs/`, `src/`, or configuration here, then rebuild and check links.
+- Review changed commands against the exact Core source and release help; distinguish wallet policy from consensus.
+- Keep `main` and `develop` synchronized with changes published to `gh-pages`, including its `_source/` snapshot. Preserve `CNAME`, `.nojekyll`, and all existing routes unless a replacement is intentional.
+- Do not use the deploy script during PR review. Publishing the `gh-pages` branch is a separate release decision.
 
-### Requirements:
+`tools/check-links.py` checks a populated build for local files, resources and fragments; it fails for a missing or empty build. External URLs are listed for separate reachability checks.
 
-1. NodeJS
-2. Yarn (Package Manager)
-3. Visual Studio Code
-4. Docker / Docker Desktop (optional, dev containers)
-
-## Docker image building
-
-1. To build the Docker image, start off by cloning this repository to a directory of your choosing:
-
-   `sudo git clone https://github.com/The-Yerbas-Endeavor/docs`
-
-2. Navigate to the cloned repository's root directory.
-3. Build the container:
-
-   `sudo docker build . -t yerbas/docs`
-
-4. Run the container:
-
-   `sudo docker run -p -d yerbas/docs`
-   - -p opens the ports specified in the Dockerfile
-   - -d specifies detatched 
-
-This will make the applications accessible on port 3000 (localhost or otherwise)
+`tools/capture-rpc-help.py` reads help/status from an already running isolated regtest node. Verify the release archive checksum first. Never point documentation tooling at a funded production wallet. It does not launch a node or submit transactions.

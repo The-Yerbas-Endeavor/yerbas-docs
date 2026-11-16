@@ -1,58 +1,20 @@
----
-sidebar_position: 36
----
-
-import ReactPlayer from 'react-player';
-
 # listtransactions
 
-_listtransactions ( "account" count skip include_watchonly)_
+RPC help captured from **Yerbas Core 4.0.1.4** (`f0e2dde`).
+
+Use `./yerbas-cli help listtransactions` on your node for help. In the GUI console omit `yerbas-cli`. HTTP examples use mainnet RPC port 15419; network-specific defaults and availability can differ.
+
+```text
+listtransactions ( "account" count skip include_watchonly)
 
 Returns up to 'count' most recent transactions skipping the first 'from' transactions for account 'account'.
 
-```bash
-# List the most recent 10 transactions in the systems
-yerbas-cli listtransactions
-
-# List transactions 100 to 120
-yerbas-cli listtransactions "*" 20 100
-```
-
-<ReactPlayer
-  playing
-  controls
-  url={[
-    {
-      src: `${require('./assets/listtransactions.webm').default}`,
-      type: 'video/webm',
-    },
-  ]}
-/>
-
-## Arguments
-
-| Argument          | Type      | Description                                                    |
-| ----------------- | --------- | -------------------------------------------------------------- |
-| "account"         | (string)  | DEPRECATED. The account name. Should be "\*".                  |
-| count             | (numeric) | The number of transactions to return                           |
-| skip              | (numeric) | The number of transactions to skip                             |
-| include_watchonly | (bool)    | Include balances in watch-only addresses (see 'importaddress') |
-
-```bash
 Arguments:
 1. "account"        (string, optional) DEPRECATED. The account name. Should be "*".
 2. count            (numeric, optional, default=10) The number of transactions to return
 3. skip           (numeric, optional, default=0) The number of transactions to skip
 4. include_watchonly (bool, optional, default=false) Include transactions to watch-only addresses (see 'importaddress')
-```
 
-## Output
-
-| Result    | Type     | Description                                                                                          |
-| --------- | -------- | ---------------------------------------------------------------------------------------------------- |
-| "account" | (string) | DEPRECATED. The account name associated with the transaction. It will be "" for the default account. |
-
-```bash
 Result:
 [
   {
@@ -95,10 +57,15 @@ Result:
                                          'send' category of transactions.
   }
 ]
-```
 
-## Examples
+Examples:
 
-```bash
-curl --user myusername --data-binary '{"jsonrpc": "1.0", "id":"curltest", "method": "listtransactions", "params": ["*", 20, 100] }' -H 'content-type: text/plain;' http://127.0.0.1:9998/
+List the most recent 10 transactions in the systems
+> yerbas-cli listtransactions
+
+List transactions 100 to 120
+> yerbas-cli listtransactions "*" 20 100
+
+As a json rpc call
+> curl --user myusername --data-binary '{"jsonrpc": "1.0", "id":"curltest", "method": "listtransactions", "params": ["*", 20, 100] }' -H 'content-type: text/plain;' http://127.0.0.1:15419/
 ```

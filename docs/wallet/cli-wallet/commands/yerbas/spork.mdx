@@ -1,43 +1,17 @@
----
-sidebar_position: 10
----
-
-import ReactPlayer from 'react-player';
-
 # spork
 
-_spork "command"_
+RPC help captured from **Yerbas Core 4.0.1.4** (`f0e2dde`).
+
+Use `./yerbas-cli help spork` on your node for help. In the GUI console omit `yerbas-cli`. HTTP examples use mainnet RPC port 15419; network-specific defaults and availability can differ.
+
+```text
+spork "command"
 
 Shows information about current state of sporks
 
-`yerbas-cli spork show`
-
-<ReactPlayer
-  playing
-  controls
-  url={[
-    { src: `${require('./assets/spork.webm').default}`, type: 'video/webm' },
-  ]}
-/>
-
-## Arguments
-
-| Argument  | Type     | Description            |
-| --------- | -------- | ---------------------- |
-| "command" | (string) | The command to execute |
-
-```bash
 Arguments:
-1. "command"        (string or set of strings, required) The command to execute
-```
+1. "command"                     (string, required) 'show' to show all current spork values, 'active' to show which sporks are active
 
-## Output
-
-| Result | Type | Description |
-| ------ | ---- | ----------- |
-| ...    | ...  | ...         |
-
-```bash
 Result:
 For 'show':
 {
@@ -49,10 +23,8 @@ For 'active':
   "SPORK_NAME" : true|false,     (boolean) 'true' for time-based sporks if spork is active and 'false' otherwise
   ...
 }
-```
 
-## Examples
-
-```bash
-curl --user myusername --data-binary '{"jsonrpc": "1.0", "id":"curltest", "method": "spork", "params": ["show"] }' -H 'content-type: text/plain;' http://127.0.0.1:9998/
+Examples:
+> yerbas-cli spork show
+> curl --user myusername --data-binary '{"jsonrpc": "1.0", "id":"curltest", "method": "spork", "params": ["show"] }' -H 'content-type: text/plain;' http://127.0.0.1:15419/
 ```

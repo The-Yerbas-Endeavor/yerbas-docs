@@ -1,49 +1,19 @@
----
-sidebar_position: 8
----
-
-import ReactPlayer from 'react-player';
-
 # getblockheader
 
-_getblockheader "hash" ( verbose )_
+RPC help captured from **Yerbas Core 4.0.1.4** (`f0e2dde`).
+
+Use `./yerbas-cli help getblockheader` on your node for help. In the GUI console omit `yerbas-cli`. HTTP examples use mainnet RPC port 15419; network-specific defaults and availability can differ.
+
+```text
+getblockheader "hash" ( verbose )
 
 If verbose is false, returns a string that is serialized, hex-encoded data for blockheader 'hash'.
-If verbose is true, returns an Object with information about blockheader hash.
+If verbose is true, returns an Object with information about blockheader <hash>.
 
-`yerbas-cli getblockheader "00000000c937983704a73af28acdec37b049d214adbda81d7e2a3dd146f6ed09"`
-
-<ReactPlayer
-  playing
-  controls
-  url={[
-    {
-      src: `${require('./assets/getblockheader.webm').default}`,
-      type: 'video/webm',
-    },
-  ]}
-/>
-
-## Arguments
-
-| Argument | Type      | Description                                                      |
-| -------- | --------- | ---------------------------------------------------------------- |
-| "hash"   | (string)  | The block hash                                                   |
-| verbose  | (boolean) | (default) true for a json object, false for the hex encoded data |
-
-```bash
 Arguments:
 1. "hash"          (string, required) The block hash
 2. verbose           (boolean, optional, default=true) true for a json object, false for the hex encoded data
-```
 
-## Output
-
-| Result | Type     | Description    |
-| ------ | -------- | -------------- |
-| "hash" | (string) | The block hash |
-
-```bash
 Result (for verbose = true):
 {
   "hash" : "hash",     (string) the block hash (same as provided)
@@ -64,10 +34,8 @@ Result (for verbose = true):
 
 Result (for verbose=false):
 "data"             (string) A string that is serialized, hex-encoded data for block 'hash'.
-```
 
-## Examples
-
-```bash
-curl --user myusername --data-binary '{"jsonrpc": "1.0", "id":"curltest", "method": "getblockhashes", "params": [1231614698, 1231024505] }' -H 'content-type: text/plain;' http://127.0.0.1:9998/
+Examples:
+> yerbas-cli getblockheader "00000000c937983704a73af28acdec37b049d214adbda81d7e2a3dd146f6ed09"
+> curl --user myusername --data-binary '{"jsonrpc": "1.0", "id":"curltest", "method": "getblockheader", "params": ["00000000c937983704a73af28acdec37b049d214adbda81d7e2a3dd146f6ed09"] }' -H 'content-type: text/plain;' http://127.0.0.1:15419/
 ```

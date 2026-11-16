@@ -2,76 +2,26 @@
 sidebar_position: 7
 ---
 
-# Troubleshooting
+# Troubleshooting 4.0.1.4
 
-Yerbascore Troubleshooting
+## Synchronization and startup
 
-## Yerbascore Fails To Synchronize
-
-Yerbascore can fail to synchronize for a few different reasons, the most common ones being:
-
-- A bad / invalid header or block locally. In your debug console > Peers you will see peers connecting and then being banned as a symptom.
-- Corrupted database files. Wallet will fail to progress on synchronization.
-- Errors related to .dat files, most commonly mncache.dat and sporks.dat.
-
-To fix the first two issues it is best to resynchronize the wallet either from scratch or from bootstrap. Using the bootstrap is much faster. Either option starts with removing the following folders from Yerbascore data directory:
-
-```text
-blocks
-chainstate
-evodb
-llmq
-```
-
-If you want to resynchronize from scratch start the wallet now. If you want to use the bootstrap:
-
-- Download bootstrap.zip listed on our latest release: <https://github.com/The-Yerbas-Endeavor/yerbas/releases/>
-- Unzip the bootstrap and copy the folders into Yerbascore data directory.
-- Start the wallet.
-
-## Fixing .dat Related Errors
-
-In most cases stopping the wallet and removing the mentioned .dat file is enough. If after starting the wallet you receive further .dat errors or the same .dat error then remove all .dat files except for any wallet.dat files, and start the wallet.
-
-:::note
-
-The first time starting Yerbascore progress will seem quite slow, this does not mean the wallet is not synchronizing, it can take up to a day for it to fully synchronize. The slow part is when it says "Synchronizing headers" after that it progresses much quicker.
-
-:::
-
-## Yerbascore is Showing Incorrect Balance
-
-Go to `Tools > Wallet Repair > Rescan` blockchain files. Using CLI you can do this by using the `-rescan` flag when starting yerbasd:
+Confirm the executable reports 4.0.1.4, the correct network/data directory is selected, the disk has space, and only one process is using the directory. Inspect `debug.log`, peer connections and the exact error message.
 
 ```bash
-./yerbasd -rescan
+./yerbas-cli getblockchaininfo
+./yerbas-cli getnetworkinfo
+./yerbas-cli getpeerinfo
 ```
 
-## Fixing Long Synchronization Times
+Automatic recovery-history indexing may take time. A routine upgrade does not require `-reindex`. Missing block history or recovery indexes can require restoring compatible history or reindexing; follow the diagnostic and retain your original data and wallet backups first. Pruned nodes may not have the blocks needed for migration.
 
-The first time you synchronize YerbasCore it can take up to a day to fully synchronize. You can reduce this time in most cases to less than one hour by using a bootstrap. We provide a bootstrap with our releases on Github for this reason, it is updated once per month. You can use the bootstrap like so:
+Do not delete `sporks.dat`, `evodb`, `llmq`, wallet files or all `.dat` files as a generic repair. See [recorded recovery](/docs/smartnodes/recovery/).
 
-1. Download: (Yerbas bootstrap packages)[https://bootstrap.yerbas.org/]
-2. Stop wallet or daemon
+## Wallet history or balances
 
-   In your wallets data directory delete folders:
+Check synchronization and the selected wallet first. A rescan rebuilds wallet transaction history from available blocks; it is different from rebuilding chainstate. After backing up and stopping the node, `./yerbasd -rescan` is the startup rescan option. Keep the same data directory; do not run a second process against it. Pruned blocks may need restoration.
 
-   ```text
-   blocks
-   chainstate
-   evodb
-   llmq
-   ```
+A seed/private-key restore does not recover every local asset reward or payout-job record. Use a complete wallet backup where available. Never share your wallet file, seed, passphrase, operator secret or signing key when requesting support.
 
-3. Unzip bootstrap and copy folder into your data directory
-4. Start wallet
-
-## Miscellaneous
-
-If you are experiencing errors or having a hard time synchronizing the wallet and do not see your specific issue above removing all files in your Yerbascore data directory except:
-
-- wallet.dat files.
-- "backups" directory.
-- yerbas.conf if used.
-
-Using the bootstrap will in most cases fix the problem. If not make sure you are using the correct wallet for your operating system. If you cannot resolve the issue don't hesitate to drop in on our Discord for support.
+[History/index diagnostics](https://github.com/The-Yerbas-Endeavor/yerbas/blob/f0e2dde5673580d5d5cac9aa21e16ebe6936dd05/doc/low-llmq-history-migration.md) · [Wallet recovery](https://github.com/The-Yerbas-Endeavor/yerbas/blob/f0e2dde5673580d5d5cac9aa21e16ebe6936dd05/doc/wallet-asset-storage.md)

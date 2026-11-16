@@ -2,77 +2,12 @@
 sidebar_position: 1
 ---
 
-import Tabs from '@theme/Tabs';
-import TabItem from '@theme/TabItem';
+# Getting started with the GUI
 
-# Getting started
+[Install and verify Core 4.0.1.4](/docs/wallet/quick-start/), then start the graphical wallet and allow synchronization to finish.
 
-Get started quickly with the YerbasCore Wallet.
+Use Receive to create a receiving address, Send to review and send a transaction, and Transactions to inspect wallet history. Check the address, amount, and fee before confirming a payment.
 
-## Usage
+The Qt 6 **Asset Manager** groups My Assets, Send, Create, Reissue, and Restricted controls. My Assets offers search, balances, metadata/details, and selected-asset sending. Read [asset availability and backups](/docs/wallet/assets/) before using it.
 
-### Binaries
-
-   - `yerbasd` - Yerbas Daemon
-   - `yerbas-qt` - Yerbas Wallet GUI
-   - `yerbas-cli` - Yerbas Wallet CLI
-   - `yerbas-tx` - Yerbas Tx Utility
-
-### The basics
-
-- Generating a new wallet address
-
-### Transactions
-
-- How to make a transaction
-- How to receive a transaction
-
-- How to verify a transaction
-- Transaction confirmation on the blockchain
-- Masternodes & transaction security
-
-### Special features
-
-- Private Sending (PrivateSend/CoinJoin)
-- Smartnodes
-- Assets
-
-## Setup
-
-<Tabs>
-  <TabItem value="windows" label="Windows" default>
-    <p>Binaries: <a href="https://github.com/The-Yerbas-Endeavor/yerbas/releases/download/v3.2.0.15/yerbas-win64-x86-release-3.2.0.15.zip" class="button button--primary">yerbas-win-v3.2.0.15.zip</a></p>
-  </TabItem>
-  <TabItem value="mac" label="Mac" default>
-    <p>Installer: <a href="https://github.com/The-Yerbas-Endeavor/yerbas/releases/download/v3.2.0.15/Yerbas-Qt-macOS15-x86.dmg" class="button button--primary">Yerbas-Qt-v3.2.0.15.dmg</a></p>
-  </TabItem>
-  <TabItem value="linux" label="Linux">
-    <p>Binaries: <a href="https://github.com/The-Yerbas-Endeavor/yerbas/releases/download/v3.2.0.15/yerbas-ubuntu-26.04-x86-release-3.2.0.15.tar.gz" class="button button--primary">yerbas-ubuntu20-v3.2.0.15.tar.gz</a></p>
-  </TabItem>
-</Tabs>
-
-### Installer
-
-1. Download the latest release [here][#setup] or on [GitHub][wallet-gh]
-2. Run the installer (.exe or .dmg) and follow the steps
-3. Run the YerbasCore Daemon (yerbasd)
-4. Open the wallet
-    - **CLI**
-      Run yerbas-cli.exe from the command line to use
-    - **GUI**
-      Run yerbas-qt.exe to open 
-5. Allow Daemon to Sync (Use the [bootstrap package](/docs/wallet/bootstrap))
-
-### Binaries
-
-1. Download the latest release [here][#setup] or on [GitHub][wallet-gh]
-2. Extract the archive to your desired location
-3. Run the YerbasCore Daemon (yerbasd)
-4. Open the wallet
-    - **CLI**
-      Run yerbas-cli from the command line to use
-    - **GUI**
-      Run yerbas-qt to open 
-5. Allow Daemon to Sync (Use the [bootstrap package](/docs/wallet/bootstrap))
-
-[wallet-gh]: https://github.com/The-Yerbas-Endeavor/yerbas/releases/latest/
+Older screenshots elsewhere in this guide illustrate general workflows; labels and appearance can differ in Qt 6. The release does not implement arbitrary smart contracts.

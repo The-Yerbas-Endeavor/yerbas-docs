@@ -1,58 +1,19 @@
----
-sidebar_position: 51
----
-
-import ReactPlayer from 'react-player';
-
 # walletpassphrasechange
 
-_walletpassphrasechange "oldpassphrase" "newpassphrase"_
+RPC help captured from **Yerbas Core 4.0.1.4** (`f0e2dde`).
+
+Use `./yerbas-cli help walletpassphrasechange` on your node for help. In the GUI console omit `yerbas-cli`. HTTP examples use mainnet RPC port 15419; network-specific defaults and availability can differ.
+
+```text
+walletpassphrasechange "oldpassphrase" "newpassphrase"
 
 Changes the wallet passphrase from 'oldpassphrase' to 'newpassphrase'.
 
-```bash
-yerbas-cli walletpassphrasechange "old one" "new one"
-```
-
-<ReactPlayer
-  playing
-  controls
-  url={[
-    {
-      src: `${require('./assets/walletpassphrasechange.webm').default}`,
-      type: 'video/webm',
-    },
-  ]}
-/>
-
-## Arguments
-
-| Argument        | Type     | Description            |
-| --------------- | -------- | ---------------------- |
-| "oldpassphrase" | (string) | The current passphrase |
-| "newpassphrase" | (string) | The new passphrase     |
-
-```bash
 Arguments:
 1. "oldpassphrase"      (string) The current passphrase
 2. "newpassphrase"      (string) The new passphrase
-```
 
-## Output
-
-| Result | Type | Description |
-| ------ | ---- | ----------- |
-| ...    | ...  | ...         |
-
-```bash
-Result:
-{
-  ...
-}
-```
-
-## Examples
-
-```bash
-curl --user myusername --data-binary '{"jsonrpc": "1.0", "id":"curltest", "method": "walletpassphrasechange", "params": ["old one", "new one"] }' -H 'content-type: text/plain;' http://127.0.0.1:9998/
+Examples:
+> yerbas-cli walletpassphrasechange "old one" "new one"
+> curl --user myusername --data-binary '{"jsonrpc": "1.0", "id":"curltest", "method": "walletpassphrasechange", "params": ["old one", "new one"] }' -H 'content-type: text/plain;' http://127.0.0.1:15419/
 ```

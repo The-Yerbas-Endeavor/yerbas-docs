@@ -1,0 +1,23 @@
+# listaddressrestrictions
+
+RPC help captured from **Yerbas Core 4.0.1.4** (`f0e2dde`).
+
+Use `./yerbas-cli help listaddressrestrictions` on your node for help. In the GUI console omit `yerbas-cli`. HTTP examples use mainnet RPC port 15419; network-specific defaults and availability can differ.
+
+```text
+listaddressrestrictions address
+
+List all assets that have frozen this address
+
+Arguments:
+1. "address"          (string), required) the address to list restrictions for
+
+Result:
+["asset_name",        (string) The restriction name
+...,
+]
+
+Examples:
+> yerbas-cli listaddressrestrictions "address"
+> curl --user myusername --data-binary '{"jsonrpc": "1.0", "id":"curltest", "method": "listaddressrestrictions", "params": ["address"] }' -H 'content-type: text/plain;' http://127.0.0.1:15419/
+```

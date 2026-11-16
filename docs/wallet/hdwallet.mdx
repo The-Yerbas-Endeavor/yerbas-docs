@@ -3,6 +3,12 @@
 
 Enabling Hierarchical Deterministic (HD) Yerbas Wallet
 
+:::note Core 4.0.1.4 backup scope
+
+A mnemonic restores derived keys, not every local asset reward or payout-job record. Keep a complete wallet backup as described in [wallet maintenance](/docs/wallet/maintenance/). Perform seed restoration in a separate new data directory; preserve the original wallet rather than deleting it. Older screenshots below are illustrative. Keep seed phrases and passphrases private, including terminal history.
+
+:::
+
 ## Unix
 
 Enter the following command from the command line. This will start a yerbas wallet with a randomly generated HD wallet seed and no mnemonic passphrase:
@@ -17,7 +23,7 @@ After the wallet starts it will warn you that you need to encrypt your wallet af
 dumphdinfo
 ```
 
-To restore an HD wallet you will need this 24-word seed phrase. You can restore a lost wallet, or create a new wallet with a custom separately generated 24-word mnemonic and passphrase, by running the following command from your command line. Make sure no existing wallet.dat file exists in the wallets data directory:
+To restore an HD wallet you will need this 24-word seed phrase. You can restore a lost wallet, or create a new wallet with a custom separately generated 24-word mnemonic and passphrase, by running the following command from your command line. Use a separate empty data directory for restoration; do not delete the existing wallet:
 
 ```bash
 ./yerbas-qt --usehd=1 --mnemonic="YOUR 24-WORD SEED PHRASE" --mnemonicpassphrase="OPTIONAL PASSPHRASE"
@@ -83,7 +89,7 @@ You are now done generating your HD wallet.
 
 ## Restoring a lost HD wallet
 
-You can restore your wallet with this seed phrase from the command line similar to the way you generated the HD wallet. You can restore a lost wallet by running the following command from your command line. Make sure no existing wallet.dat file exists in the wallets data directory:
+You can restore your wallet with this seed phrase from the command line similar to the way you generated the HD wallet. You can restore a lost wallet by running the following command from your command line. Use a separate empty data directory for restoration; do not delete the existing wallet:
 
 ```bash
 yerbas-qt.exe --usehd=1 --mnemonic="YOUR 24-WORD SEED PHRASE" --mnemonicpassphrase="OPTIONAL PASSPHRASE"

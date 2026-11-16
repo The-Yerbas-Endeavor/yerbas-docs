@@ -1,49 +1,22 @@
----
-sidebar_position: 2
----
-
-import ReactPlayer from 'react-player';
-
 # abortrescan
 
-_abortrescan_
+RPC help captured from **Yerbas Core 4.0.1.4** (`f0e2dde`).
+
+Use `./yerbas-cli help abortrescan` on your node for help. In the GUI console omit `yerbas-cli`. HTTP examples use mainnet RPC port 15419; network-specific defaults and availability can differ.
+
+```text
+abortrescan
 
 Stops current wallet rescan triggered e.g. by an importprivkey call.
 
-```bash
-# Import a private key
-yerbas-cli importprivkey "mykey"
+Examples:
 
-# Abort the running wallet rescan
-yerbas-cli abortrescan
-```
+Import a private key
+> yerbas-cli importprivkey "mykey"
 
-<ReactPlayer
-  playing
-  controls
-  url={[
-    {
-      src: `${require('./assets/abortrescan.webm').default}`,
-      type: 'video/webm',
-    },
-  ]}
-/>
+Abort the running wallet rescan
+> yerbas-cli abortrescan
 
-## Output
-
-| Result | Type | Description |
-| ------ | ---- | ----------- |
-| ...    | ...  | ...         |
-
-```bash
-Result:
-{
-  ...
-}
-```
-
-## Examples
-
-```bash
-curl --user myusername --data-binary '{"jsonrpc": "1.0", "id":"curltest", "method": "abortrescan", "params": [] }' -H 'content-type: text/plain;' http://127.0.0.1:9998/
+As a JSON-RPC call
+> curl --user myusername --data-binary '{"jsonrpc": "1.0", "id":"curltest", "method": "abortrescan", "params": [] }' -H 'content-type: text/plain;' http://127.0.0.1:15419/
 ```

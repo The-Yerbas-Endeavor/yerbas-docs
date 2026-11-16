@@ -1,0 +1,15 @@
+# getrichlist
+
+RPC help captured from **Yerbas Core 4.0.1.4** (`f0e2dde`).
+
+Use `./yerbas-cli help getrichlist` on your node for help. In the GUI console omit `yerbas-cli`. HTTP examples use mainnet RPC port 15419; network-specific defaults and availability can differ.
+
+```text
+getrichlist ( count )
+Scan confirmed UTXOs and return the richest addresses by native YERB.
+count: integer 1..1000, default 100. This expensive call scans chainstate.
+Includes immature coinbase and locked collateral; excludes mempool changes.
+Asset quantities are not YERB. Unattributable native value is reported separately.
+Amounts ending in Satoshis are exact decimal strings. No wallet or address index needed.
+Returns height, bestblock, totalSatoshis, unattributedSatoshis, addresses and items.
+```

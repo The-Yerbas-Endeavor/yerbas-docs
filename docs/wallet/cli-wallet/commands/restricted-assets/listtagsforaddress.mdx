@@ -1,0 +1,23 @@
+# listtagsforaddress
+
+RPC help captured from **Yerbas Core 4.0.1.4** (`f0e2dde`).
+
+Use `./yerbas-cli help listtagsforaddress` on your node for help. In the GUI console omit `yerbas-cli`. HTTP examples use mainnet RPC port 15419; network-specific defaults and availability can differ.
+
+```text
+listtagsforaddress address
+
+List all tags assigned to an address
+
+Arguments:
+1. "address"          (string, required) the address to list tags for
+
+Result:
+["tag_name",        (string) The tag name
+...,
+]
+
+Examples:
+> yerbas-cli listtagsforaddress "address"
+> curl --user myusername --data-binary '{"jsonrpc": "1.0", "id":"curltest", "method": "listtagsforaddress", "params": ["address"] }' -H 'content-type: text/plain;' http://127.0.0.1:15419/
+```

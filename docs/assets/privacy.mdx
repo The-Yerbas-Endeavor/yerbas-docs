@@ -1,8 +1,7 @@
----
-sidebar_position: 4
-title: Privacy and Access
----
- 
-  <p>A common question about assets is who can see whats on an asset and is there any way to limit viewership of the asset to a recipient.
-   The simple answer is that anyone is able to see the data associated with an asset, however there are protocols (see <a href="https://github.com/The-Yerbas-Endeavor/rips/blob/master/rip-0010.mediawiki">RIP-10</a>, <a href="https://github.com/The-Yerbas-Endeavor/rips/blob/master/rip-0011.mediawiki">RIP-11</a>, and <a href="https://github.com/The-Yerbas-Endeavor/rips/blob/master/rip-0014.mediawiki">RIP-14</a>) that allow for the encryption of IPFS data such that only a recipient of an asset may view it.</p>
-  <br/>
+# Asset privacy
+
+Mainnet v4 wallet operations are restricted below tip height **1,195,400**. See [availability and backup guidance](/docs/wallet/assets/). This wallet safeguard is distinct from consensus validation.
+
+Asset transactions and their on-chain metadata references are public. Referenced files may be stored elsewhere; access control, encryption and file availability are responsibilities of the external storage/application. Do not put private information in an asset name or public metadata. This release does not provide automatic metadata encryption.
+
+[Asset implementation](https://github.com/The-Yerbas-Endeavor/yerbas/blob/f0e2dde5673580d5d5cac9aa21e16ebe6936dd05/src/assets/assets.cpp) · [Asset structures](https://github.com/The-Yerbas-Endeavor/yerbas/blob/f0e2dde5673580d5d5cac9aa21e16ebe6936dd05/src/assets/assets.h) · [RPC implementation](https://github.com/The-Yerbas-Endeavor/yerbas/blob/f0e2dde5673580d5d5cac9aa21e16ebe6936dd05/src/rpc/assets.cpp)

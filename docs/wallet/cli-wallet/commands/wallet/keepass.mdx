@@ -1,51 +1,9 @@
----
-sidebar_position: 27
----
-
-import ReactPlayer from 'react-player';
-
 # keepass
 
-_keepass genkey|init|setpassphrase_
+RPC help captured from **Yerbas Core 4.0.1.4** (`f0e2dde`).
 
-Keepass command
+Use `./yerbas-cli help keepass` on your node for help. In the GUI console omit `yerbas-cli`. HTTP examples use mainnet RPC port 15419; network-specific defaults and availability can differ.
 
-`keepass genkey|init|setpassphrase`
-
-<ReactPlayer
-  playing
-  controls
-  url={[
-    { src: `${require('./assets/keepass.webm').default}`, type: 'video/webm' },
-  ]}
-/>
-
-## Arguments
-
-| Argument   | Type     | Description      |
-| ---------- | -------- | ---------------- |
-| "argument" | (string) | Keepass argument |
-
-```bash
-Arguments:
-1. "argument"    (string) Argument for Keepass genkey|init|setpassphrase
-```
-
-## Output
-
-| Result | Type | Description |
-| ------ | ---- | ----------- |
-| ...    | ...  | ...         |
-
-```bash
-Result:
-{
-  ...
-}
-```
-
-## Examples
-
-```bash
-...
+```text
+keepass <genkey|init|setpassphrase>
 ```

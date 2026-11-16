@@ -1,17 +1,14 @@
----
-sidebar_position: 5
----
-
-import ReactPlayer from 'react-player';
-
 # gobject
 
-_gobject "command" ..._
+RPC help captured from **Yerbas Core 4.0.1.4** (`f0e2dde`).
 
+Use `./yerbas-cli help gobject` on your node for help. In the GUI console omit `yerbas-cli`. HTTP examples use mainnet RPC port 15419; network-specific defaults and availability can differ.
+
+```text
+gobject "command" ...
 Set of commands to manage governance objects.
 
-```bash
-# Available commands:
+Available commands:
   check              - Validate governance object data (proposal only)
   prepare            - Prepare governance object by signing and creating tx
   submit             - Submit governance object to network
@@ -24,33 +21,4 @@ Set of commands to manage governance objects.
   vote-alias         - Vote on a governance object by smartnode proTxHash
   vote-conf          - Vote on a governance object by smartnode configured in yerbas.conf
   vote-many          - Vote on a governance object by all smartnodes for which the voting key is in the wallet
-```
-
-`yerbas-cli gobject count`
-
-<ReactPlayer
-  playing
-  controls
-  url={[
-    { src: `${require('./assets/gobject.webm').default}`, type: 'video/webm' },
-  ]}
-/>
-
-## Output
-
-| Result | Type | Description |
-| ------ | ---- | ----------- |
-| ...    | ...  | ...         |
-
-```bash
-Result:
-{
-  ...
-}
-```
-
-## Examples
-
-```bash
-curl --user myusername --data-binary '{"jsonrpc": "1.0", "id":"curltest", "method": "gobject", "params": ["check"] }' -H 'content-type: text/plain;' http://127.0.0.1:9998/
 ```

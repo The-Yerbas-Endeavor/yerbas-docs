@@ -1,12 +1,11 @@
----
-sidebar_position: 6
----
-
-import ReactPlayer from 'react-player';
-
 # getrawtransaction
 
-_getrawtransaction "txid" ( verbose )_
+RPC help captured from **Yerbas Core 4.0.1.4** (`f0e2dde`).
+
+Use `./yerbas-cli help getrawtransaction` on your node for help. In the GUI console omit `yerbas-cli`. HTTP examples use mainnet RPC port 15419; network-specific defaults and availability can differ.
+
+```text
+getrawtransaction "txid" ( verbose )
 
 NOTE: By default this function only works for mempool transactions. If the -txindex option is
 enabled, it also works for blockchain transactions.
@@ -17,50 +16,10 @@ Return the raw transaction data.
 If verbose is 'true', returns an Object with information about 'txid'.
 If verbose is 'false' or omitted, returns a string that is serialized, hex-encoded data for 'txid'.
 
-```bash
-yerbas-cli getrawtransaction "mytxid"
-yerbas-cli getrawtransaction "mytxid" true
-```
-
-<ReactPlayer
-  playing
-  controls
-  url={[
-    {
-      src: `${require('./assets/sendrawtransaction.webm').default}`,
-      type: 'video/webm',
-    },
-  ]}
-/>
-
-<sub>Video Guide - credit @rocket</sub>
-<ReactPlayer
-  playing
-  controls
-  url="https://www.youtube.com/watch?v=Yd---pu4oTg"
-  muted={true}
-  playing={false}
-/>
-
-## Arguments
-
-| Argument | Type     | Description        |
-| -------- | -------- | ------------------ |
-| "txid"   | (string) | The transaction id |
-
-```bash
 Arguments:
 1. "txid"      (string, required) The transaction id
 2. verbose       (bool, optional, default=false) If false, return a string, otherwise return a json object
-```
 
-## Output
-
-| Result | Type     | Description                                 |
-| ------ | -------- | ------------------------------------------- |
-| "data" | (string) | The serialized, hex-encoded data for 'txid' |
-
-```bash
 Result (if verbose is not set or set to false):
 "data"      (string) The serialized, hex-encoded data for 'txid'
 
@@ -111,10 +70,9 @@ Result (if verbose is set to true):
   "instantlock_internal" : true|false, (bool) Current internal transaction lock state
   "chainlock" : true|false, (bool) The state of the corresponding block chainlock
 }
-```
 
-## Examples
-
-```bash
-curl --user myusername --data-binary '{"jsonrpc": "1.0", "id":"curltest", "method": "getrawtransaction", "params": ["mytxid", true] }' -H 'content-type: text/plain;' http://127.0.0.1:9998/
+Examples:
+> yerbas-cli getrawtransaction "mytxid"
+> yerbas-cli getrawtransaction "mytxid" true
+> curl --user myusername --data-binary '{"jsonrpc": "1.0", "id":"curltest", "method": "getrawtransaction", "params": ["mytxid", true] }' -H 'content-type: text/plain;' http://127.0.0.1:15419/
 ```

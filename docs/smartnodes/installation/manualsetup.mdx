@@ -1,234 +1,53 @@
 ---
-pagination_previous: smartnodes/requirements
-pagination_next: wallet/bootstrap
+sidebar_position: 1
 ---
 
-import ReactPlayer from 'react-player';
+# Manual setup
 
-# Smartnode Setup
+Use a synced Core 4.0.1.4 control wallet and a separate server running the matching daemon. Read [requirements and collateral](/docs/smartnodes/requirements/) first. Keep collateral keys in the control wallet; the server needs the operator BLS key, not the spending keys.
 
-:::note
+## Server
 
-Using Ubuntu 26 for the example
-For the following part of the guide you need to be root. depending on your VPS provider they may have only provided you with a "sudo" user. You can change to root by doing:
-
-```bash
-sudo su
-```
-
-:::
-
-## Guide
-
-### 1. Update Server
+Install and verify the correct archive using [download and upgrade](/docs/wallet/quick-start/). Run the daemon as a dedicated non-root user. Allow inbound TCP **15420** while retaining your SSH access. Keep RPC local. From `yerbas-build/`:
 
 ```bash
-apt update && apt upgrade -y
-apt install unzip fail2ban -y
+./yerbasd -daemon
+./yerbas-cli getblockchaininfo
+./yerbas-cli getnetworkinfo
 ```
 
-<sub>Unzip is required to unpack the bootstrap.</sub>
+Allow synchronization to complete before registering. Default Linux data is in `~/.yerbascore`; configuration is `yerbas.conf` there. A compatible bootstrap is optional; see [bootstrap guidance](/docs/wallet/bootstrap/).
 
-### 2. Add 4GB of SWAP
+## Control wallet and registration {#build-protx}
 
-First check to make sure there is not already swap active:
+1. Encrypt and back up the complete control wallet.
+2. Create a dedicated receiving address and send the [height-appropriate collateral](/docs/smartnodes/requirements/) as one output. Maintain separate funds to pay the registration fee.
+3. Identify the collateral transaction ID and output index with `smartnode outputs`. Confirm the output and its amount before registration.
+4. Inspect help before constructing the registration transaction:
 
 ```bash
-free -h
+./yerbas-cli help protx
+./yerbas-cli help protx quick_setup
 ```
 
-:::note
+Template only; replace every uppercase placeholder with your own value:
 
-If no swap it will return:
+```text
+protx quick_setup "COLLATERAL_TXID" "OUTPUT_INDEX" "SERVER_IP:15420" "FEE_SOURCE_ADDRESS"
+```
+
+Run this in the control wallet's console (or prepend `./yerbas-cli` in a shell). This command **submits a fee-paying registration transaction**, creates owner/voting/payout addresses and an operator key, and returns configuration information. Its result includes `operatorSecret` and `yerbas.conf`; protect them and do not post them in support messages. Back up the control wallet again after registration.
+
+## Server activation
+
+Stop the server daemon cleanly, wait for it to exit, and apply the returned operator configuration to its `yerbas.conf`. Preserve existing settings; check the advertised address and port. Start the daemon and inspect:
 
 ```bash
-Swap:            0B          0B          0B
+./yerbasd -daemon
+./yerbas-cli smartnode status
+./yerbas-cli protx info "PROTX_HASH"
 ```
 
-:::
+Replace `PROTX_HASH` with the registration hash. Registration confirmation, synchronization, and quorum participation are separate conditions; no fixed readiness or payment time is guaranteed.
 
-Create SWAP and Activate:
-
-```bash
-dd if=/dev/zero of=/swapfile bs=1k count=4096k
-chmod 600 /swapfile
-mkswap /swapfile
-swapon /swapfile
-echo "/swapfile       swap    swap    auto      0       0" | tee -a /etc/fstab
-sysctl -w vm.swappiness=10
-echo vm.swappiness = 10 | tee -a /etc/sysctl.conf
-```
-
-<div class="alert alert--info" role="alert">
-  <sub>
-    Note: <code>swappiness = 10</code> tells system only to use it if absolutely
-    needed.
-  </sub>
-</div>
-
-### 3. Enable UFW & Open Ports
-
-```bash
-apt install ufw -y
-ufw default deny incoming
-ufw default allow outgoing
-ufw allow ssh
-ufw allow 15420/tcp
-ufw enable
-```
-
-### 4. Configure Fail2Ban
-
-As I am not bothering with setting up SSH login with keys rather then password based login need to keep something from the bots and kiddies brute forcing our SSH service.
-
-Setup jail for bad guys hitting SSH, and set it to ban after three failed logins to SSH:
-
-```bash
-nano /etc/fail2ban/jail.local
-```
-
-Copy and paste the following into the file:
-
-```bash
-[sshd]
-enabled = true
-port = 22
-filter = sshd
-logpath = /var/log/auth.log
-maxretry = 3
-```
-
-Reboot the server:
-
-```bash
-reboot
-```
-
-Add a system user to run yerbasd:
-
-```bash
-adduser <username_here>
-```
-
-Get Yerbas wallet / daemon and bootstrap:
-
-```bash
-wget https://github.com/The-Yerbas-Endeavor/yerbas/releases/download/v3.2.0.15/yerbas-ubuntu-26.04-x86-release-3.2.0.15.tar.gz
-tar -xvf yerbas-ubuntu20-v3.2.0.14.tar.gz
-mkdir ~/.yerbascore && touch ~/.yerbascore/yerbas.conf
-echo "daemon=1" >> ~/.yerbascore/yerbas.conf
-cd .yerbascore
-wget https://github.com/The-Yerbas-Endeavor/yerbas/releases/download/v3.2.0.15/yerbas-ubuntu-26.04-x86-release-3.2.0.15.tar.gz
-cd ~/yerbas-build
-./yerbasd
-```
-
-:::tip Info
-
-You should see Yerbasd server starting. You can confirm it is running <code>top -c</code> it will be using 100% CPU (1 core). This shows you it is working, we will return to it later.
-
-:::
-
-## Local Wallet Setup
-
-:::note
-
-This part of the guide is to get your local wallet or control wallet setup. If you already have Yerbas core wallet running you can skip to next section.
-
-:::
-
-### 1. Install and Sync Local Wallet:
-
-For this step, you will need the YerbasCore wallet installed. 
-
-Follow our [YerbasCore Wallet](/docs/wallet/) guides for detailed instructions on how to do this.
-
-To speed up the synchronization, use our POWCache or Bootstrap packages: [Using Powcache & Bootstrap](/docs/wallet/bootstrap)
-
-Grab bootstrap from github release and unpack in the above directory (highly recommended as reduces sync time drastically)
-
-:::note
-
-If you already have a Yerbas wallet remove the following folders before using the bootstrap (make sure wallet is closed before using bootstrap)
-blocks
-chainstate
-evodb
-llmq
-To use the bootstrap <code>right click > unzip</code>. Copy contents to the new directory you created above.
-
-:::
-
-- Start wallet and let it finish syncing.
-- Encrypt wallet (Settings > Encrypt Wallet)
-- Create new receiving address
-- Backup wallet.dat (File > Backup Wallet). Store in multiple locations.
-- Dump private key for receiving address (this should be printed and stored offline in multiple locations):
-
-```
-walletpassphrase password time (in seconds)
-dumpprivkey "address" (address is the receiving address you sent the 28000 YERB to)
-```
-
-- Send 28,000 YERB to self (this is current collateral amount)
-- Wait for 2 confirmations
-
-:::note
-
-The private key only allows you to restore the matching receiving address. If you setup multiple nodes you should dump the private key for each collateral receiving address.
-
-:::
-
-### 2. Build protx command for control wallet {#build-protx}
-
-Here is an example protx quick_setup command:
-
-```bash
-d7898f44c6bdc39a49b0917d5c6bcb61455270ddb9e7eb1168a6b745434daf26 1 194.113.73.87:15420 yaDfcdCupB1T5YoVRjYr8fXCvB8U5AuNX8
-```
-
-The structure from left to right is:
-
-- <code>Transaction ID</code>: In your wallet go to "Transactions" right click
-  the one you sent yourself earlier and "Copy Transaction ID". Replace the
-  Transaction ID in example.
-- <code>Collateral index</code>: Tools > Debug console. Type smartnode outputs
-  to check if 1 or 0. Adjust example command if needed.
-- <code>Your smartnode server IP and port</code>. Replace example IP with your
-  Smartnode server IP, leave port as is.
-- <code>Fee address</code>: This is any address in your wallet which contains
-  enough YERB to pay the fee (cannot be the address which you sent the 28,000
-  YERB to). When you enter the protx quick_setup command it is a transaction and
-  needs to be paid for. It is a very small amount 1/2 an YERB is more than
-  enough. In Debug console do "listaddressbalances" to show all addresses with a
-  balance, choose one and replace address in example command.
-
-:::info
-
-Enter the protx quick_setup command in Debug console. This will create a .conf file for that node in the same directory you ran the wallet from. Open it and copy the contents.
-
-:::
-
-## Final steps
-
-Back to the smartnode server:
-
-```bash
-~./yerbas-cli stop
-nano ~/.yerbascore/yerbas.conf
-```
-
-Paste in what you copied from the .conf file made during the protx command, save and exit.
-
-When done with this, run yerbasd from the terminal:
-
-```bash
-~/./yerbasd
-```
-
-When this is done, wait a couple minutes until running `~/./yerbas-cli smartnode status` to check the status of your smartnode. This should return: `Ready Ready`
-
-:::success Success!
-Your Smartnode should now be running!
-:::
-
-## Video guides
+[Registration implementation](https://github.com/The-Yerbas-Endeavor/yerbas/blob/f0e2dde5673580d5d5cac9aa21e16ebe6936dd05/src/rpc/rpcevo.cpp) · [Mainnet settings](https://github.com/The-Yerbas-Endeavor/yerbas/blob/f0e2dde5673580d5d5cac9aa21e16ebe6936dd05/src/chainparams.cpp)

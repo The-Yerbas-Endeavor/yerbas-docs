@@ -1,46 +1,17 @@
----
-sidebar_position: 14
----
-
-import ReactPlayer from 'react-player';
-
 # getmempoolentry
 
-_getmempoolentry txid_
+RPC help captured from **Yerbas Core 4.0.1.4** (`f0e2dde`).
+
+Use `./yerbas-cli help getmempoolentry` on your node for help. In the GUI console omit `yerbas-cli`. HTTP examples use mainnet RPC port 15419; network-specific defaults and availability can differ.
+
+```text
+getmempoolentry txid
 
 Returns mempool data for given transaction
 
-`yerbas-cli getmempoolentry "mytxid"`
-
-<ReactPlayer
-  playing
-  controls
-  url={[
-    {
-      src: `${require('./assets/getmempoolentry.webm').default}`,
-      type: 'video/webm',
-    },
-  ]}
-/>
-
-## Arguments
-
-| Argument | Type     | Description                             |
-| -------- | -------- | --------------------------------------- |
-| "txid"   | (string) | The transaction id (must be in mempool) |
-
-```bash
 Arguments:
 1. "txid"                   (string, required) The transaction id (must be in mempool)
-```
 
-## Output
-
-| Result          | Type     | Description                                              |
-| --------------- | -------- | -------------------------------------------------------- |
-| "transactionid" | (string) | The transaction id of an in-mempool ancestor transaction |
-
-```bash
 Result:
 {                           (json object)
     "size" : n,                 (numeric) transaction size in bytes
@@ -59,10 +30,8 @@ Result:
        ... ],
     "instantlock" : true|false  (boolean) True if this transaction was locked via InstantSend
 }
-```
 
-## Examples
-
-```bash
-curl --user myusername --data-binary '{"jsonrpc": "1.0", "id":"curltest", "method": "getmempoolentry", "params": ["mytxid"] }' -H 'content-type: text/plain;' http://127.0.0.1:9998/
+Examples:
+> yerbas-cli getmempoolentry "mytxid"
+> curl --user myusername --data-binary '{"jsonrpc": "1.0", "id":"curltest", "method": "getmempoolentry", "params": ["mytxid"] }' -H 'content-type: text/plain;' http://127.0.0.1:15419/
 ```

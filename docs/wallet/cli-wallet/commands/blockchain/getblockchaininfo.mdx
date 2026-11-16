@@ -1,33 +1,13 @@
----
-sidebar_position: 4
----
-
-import ReactPlayer from 'react-player';
-
 # getblockchaininfo
 
-Returns the txids for an address(es) (requires addressindex to be enabled).
+RPC help captured from **Yerbas Core 4.0.1.4** (`f0e2dde`).
 
-`yerbas-cli getblockchaininfo `
+Use `./yerbas-cli help getblockchaininfo` on your node for help. In the GUI console omit `yerbas-cli`. HTTP examples use mainnet RPC port 15419; network-specific defaults and availability can differ.
 
-<ReactPlayer
-  playing
-  controls
-  url={[
-    {
-      src: `${require('./assets/getblockchaininfo.webm').default}`,
-      type: 'video/webm',
-    },
-  ]}
-/>
+```text
+getblockchaininfo
+Returns an object containing various state info regarding blockchain processing.
 
-## Output
-
-| Result  | Type     | Description                                                    |
-| ------- | -------- | -------------------------------------------------------------- |
-| "chain" | (string) | current network name as defined in BIP70 (main, test, regtest) |
-
-```bash
 Result:
 {
   "chain": "xxxx",        (string) current network name as defined in BIP70 (main, test, regtest)
@@ -66,10 +46,8 @@ Result:
      }
   }
 }
-```
 
-## Examples
-
-```bash
-curl --user myusername --data-binary '{"jsonrpc": "1.0", "id":"curltest", "method": "getblockchaininfo", "params": [] }' -H 'content-type: text/plain;' http://127.0.0.1:9998/
+Examples:
+> yerbas-cli getblockchaininfo
+> curl --user myusername --data-binary '{"jsonrpc": "1.0", "id":"curltest", "method": "getblockchaininfo", "params": [] }' -H 'content-type: text/plain;' http://127.0.0.1:15419/
 ```

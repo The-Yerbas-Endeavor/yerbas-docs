@@ -17,10 +17,6 @@
   --ifm-code-font-size: 95%;
 }
 
-body {
-  background-color: black;
-}
-
 .docusaurus-highlight-code-line {
   background-color: rgba(0, 0, 0, 0.1);
   display: block;
@@ -51,8 +47,8 @@ html[data-theme='dark'] {
   background: rgb(223, 117, 20);
 }
 
-.main-wrapper {
-  background-color: #000000;
+.main-wrapper[data-theme='dark'] {
+  background-color: #242526;
 }
 
 .footer {
@@ -66,10 +62,6 @@ html[data-theme='dark'] {
 
 .navbar__title:hover {
   color: #0892d0;
-}
-
-.navbar {
-  background-color: #4F7942;
 }
 
 .menu__link:hover {

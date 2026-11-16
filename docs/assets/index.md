@@ -1,39 +1,7 @@
----
-sidebar_position: 1
-title: About Assets
----
+# Assets in Core 4.0.1.4
 
-# About Assets
+Mainnet v4 wallet operations are restricted below tip height **1,195,400**. See [availability and backup guidance](/docs/wallet/assets/). This wallet safeguard is distinct from consensus validation.
 
-  <p>This page is a work in progress. While almost all of the information is correct, there may be some nuance that is 
-overlooked. If you come across any problems or believe information needs to be corrected or added, please make a pull request on
-<a href="https://github.com/The-Yerbas-Endeavor/yerbas-docs"> this website's github source</a> or visit us at our 
-<a href="https://discord.gg/XGEp2cKSKF"> discord server</a>.</p>
+Use the Qt 6 Asset Manager or the asset RPCs to inspect native asset balances and metadata. Start with [what an asset is](/docs/assets/whatisanasset/), [creating assets](/docs/assets/creating/), [fees](/docs/assets/asset_fees/), and [wallet backup guidance](/docs/wallet/assets/).
 
-  <h2></h2>
-
-  <p>This webpage will attempt to cover all aspects of Yerbas assets from what they are to their on-chain encodings.
- As you read on, this document will become increasingly technical.</p>
- 
-  <h2>Table of Contents</h2>
-  <ul>
-    <li><a href="/docs/assets/whatisanasset">What is an asset?</a></li>
-    <li><a href="/docs/assets/trade">Where can I trade assets?</a></li>
-    <li><a href="/docs/assets/privacy">Privacy and Access</a></li>
-    <li><a href="/docs/assets/jargon">The Jargon</a></li>
-    <li><a href="/docs/assets/creating">Creating Assets</a>
-    <ul>
-    <li><a href="/docs/assets/creating/the_big_three">The Big Three</a></li>
-    <li><a href="/docs/assets/creating/broadcasts_and_messages">Broadcasts and Messages</a></li>
-    <li><a href="/docs/assets/creating/qualifiers_restricted_tags">Qualifiers, Restricted Assets, and More</a></li>
-    </ul>
-    </li>
-    <li><a href="/docs/assets/what_is_on_chain">What is on the chain?</a></li>
-    <li><a href="/docs/assets/asset_fees">Asset Fees</a></li>
-    <li><a href="/docs/assets/scripts">Standard Asset Scripts</a>
-    <ul>
-    <li><a href="/docs/assets/scripts#chain_parsing_note">A note on chain parsing</a></li>
-    </ul>
-    </li>
-    <li><a href="/docs/assets/create_transactions">Building Asset Transactions</a></li>
-  </ul>
+[Asset implementation](https://github.com/The-Yerbas-Endeavor/yerbas/blob/f0e2dde5673580d5d5cac9aa21e16ebe6936dd05/src/assets/assets.cpp) · [Asset structures](https://github.com/The-Yerbas-Endeavor/yerbas/blob/f0e2dde5673580d5d5cac9aa21e16ebe6936dd05/src/assets/assets.h) · [RPC implementation](https://github.com/The-Yerbas-Endeavor/yerbas/blob/f0e2dde5673580d5d5cac9aa21e16ebe6936dd05/src/rpc/assets.cpp)

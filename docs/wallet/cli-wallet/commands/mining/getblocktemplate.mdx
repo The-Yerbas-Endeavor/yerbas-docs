@@ -1,37 +1,19 @@
----
-sidebar_position: 1
----
-
-import ReactPlayer from 'react-player';
-
 # getblocktemplate
 
-_getblocktemplate ( TemplateRequest )_
+RPC help captured from **Yerbas Core 4.0.1.4** (`f0e2dde`).
+
+Use `./yerbas-cli help getblocktemplate` on your node for help. In the GUI console omit `yerbas-cli`. HTTP examples use mainnet RPC port 15419; network-specific defaults and availability can differ.
+
+```text
+getblocktemplate ( TemplateRequest )
 
 If the request parameters include a 'mode' key, that is used to explicitly select between the default 'template' request or a 'proposal'.
 It returns data needed to construct a block to work on.
-For full specification, see BIPs 22, 23, and 9: - https://github.com/bitcoin/bips/blob/master/bip-0022.mediawiki - https://github.com/bitcoin/bips/blob/master/bip-0023.mediawiki - https://github.com/bitcoin/bips/blob/master/bip-0009.mediawiki#getblocktemplate_changes
+For full specification, see BIPs 22, 23, and 9:
+    https://github.com/bitcoin/bips/blob/master/bip-0022.mediawiki
+    https://github.com/bitcoin/bips/blob/master/bip-0023.mediawiki
+    https://github.com/bitcoin/bips/blob/master/bip-0009.mediawiki#getblocktemplate_changes
 
-`yerbas-cli getblocktemplate`
-
-<ReactPlayer
-  playing
-  controls
-  url={[
-    {
-      src: `${require('./assets/getblocktemplate.webm').default}`,
-      type: 'video/webm',
-    },
-  ]}
-/>
-
-## Arguments
-
-| Argument           | Type          | Description                         |
-| ------------------ | ------------- | ----------------------------------- |
-| "template_request" | (json object) | A json object in the following spec |
-
-```bash
 Arguments:
 1. template_request         (json object, optional) A json object in the following spec
      {
@@ -46,15 +28,7 @@ Arguments:
        ]
      }
 
-```
 
-## Output
-
-| Result         | Type     | Description                             |
-| -------------- | -------- | --------------------------------------- |
-| "capabilities" | (string) | specific client side supported features |
-
-```bash
 Result:
 {
   "capabilities" : [ "capability", ... ],    (array of strings) specific client side supported features
@@ -119,10 +93,8 @@ Result:
   "superblocks_enabled" : true|false, (boolean) true, if superblock payments are enabled
   "coinbase_payload" : "xxxxxxxx"    (string) coinbase transaction payload data encoded in hexadecimal
 }
-```
 
-## Examples
-
-```bash
-curl --user myusername --data-binary '{"jsonrpc": "1.0", "id":"curltest", "method": "getblocktemplate", "params": [] }' -H 'content-type: text/plain;' http://127.0.0.1:9998/
+Examples:
+> yerbas-cli getblocktemplate
+> curl --user myusername --data-binary '{"jsonrpc": "1.0", "id":"curltest", "method": "getblocktemplate", "params": [] }' -H 'content-type: text/plain;' http://127.0.0.1:15419/
 ```

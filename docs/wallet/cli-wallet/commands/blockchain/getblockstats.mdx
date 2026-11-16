@@ -1,41 +1,16 @@
----
-sidebar_position: 10
----
-
-import ReactPlayer from 'react-player';
-
 # getblockstats
 
-_getblockstats hash_or_height ( stats )_
+RPC help captured from **Yerbas Core 4.0.1.4** (`f0e2dde`).
+
+Use `./yerbas-cli help getblockstats` on your node for help. In the GUI console omit `yerbas-cli`. HTTP examples use mainnet RPC port 15419; network-specific defaults and availability can differ.
+
+```text
+getblockstats hash_or_height ( stats )
 
 Compute per block statistics for a given window. All amounts are in duffs.
 It won't work for some heights with pruning.
 It won't work without -txindex for utxo_size_inc, *fee or *feerate stats.
 
-`yerbas-cli getblockstats 1000 '["minfeerate","avgfeerate"]'`
-
-<ReactPlayer
-  playing
-  controls
-  url={[
-    {
-      src: `${require('./assets/getblockstats.webm').default}`,
-      type: 'video/webm',
-    },
-  ]}
-/>
-
-## Arguments
-
-| Argument         | Type                | Description                                              |
-| ---------------- | ------------------- | -------------------------------------------------------- |
-| "hash_or_height" | (string or numeric) | The block hash or height of the target block             |
-| "stats"          | (array)             | Values to plot, by default all values (see result below) |
-
-- test
-  |
-
-```bash
 Arguments:
 1. "hash_or_height"     (string or numeric, required) The block hash or height of the target block
 2. "stats"              (array,  optional) Values to plot, by default all values (see result below)
@@ -44,15 +19,7 @@ Arguments:
       "time",           (string, optional) Selected statistic
       ,...
     ]
-```
 
-## Output
-
-| Result | Type     | Description    |
-| ------ | -------- | -------------- |
-| "hash" | (string) | The block hash |
-
-```bash
 Result:
 {                           (json object)
   "avgfee": xxxxx,          (numeric) Average fee in the block
@@ -81,10 +48,8 @@ Result:
   "utxo_increase": xxxxx,   (numeric) The increase/decrease in the number of unspent outputs
   "utxo_size_inc": xxxxx,   (numeric) The increase/decrease in size for the utxo index (not discounting op_return and similar)
 }
-```
 
-## Examples
-
-```bash
-curl --user myusername --data-binary '{"jsonrpc": "1.0", "id":"curltest", "method": "getblockstats", "params": [1000 '["minfeerate","avgfeerate"]'] }' -H 'content-type: text/plain;' http://127.0.0.1:9998/
+Examples:
+> yerbas-cli getblockstats 1000 '["minfeerate","avgfeerate"]'
+> curl --user myusername --data-binary '{"jsonrpc": "1.0", "id":"curltest", "method": "getblockstats", "params": [1000 '["minfeerate","avgfeerate"]'] }' -H 'content-type: text/plain;' http://127.0.0.1:15419/
 ```

@@ -2,13 +2,13 @@
   "name": "yerbas-docs",
   "version": "2.0.0",
   "private": true,
-  "homepage": "https//docs.yerbas.org",
+  "homepage": "https://docs.yerbas.org",
   "scripts": {
     "docusaurus": "docusaurus",
     "start": "docusaurus start",
     "build": "docusaurus build",
     "swizzle": "docusaurus swizzle",
-    "deploy": "gh-pages -d build",
+    "deploy": "gh-pages -d build --dotfiles",
     "clear": "docusaurus clear",
     "serve": "docusaurus serve",
     "write-translations": "docusaurus write-translations",
@@ -16,7 +16,10 @@
     "typecheck": "tsc",
     "lint": "yarn lint:js && yarn lint:style",
     "lint:js": "eslint --cache \"**/*.{js,jsx,ts,tsx}\"",
-    "lint:style": "stylelint \"**/*.css\""
+    "lint:style": "stylelint \"**/*.css\"",
+    "predeploy": "npm run build",
+    "check:links": "python3 tools/check-links.py build",
+    "test:links": "python3 -m unittest discover -s tools -p \"test_*.py\""
   },
   "dependencies": {
     "@docusaurus/core": "^2.3.1",

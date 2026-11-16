@@ -1,36 +1,17 @@
----
-sidebar_position: 10
----
-
-import ReactPlayer from 'react-player';
-
 # ping
 
+RPC help captured from **Yerbas Core 4.0.1.4** (`f0e2dde`).
+
+Use `./yerbas-cli help ping` on your node for help. In the GUI console omit `yerbas-cli`. HTTP examples use mainnet RPC port 15419; network-specific defaults and availability can differ.
+
+```text
 ping
 
 Requests that a ping be sent to all other nodes, to measure ping time.
 Results provided in getpeerinfo, pingtime and pingwait fields are decimal seconds.
 Ping command is handled in queue with all other commands, so it measures processing backlog, not just network ping.
 
-`yerbas-cli ping `
-
-<!-- <ReactPlayer playing controls url={[
-    {src: `${require('./assets/placeholder.webm').default}`, type: 'video/webm'}]} /> -->
-
-## Output
-
-| Result | Type | Description |
-| ------ | ---- | ----------- |
-| ...    | ...  | ...         |
-
-```bash
-Result:
-{
-}
-```
-
-## Examples
-
-```bash
-curl --user myusername --data-binary '{"jsonrpc": "1.0", "id":"curltest", "method": "ping", "params": [] }' -H 'content-type: text/plain;' http://127.0.0.1:9998/
+Examples:
+> yerbas-cli ping
+> curl --user myusername --data-binary '{"jsonrpc": "1.0", "id":"curltest", "method": "ping", "params": [] }' -H 'content-type: text/plain;' http://127.0.0.1:15419/
 ```
