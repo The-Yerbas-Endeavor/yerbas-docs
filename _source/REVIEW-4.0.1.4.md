@@ -53,3 +53,15 @@ python3 tools/check-links.py build
 ```
 
 Review the resulting `build/` before copying generated files to a review branch. Do not invoke the deployment script during review. Search index names include build timestamps, so byte-for-byte reproducibility requires controlling that build input; source and content provenance are pinned here.
+
+## Follow-up documentation review
+
+The 4.0.1.4 branch and release were rechecked and still identify binary source `f0e2dde5673580d5d5cac9aa21e16ebe6936dd05`. No PR review comments were present at the start of this pass.
+
+- Corrected the remaining GUI backup guide against `src/wallet/wallet.cpp` and `src/qt/askpassphrasedialog.cpp`: automatic backups default to 3 (clamped to 0–10), are not promised on every successful close, and encryption closes the GUI rather than automatically restarting it. Old unencrypted HD copies remain sensitive.
+- Removed the minutes-to-an-hour sync promise and explained the actual synchronization fields. `initialblockdownload` is present in the implementation and captured RPC result even though the release help omits it.
+- Replaced stale contributor URLs and invalid Docker commands with the tested local build/check workflow. The historical Dockerfile is explicitly unvalidated.
+- The link checker now rejects missing/empty build directories and builds without an index page. Five regression tests cover these failures plus resource and fragment checks.
+- Rebuilt 259 pages; all 17,554 local link/resource/fragment checks pass. Browser checks for the corrected pages and desktop/mobile navigation pass without JavaScript errors or local request failures. New pinned source links were checked; previously checked external URLs retain their earlier evidence in the structured results.
+
+No mainnet operations, merge, or deployment were performed in this follow-up.

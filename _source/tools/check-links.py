@@ -15,6 +15,9 @@ class Page(HTMLParser):
    if a.get(key):self.links.append(a[key])
 pages={p:Page(p.read_text()) for p in root.rglob('*.html')}
 errors=[];external=set();checked=0
+if not root.is_dir():errors.append([str(root), '', 'build directory does not exist'])
+elif not pages:errors.append([str(root), '', 'build contains no HTML pages'])
+elif root/'index.html' not in pages:errors.append([str(root), 'index.html', 'build has no home page'])
 for p,page in pages.items():
  url='/'+p.relative_to(root).as_posix()
  if url.endswith('index.html'):url=url[:-10]

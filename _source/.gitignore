@@ -31,3 +31,6 @@ build/*
 .env.production.local
 
 cross-compile-yerb-miner.zip
+# Python validation caches
+__pycache__/
+*.pyc

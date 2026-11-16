@@ -1,7 +1,7 @@
 {
   "internal": {
     "pages": 259,
-    "local_links_checked": 17550,
+    "local_links_checked": 17554,
     "errors": []
   },
   "external": [
@@ -29,11 +29,6 @@
       "url": "https://discord.gg/yerbas",
       "status": 200,
       "final": "https://discord.com/invite/yerbas"
-    },
-    {
-      "url": "https://explorer.yerbas.org",
-      "status": 200,
-      "final": "https://explorer.yerbas.org"
     },
     {
       "url": "https://explorer.yerbas.org/",
@@ -126,6 +121,11 @@
       "final": "https://github.com/The-Yerbas-Endeavor/yerbas/blob/f0e2dde5673580d5d5cac9aa21e16ebe6936dd05/src/llmq/quorums_recovery.cpp"
     },
     {
+      "url": "https://github.com/The-Yerbas-Endeavor/yerbas/blob/f0e2dde5673580d5d5cac9aa21e16ebe6936dd05/src/qt/askpassphrasedialog.cpp",
+      "status": 200,
+      "final": "https://github.com/The-Yerbas-Endeavor/yerbas/blob/f0e2dde5673580d5d5cac9aa21e16ebe6936dd05/src/qt/askpassphrasedialog.cpp"
+    },
+    {
       "url": "https://github.com/The-Yerbas-Endeavor/yerbas/blob/f0e2dde5673580d5d5cac9aa21e16ebe6936dd05/src/rpc/assets.cpp",
       "status": 200,
       "final": "https://github.com/The-Yerbas-Endeavor/yerbas/blob/f0e2dde5673580d5d5cac9aa21e16ebe6936dd05/src/rpc/assets.cpp"
@@ -159,6 +159,11 @@
       "url": "https://github.com/The-Yerbas-Endeavor/yerbas/blob/f0e2dde5673580d5d5cac9aa21e16ebe6936dd05/src/wallet/assetissuance.h",
       "status": 200,
       "final": "https://github.com/The-Yerbas-Endeavor/yerbas/blob/f0e2dde5673580d5d5cac9aa21e16ebe6936dd05/src/wallet/assetissuance.h"
+    },
+    {
+      "url": "https://github.com/The-Yerbas-Endeavor/yerbas/blob/f0e2dde5673580d5d5cac9aa21e16ebe6936dd05/src/wallet/wallet.cpp",
+      "status": 200,
+      "final": "https://github.com/The-Yerbas-Endeavor/yerbas/blob/f0e2dde5673580d5d5cac9aa21e16ebe6936dd05/src/wallet/wallet.cpp"
     },
     {
       "url": "https://github.com/The-Yerbas-Endeavor/yerbas/releases/download/v4.0.1.4/BUILD-NOTICES-4.0.1.4.zip",
@@ -294,13 +299,13 @@
         "horizontalOverflow": false
       },
       {
-        "route": "/docs/assets/asset_fees/",
-        "title": "Asset fees",
+        "route": "/docs/wallet/gui-wallet/guiwalletguide/encryptbackup/",
+        "title": "Encrypt and back up your wallet",
         "horizontalOverflow": false
       },
       {
-        "route": "/docs/smartnodes/requirements/",
-        "title": "Smartnode requirements",
+        "route": "/docs/wallet/gui-wallet/guiwalletguide/syncing/",
+        "title": "Synchronization",
         "horizontalOverflow": false
       },
       {
@@ -331,5 +336,9 @@
     "errors": []
   },
   "release_archive_sha256": "4d3cd6d74d6a8a84e74069143922893adffc654e73260786091953c62b704cfa",
-  "core_source": "f0e2dde5673580d5d5cac9aa21e16ebe6936dd05"
+  "core_source": "f0e2dde5673580d5d5cac9aa21e16ebe6936dd05",
+  "link_checker_regressions": {
+    "tests": 5,
+    "passed": 5
+  }
 }

@@ -17,7 +17,9 @@
     "lint": "yarn lint:js && yarn lint:style",
     "lint:js": "eslint --cache \"**/*.{js,jsx,ts,tsx}\"",
     "lint:style": "stylelint \"**/*.css\"",
-    "predeploy": "npm run build"
+    "predeploy": "npm run build",
+    "check:links": "python3 tools/check-links.py build",
+    "test:links": "python3 -m unittest discover -s tools -p \"test_*.py\""
   },
   "dependencies": {
     "@docusaurus/core": "^2.3.1",
