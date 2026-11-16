@@ -251,11 +251,6 @@
       "final": "https://github.com/xmrig/xmrig"
     },
     {
-      "url": "https://t.me/Yerbas420",
-      "status": 200,
-      "final": "https://t.me/Yerbas420"
-    },
-    {
       "url": "https://twitter.com/Yerbas_Endeavor",
       "status": 200,
       "final": "https://twitter.com/Yerbas_Endeavor"
@@ -314,8 +309,8 @@
         "horizontalOverflow": false
       },
       {
-        "route": "/docs/yerbas/consensus/",
-        "title": "Mainnet facts verified against 4.0.1.4",
+        "route": "/docs/yerbas/yerbassocial/",
+        "title": "Social",
         "horizontalOverflow": false
       },
       {
@@ -340,5 +335,10 @@
   "link_checker_regressions": {
     "tests": 5,
     "passed": 5
+  },
+  "source_sync": {
+    "all_259_routes_retained": true,
+    "retired_community_links_absent": true,
+    "nojekyll_in_build": true
   }
 }

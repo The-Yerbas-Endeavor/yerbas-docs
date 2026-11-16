@@ -65,3 +65,9 @@ The 4.0.1.4 branch and release were rechecked and still identify binary source `
 - Rebuilt 259 pages; all 17,554 local link/resource/fragment checks pass. Browser checks for the corrected pages and desktop/mobile navigation pass without JavaScript errors or local request failures. New pinned source links were checked; previously checked external URLs retain their earlier evidence in the structured results.
 
 No mainnet operations, merge, or deployment were performed in this follow-up.
+
+## Source branch synchronization
+
+Following the successful publication of PR #2 at `66f2127c3684d9a118a0c74217abad1013c0d97d`, the checked source is synchronized to the roots of both `main` and `develop`. Their histories are retained. The `gh-pages` `_source/` snapshot uses the same source tree as these branches.
+
+The retired community link is removed from the global footer, social page, generated JavaScript/HTML and search data. The source now includes `static/.nojekyll`, and the existing publishing command includes dotfiles so future builds retain that marker. Build and link-checker tests passed; the generated site retains all 259 HTML pages and passes 17,554 internal link/resource/fragment checks.

@@ -1,6 +1,6 @@
 # Yerbas documentation source
 
-This directory contains the editable Docusaurus source for [docs.yerbas.org](https://docs.yerbas.org). The review branch stores the generated website at the repository root and the source under `_source/`.
+This directory contains the editable Docusaurus source for [docs.yerbas.org](https://docs.yerbas.org). The `main` and `develop` branches contain this source at their root. The `gh-pages` branch contains the generated site and an `_source/` snapshot of the checked source.
 
 The documentation targets Core 4.0.1.4 binary source `f0e2dde5673580d5d5cac9aa21e16ebe6936dd05`. Read [verification notes](REVIEW-4.0.1.4.md) before changing release, consensus or wallet guidance.
 
@@ -22,8 +22,8 @@ The existing lockfile needs the checked-in `.npmrc` legacy peer resolution setti
 
 - Edit `docs/`, `src/`, or configuration here, then rebuild and check links.
 - Review changed commands against the exact Core source and release help; distinguish wallet policy from consensus.
-- Keep the source and generated root website in the same review commit. Preserve `CNAME` and all existing routes unless a replacement is intentional.
-- Do not use the deploy script during PR review. Merging a Pages publishing branch is a separate release decision.
+- Keep `main` and `develop` synchronized with changes published to `gh-pages`, including its `_source/` snapshot. Preserve `CNAME`, `.nojekyll`, and all existing routes unless a replacement is intentional.
+- Do not use the deploy script during PR review. Publishing the `gh-pages` branch is a separate release decision.
 
 `tools/check-links.py` checks a populated build for local files, resources and fragments; it fails for a missing or empty build. External URLs are listed for separate reachability checks.
 

@@ -155,10 +155,6 @@ const config = {
                 href: 'https://discord.gg/XGEp2cKSKF',
               },
               {
-                label: 'Telegram',
-                href: 'https://t.me/Yerbas420',
-              },
-              {
                 label: 'Reddit',
                 href: 'https://www.reddit.com/r/Yerbas/',
               },
