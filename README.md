@@ -10,9 +10,7 @@ Use Node.js and npm (the checked build used Node 22.23.4). From this directory:
 
 ```sh
 npm ci --ignore-scripts --no-audit --no-fund
-npm run build
-npm run check:links
-npm run test:links
+npm run verify
 npm run serve -- --host 127.0.0.1
 ```
 
@@ -28,3 +26,9 @@ The existing lockfile needs the checked-in `.npmrc` legacy peer resolution setti
 `tools/check-links.py` checks a populated build for local files, resources and fragments; it fails for a missing or empty build. External URLs are listed for separate reachability checks.
 
 `tools/capture-rpc-help.py` reads help/status from an already running isolated regtest node. Verify the release archive checksum first. Never point documentation tooling at a funded production wallet. It does not launch a node or submit transactions.
+
+## Automated checks
+
+The `Documentation checks` workflow runs on every push to `main` or `develop`, on pull requests targeting either branch, and on manual dispatch. Its `Build and link checks` job installs the lockfile with Node.js 22, runs the link-checker regression tests, builds the production site, validates all local links/resources/fragments, and checks `CNAME` and `.nojekyll`. External URLs still require separate reachability review.
+
+Use `npm run verify` to run the same tests, build and link validation locally. `npm run deploy` runs this verification through `predeploy` and stops if a check fails. The workflow only validates; publication remains a separate release decision. Require a successful check for the exact source revision before publishing. Repository branch protection must require `Build and link checks` if merges are to be blocked automatically; this workflow alone does not change branch protection or prevent direct writes to `gh-pages`.

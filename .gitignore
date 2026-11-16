@@ -10,9 +10,6 @@ yarn-error.log*
 
 ### Production ###
 build/*
-# Use git-add -f to update files in .github folder
-.github
-.github/*
 
 ### Generated files ###
 .docusaurus
