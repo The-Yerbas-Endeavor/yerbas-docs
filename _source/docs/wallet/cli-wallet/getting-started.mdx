@@ -1,0 +1,25 @@
+---
+sidebar_position: 1
+---
+
+# Getting started with the CLI
+
+Download and verify the archive for your system using the [4.0.1.4 guide](/docs/wallet/quick-start/). The simplified archives contain the daemon, CLI and GUI; do not assume a `yerbas-tx` binary is included.
+
+From the extracted `yerbas-build/` directory on Linux/macOS:
+
+```bash
+./yerbasd -daemon
+./yerbas-cli getblockchaininfo
+./yerbas-cli getnetworkinfo
+./yerbas-cli getwalletinfo
+./yerbas-cli help
+./yerbas-cli help backupwallet
+./yerbas-cli stop
+```
+
+Wait for startup before sending RPC commands. On Windows run `yerbasd.exe` in one terminal and `yerbas-cli.exe` in another, without `-daemon`.
+
+`yerbas-cli` talks to a running node; it does not start one. The GUI can also serve RPC when configured with `server=1`, but must not run alongside the daemon on the same data directory. Supply the same `-datadir` and network options to the node and CLI when using custom settings. Keep RPC local; mainnet RPC defaults to port 15419, P2P to 15420.
+
+The command pages contain help captured from the verified 4.0.1.4 release. Help describes syntax; it does not imply that every method is safe to run on a funded wallet. In the GUI console, omit `yerbas-cli`.

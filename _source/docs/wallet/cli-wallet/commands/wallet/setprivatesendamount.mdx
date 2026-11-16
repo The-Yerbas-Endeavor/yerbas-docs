@@ -1,0 +1,17 @@
+# setprivatesendamount
+
+RPC help captured from **Yerbas Core 4.0.1.4** (`f0e2dde`).
+
+Use `./yerbas-cli help setprivatesendamount` on your node for help. In the GUI console omit `yerbas-cli`. HTTP examples use mainnet RPC port 15419; network-specific defaults and availability can differ.
+
+```text
+setprivatesendamount amount
+
+Set the goal amount in YERB for PrivateSend mixing.
+
+Arguments:
+1. amount         (numeric, required) The default amount is 1000 Cannot be more than 21000000 nor less than 2
+Examples:
+> yerbas-cli setprivatesendamount 500
+> curl --user myusername --data-binary '{"jsonrpc": "1.0", "id":"curltest", "method": "setprivatesendamount", "params": [208] }' -H 'content-type: text/plain;' http://127.0.0.1:15419/
+```

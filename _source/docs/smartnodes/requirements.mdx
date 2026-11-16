@@ -1,0 +1,28 @@
+---
+sidebar_position: 1
+---
+
+# Smartnode requirements
+
+Use a continuously available server with enough CPU, memory, disk and bandwidth for synchronization and quorum participation. Disk usage grows; measure your data directory and leave room for growth and recovery. Historical fixed disk-size recommendations are not a guarantee for 4.0.1.4.
+
+Choose a matching [4.0.1.4 platform archive](/docs/wallet/quick-start/). Mainnet P2P uses **TCP 15420**. Preserve SSH access when configuring a firewall and keep RPC port **15419** private. Do not assume older installation scripts support this release.
+
+## Mainnet collateral schedule
+
+The code selects the first row whose inclusive upper height is at least the queried height:
+
+| Height | Required collateral (YERB) |
+| --- | ---: |
+| 0–69,420 | 10,000 |
+| 69,421–100,420 | 16,000 |
+| 100,421–200,420 | 22,000 |
+| 200,421–302,420 | 28,000 |
+| 302,421–420,420 | 34,000 |
+| 420,421–1,096,420 | 42,000 |
+| 1,096,421–1,369,420 | 69,000 |
+| 1,369,421 onward | 100,000 |
+
+Use the collateral required at registration height, in one output you control. Do not substitute testnet/devnet fast-collateral settings. Mainnet sets `nSmartnodeMinimumConfirmations` to 15 for deterministic-list confirmation; this is not a promise that a node becomes ready after two confirmations. Check on-chain registration, synchronization and `smartnode status`.
+
+[Mainnet parameters](https://github.com/The-Yerbas-Endeavor/yerbas/blob/f0e2dde5673580d5d5cac9aa21e16ebe6936dd05/src/chainparams.cpp) · [Inclusive schedule selection](https://github.com/The-Yerbas-Endeavor/yerbas/blob/f0e2dde5673580d5d5cac9aa21e16ebe6936dd05/src/smartnode/smartnode-collaterals.cpp) · [Confirmation handling](https://github.com/The-Yerbas-Endeavor/yerbas/blob/f0e2dde5673580d5d5cac9aa21e16ebe6936dd05/src/evo/deterministicmns.cpp)

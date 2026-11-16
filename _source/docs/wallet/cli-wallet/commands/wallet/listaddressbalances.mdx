@@ -1,0 +1,26 @@
+# listaddressbalances
+
+RPC help captured from **Yerbas Core 4.0.1.4** (`f0e2dde`).
+
+Use `./yerbas-cli help listaddressbalances` on your node for help. In the GUI console omit `yerbas-cli`. HTTP examples use mainnet RPC port 15419; network-specific defaults and availability can differ.
+
+```text
+listaddressbalances ( minamount )
+
+Lists addresses of this wallet and their balances
+
+Arguments:
+1. minamount               (numeric, optional, default=0) Minimum balance in YERB an address should have to be shown in the list
+
+Result:
+{
+  "address": amount,       (string) The yerbas address and the amount in YERB
+  ,...
+}
+
+Examples:
+> yerbas-cli listaddressbalances
+> yerbas-cli listaddressbalances 10
+> curl --user myusername --data-binary '{"jsonrpc": "1.0", "id":"curltest", "method": "listaddressbalances", "params": [] }' -H 'content-type: text/plain;' http://127.0.0.1:15419/
+> curl --user myusername --data-binary '{"jsonrpc": "1.0", "id":"curltest", "method": "listaddressbalances", "params": [10] }' -H 'content-type: text/plain;' http://127.0.0.1:15419/
+```

@@ -1,0 +1,23 @@
+# getaccountaddress
+
+RPC help captured from **Yerbas Core 4.0.1.4** (`f0e2dde`).
+
+Use `./yerbas-cli help getaccountaddress` on your node for help. In the GUI console omit `yerbas-cli`. HTTP examples use mainnet RPC port 15419; network-specific defaults and availability can differ.
+
+```text
+getaccountaddress "account"
+
+DEPRECATED. Returns the current Yerbas address for receiving payments to this account.
+
+Arguments:
+1. "account"       (string, required) The account name for the address. It can also be set to the empty string "" to represent the default account. The account does not need to exist, it will be created and a new address created  if there is no account by the given name.
+
+Result:
+"address"          (string) The account yerbas address
+
+Examples:
+> yerbas-cli getaccountaddress
+> yerbas-cli getaccountaddress ""
+> yerbas-cli getaccountaddress "myaccount"
+> curl --user myusername --data-binary '{"jsonrpc": "1.0", "id":"curltest", "method": "getaccountaddress", "params": ["myaccount"] }' -H 'content-type: text/plain;' http://127.0.0.1:15419/
+```

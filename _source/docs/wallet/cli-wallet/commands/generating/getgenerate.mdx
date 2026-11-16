@@ -1,0 +1,20 @@
+# getgenerate
+
+RPC help captured from **Yerbas Core 4.0.1.4** (`f0e2dde`).
+
+Use `./yerbas-cli help getgenerate` on your node for help. In the GUI console omit `yerbas-cli`. HTTP examples use mainnet RPC port 15419; network-specific defaults and availability can differ.
+
+```text
+getgenerate
+
+Return if the server is set to generate coins or not. The default is false.
+It is set with the command line argument -gen (or yerbas.conf setting gen)
+It can also be set with the setgenerate call.
+
+Result
+true|false      (boolean) If the server is set to generate coins or not
+
+Examples:
+> yerbas-cli getgenerate
+> curl --user myusername --data-binary '{"jsonrpc": "1.0", "id":"curltest", "method": "getgenerate", "params": [] }' -H 'content-type: text/plain;' http://127.0.0.1:15419/
+```

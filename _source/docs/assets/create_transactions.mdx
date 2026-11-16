@@ -1,0 +1,9 @@
+# Building asset transactions
+
+Mainnet v4 wallet operations are restricted below tip height **1,195,400**. See [availability and backup guidance](/docs/wallet/assets/). This wallet safeguard is distinct from consensus validation.
+
+Prefer the supported wallet RPCs for normal asset operations. Inspect the help for `issue`, `issueunique`, `reissue`, and `transfer`, and review amounts, ownership requirements, destinations, metadata and fees before sending.
+
+For custom raw transaction tooling, use `createrawtransaction` help and the pinned asset/script implementation. Custom/raw tools are not covered by the v4 wallet height safeguard; do not interpret that fact as a safe bypass procedure. Incorrect scripts, fees or ownership inputs can make a transaction invalid or cause loss. Historical third-party explorer transactions are not a substitute for current code validation.
+
+[Asset implementation](https://github.com/The-Yerbas-Endeavor/yerbas/blob/f0e2dde5673580d5d5cac9aa21e16ebe6936dd05/src/assets/assets.cpp) · [Asset structures](https://github.com/The-Yerbas-Endeavor/yerbas/blob/f0e2dde5673580d5d5cac9aa21e16ebe6936dd05/src/assets/assets.h) · [RPC implementation](https://github.com/The-Yerbas-Endeavor/yerbas/blob/f0e2dde5673580d5d5cac9aa21e16ebe6936dd05/src/rpc/assets.cpp)

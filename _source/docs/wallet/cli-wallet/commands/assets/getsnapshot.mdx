@@ -1,0 +1,36 @@
+# getsnapshot
+
+RPC help captured from **Yerbas Core 4.0.1.4** (`f0e2dde`).
+
+Use `./yerbas-cli help getsnapshot` on your node for help. In the GUI console omit `yerbas-cli`. HTTP examples use mainnet RPC port 15419; network-specific defaults and availability can differ.
+
+```text
+getsnapshot "asset_name" block_height
+
+THIS COMMAND IS NOT YET ACTIVE!
+https://github.com/The-Yerbas-Endeavor/yerbas
+
+V4 mainnet wallet policy: asset creation, sending, reissuance, ownership transfers, and asset reward payouts
+are locked below tip height 1195400. Receiving/viewing assets and ordinary YERB payments remain available.
+Testnet/regtest are unaffected. This is wallet policy, not a consensus restriction on raw transactions.
+
+Returns details for the asset snapshot, at the specified height
+
+Arguments:
+1. "asset_name"               (string, required) the name of the asset
+2. block_height                 (int, required) the block height of the snapshot
+
+Result:
+{
+  name: (string),
+  height: (number),
+  owners: [
+    {
+      address: (string),
+      amount_owned: (number),
+    }
+}
+
+Examples:
+> curl --user myusername --data-binary '{"jsonrpc": "1.0", "id":"curltest", "method": "getsnapshot", "params": ["ASSET_NAME" 28546] }' -H 'content-type: text/plain;' http://127.0.0.1:15419/
+```

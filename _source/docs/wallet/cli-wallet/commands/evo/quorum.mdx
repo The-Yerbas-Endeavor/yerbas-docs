@@ -1,0 +1,26 @@
+# quorum
+
+RPC help captured from **Yerbas Core 4.0.1.4** (`f0e2dde`).
+
+Use `./yerbas-cli help quorum` on your node for help. In the GUI console omit `yerbas-cli`. HTTP examples use mainnet RPC port 15419; network-specific defaults and availability can differ.
+
+```text
+quorum "command" ...
+Set of commands for quorums/LLMQs.
+To get help on individual commands, use "help quorum command".
+
+Arguments:
+1. "command"        (string, required) The command to execute
+
+Available commands:
+  list              - List of on-chain quorums
+  info              - Return information about a quorum
+  dkgsimerror       - Simulates DKG errors and malicious behavior
+  recovery          - Manually turn LOW_LLMQ on/off or inspect recorded status
+  dkgstatus         - Return the status of the current DKG process
+  memberof          - Checks which quorums the given smartnode is a member of
+  sign              - Threshold-sign a message
+  hasrecsig         - Test if a valid recovered signature is present
+  getrecsig         - Get a recovered signature
+  isconflicting     - Test if a conflict exists
+```

@@ -1,0 +1,21 @@
+# checkglobalrestriction
+
+RPC help captured from **Yerbas Core 4.0.1.4** (`f0e2dde`).
+
+Use `./yerbas-cli help checkglobalrestriction` on your node for help. In the GUI console omit `yerbas-cli`. HTTP examples use mainnet RPC port 15419; network-specific defaults and availability can differ.
+
+```text
+checkglobalrestriction restricted_name
+
+Checks to see if a restricted asset is globally frozen
+
+Arguments:
+1. "restricted_name"   (string, required) the restricted asset to search
+
+Result:
+"true/false", (boolean) If the restricted asset is frozen globally
+
+Examples:
+> yerbas-cli checkglobalrestriction "restricted_name"
+> curl --user myusername --data-binary '{"jsonrpc": "1.0", "id":"curltest", "method": "checkglobalrestriction", "params": ["restricted_name"] }' -H 'content-type: text/plain;' http://127.0.0.1:15419/
+```

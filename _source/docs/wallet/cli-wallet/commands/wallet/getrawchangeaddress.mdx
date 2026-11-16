@@ -1,0 +1,19 @@
+# getrawchangeaddress
+
+RPC help captured from **Yerbas Core 4.0.1.4** (`f0e2dde`).
+
+Use `./yerbas-cli help getrawchangeaddress` on your node for help. In the GUI console omit `yerbas-cli`. HTTP examples use mainnet RPC port 15419; network-specific defaults and availability can differ.
+
+```text
+getrawchangeaddress
+
+Returns a new Yerbas address, for receiving change.
+This is for use with raw transactions, NOT normal use.
+
+Result:
+"address"    (string) The address
+
+Examples:
+> yerbas-cli getrawchangeaddress
+> curl --user myusername --data-binary '{"jsonrpc": "1.0", "id":"curltest", "method": "getrawchangeaddress", "params": [] }' -H 'content-type: text/plain;' http://127.0.0.1:15419/
+```

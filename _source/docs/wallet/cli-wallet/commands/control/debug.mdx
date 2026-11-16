@@ -1,0 +1,27 @@
+# debug
+
+RPC help captured from **Yerbas Core 4.0.1.4** (`f0e2dde`).
+
+Use `./yerbas-cli help debug` on your node for help. In the GUI console omit `yerbas-cli`. HTTP examples use mainnet RPC port 15419; network-specific defaults and availability can differ.
+
+```text
+debug "category"
+Change debug category on the fly. Specify single category or use '+' to specify many.
+The valid debug categories are: net, tor, mempool, http, bench, zmq, db, rpc, estimatefee, addrman, selectcoins, reindex, cmpctblock, rand, prune, proxy, mempoolrej, libevent, coindb, qt, leveldb, rewards, chainlocks, gobject, instantsend, keepass, llmq, llmq-dkg, llmq-sigs, mnpayments, mnsync, privatesend, spork.
+libevent logging is configured on startup and cannot be modified by this RPC during runtime.
+There are also a few meta-categories:
+ - "all", "1" and "" activate all categories at once;
+ - "yerbas" activates all Yerbas-specific categories at once;
+ - "none" (or "0") deactivates all categories at once.
+Note: If specified category doesn't match any of the above, no error is thrown.
+
+Arguments:
+1. "category"          (string, required) The name of the debug category to turn on.
+
+Result:
+  result               (string) "Debug mode: " followed by the specified category.
+
+Examples:
+> yerbas-cli debug yerbas
+> curl --user myusername --data-binary '{"jsonrpc": "1.0", "id":"curltest", "method": "debug", "params": [yerbas+net] }' -H 'content-type: text/plain;' http://127.0.0.1:15419/
+```

@@ -1,0 +1,23 @@
+# getgovernanceinfo
+
+RPC help captured from **Yerbas Core 4.0.1.4** (`f0e2dde`).
+
+Use `./yerbas-cli help getgovernanceinfo` on your node for help. In the GUI console omit `yerbas-cli`. HTTP examples use mainnet RPC port 15419; network-specific defaults and availability can differ.
+
+```text
+getgovernanceinfo
+Returns an object containing governance parameters.
+
+Result:
+{
+  "governanceminquorum": xxxxx,           (numeric) the absolute minimum number of votes needed to trigger a governance action
+  "proposalfee": xxx.xx,                  (numeric) the collateral transaction fee which must be paid to create a proposal in YERB
+  "superblockcycle": xxxxx,               (numeric) the number of blocks between superblocks
+  "lastsuperblock": xxxxx,                (numeric) the block number of the last superblock
+  "nextsuperblock": xxxxx,                (numeric) the block number of the next superblock
+}
+
+Examples:
+> yerbas-cli getgovernanceinfo
+> curl --user myusername --data-binary '{"jsonrpc": "1.0", "id":"curltest", "method": "getgovernanceinfo", "params": [] }' -H 'content-type: text/plain;' http://127.0.0.1:15419/
+```

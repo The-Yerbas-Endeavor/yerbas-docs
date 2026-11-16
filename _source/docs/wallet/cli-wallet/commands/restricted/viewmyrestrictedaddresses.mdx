@@ -1,0 +1,23 @@
+# viewmyrestrictedaddresses
+
+RPC help captured from **Yerbas Core 4.0.1.4** (`f0e2dde`).
+
+Use `./yerbas-cli help viewmyrestrictedaddresses` on your node for help. In the GUI console omit `yerbas-cli`. HTTP examples use mainnet RPC port 15419; network-specific defaults and availability can differ.
+
+```text
+viewmyrestrictedaddresses
+
+View all addresses this wallet owns that have been restricted
+
+Result:
+{
+"Address:"                        (string) The address that was restricted
+"Asset Name:"                     (string) The asset that the restriction applies to
+"[Restricted|Derestricted]:"      (Date) The UTC datetime of the restriction or derestriction in the format (YY-mm-dd HH:MM:SS))
+                                         (Only the most recent restriction/derestriction event will be returned for each address)
+}...
+
+Examples:
+> yerbas-cli viewmyrestrictedaddresses
+> curl --user myusername --data-binary '{"jsonrpc": "1.0", "id":"curltest", "method": "viewmyrestrictedaddresses", "params": [] }' -H 'content-type: text/plain;' http://127.0.0.1:15419/
+```

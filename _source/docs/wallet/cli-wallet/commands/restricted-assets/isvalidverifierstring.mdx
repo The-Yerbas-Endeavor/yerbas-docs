@@ -1,0 +1,21 @@
+# isvalidverifierstring
+
+RPC help captured from **Yerbas Core 4.0.1.4** (`f0e2dde`).
+
+Use `./yerbas-cli help isvalidverifierstring` on your node for help. In the GUI console omit `yerbas-cli`. HTTP examples use mainnet RPC port 15419; network-specific defaults and availability can differ.
+
+```text
+isvalidverifierstring verifier_string
+
+Checks to see if the given verifier string is valid
+
+Arguments:
+1. "verifier_string"   (string, required) the verifier string to check
+
+Result:
+"xxxxxxx", (string) If the verifier string is valid, and the reason
+
+Examples:
+> yerbas-cli isvalidverifierstring "verifier_string"
+> curl --user myusername --data-binary '{"jsonrpc": "1.0", "id":"curltest", "method": "isvalidverifierstring", "params": ["verifier_string"] }' -H 'content-type: text/plain;' http://127.0.0.1:15419/
+```

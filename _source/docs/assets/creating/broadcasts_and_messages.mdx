@@ -1,0 +1,9 @@
+# Message channels and broadcasts
+
+Mainnet v4 wallet operations are restricted below tip height **1,195,400**. See [availability and backup guidance](/docs/wallet/assets/). This wallet safeguard is distinct from consensus validation.
+
+Message channels use the `~` naming form and an additional issuance fee of 4.2 YERB. Consult `./yerbas-cli help issue` for issuance and `./yerbas-cli help transfer` for supported message and expiry arguments. Message subscription RPCs include `viewallmessagechannels`, `subscribetochannel`, `unsubscribefromchannel`, and `viewallmessages`.
+
+Messages can reference external metadata; a reference is not a guarantee that the content remains available.
+
+[Asset implementation](https://github.com/The-Yerbas-Endeavor/yerbas/blob/f0e2dde5673580d5d5cac9aa21e16ebe6936dd05/src/assets/assets.cpp) · [Asset structures](https://github.com/The-Yerbas-Endeavor/yerbas/blob/f0e2dde5673580d5d5cac9aa21e16ebe6936dd05/src/assets/assets.h) · [RPC implementation](https://github.com/The-Yerbas-Endeavor/yerbas/blob/f0e2dde5673580d5d5cac9aa21e16ebe6936dd05/src/rpc/assets.cpp)

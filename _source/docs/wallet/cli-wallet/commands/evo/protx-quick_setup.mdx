@@ -1,0 +1,41 @@
+# protx quick_setup
+
+Help captured from Core 4.0.1.4 (`f0e2dde`). HTTP examples use the mainnet RPC port.
+
+The implementation returns `operatorPublic` and `operatorSecret`; the older `operationPubkey` / `operationSecret` labels in the help below are inaccurate. Protect the returned operator secret.
+
+```text
+protx quick_setup "collateralHash" "collateralIndex" "ipAndPort" "feeSourceAddress"
+
+Register protx transaction from collateral inputs. This command will generate voting address,
+owner address, operation pubkey with 0 operation reward and use them for register_prepare.
+bls generate also call to generate public and secret for operator. it then use register_prepare output
+to sign collateral message. Finnally it send protx transaction with protx register_submitfeeAddress is added to "protx register_prepare" to cover transaction fees
+
+
+Arguments:
+1. "collateralHash"           (string, required) The collateral transaction hash.
+2. collateralIndex            (numeric, required) The collateral transaction output index.
+3. "ipAndPort"                (string, required) IP and port in the form "IP:PORT".
+                              Must be unique on the network. Can be set to 0, which will require a ProUpServTx afterwards.
+4. "feeSourceAddress"         (string, optional) If specified wallet will only use coins from this address to fund ProTx.
+                              If not specified, payoutAddress is the one that is going to be used.
+                              The private key belonging to this address must be known in your wallet.
+
+Result:
+{
+  "txid":                  (string) The transaction id for submitted protx register_submit.
+  "tx":                    (string) The raw transaction hex of this protx without signiature.
+  "ownerAddress":          (string) The generated owner address.
+  "votingAddress":         (string) The generated voting address.
+  "payoutAddress":         (string) The generated payout address.
+  "collateralAddress":     (string) The collateral address for this collateralHash.
+  "collateralAmount":      (numberic) The collateral Amount was used for this protx.
+  "operationPubkey":       (string) The public key from bls generate.
+  "operationSecret":       (string) The secret key from bls generate.
+  "yerbas.conf" :       (string) The content of yerbas.conf to be used in vps node.
+}
+
+Examples:
+> yerbas-cli protx quick_setup "collateralHash" "collateralIndex" "ipAndPort" "feeSourceAddress"
+```

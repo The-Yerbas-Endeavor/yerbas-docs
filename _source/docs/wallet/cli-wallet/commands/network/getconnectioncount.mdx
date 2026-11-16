@@ -1,0 +1,18 @@
+# getconnectioncount
+
+RPC help captured from **Yerbas Core 4.0.1.4** (`f0e2dde`).
+
+Use `./yerbas-cli help getconnectioncount` on your node for help. In the GUI console omit `yerbas-cli`. HTTP examples use mainnet RPC port 15419; network-specific defaults and availability can differ.
+
+```text
+getconnectioncount
+
+Returns the number of connections to other nodes.
+
+Result:
+n          (numeric) The connection count
+
+Examples:
+> yerbas-cli getconnectioncount
+> curl --user myusername --data-binary '{"jsonrpc": "1.0", "id":"curltest", "method": "getconnectioncount", "params": [] }' -H 'content-type: text/plain;' http://127.0.0.1:15419/
+```

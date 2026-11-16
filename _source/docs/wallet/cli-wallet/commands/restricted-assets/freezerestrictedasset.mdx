@@ -1,0 +1,25 @@
+# freezerestrictedasset
+
+RPC help captured from **Yerbas Core 4.0.1.4** (`f0e2dde`).
+
+Use `./yerbas-cli help freezerestrictedasset` on your node for help. In the GUI console omit `yerbas-cli`. HTTP examples use mainnet RPC port 15419; network-specific defaults and availability can differ.
+
+```text
+freezerestrictedasset asset_name (change_address) (asset_data)
+
+Freeze all trading for a specific restricted asset
+
+Arguments:
+1. "asset_name"       (string, required) the name of the restricted asset you want to unfreeze
+2. "change_address"   (string, optional) The change address for the owner token of the restricted asset
+3. "asset_data"       (string, optional) The asset data (ipfs or a hash) to be applied to the transfer of the owner token
+
+Result:
+"txid"                     (string) The transaction id
+
+Examples:
+> yerbas-cli freezerestrictedasset "$RESTRICTED_ASSET"
+> curl --user myusername --data-binary '{"jsonrpc": "1.0", "id":"curltest", "method": "freezerestrictedasset", "params": ["$RESTRICTED_ASSET"] }' -H 'content-type: text/plain;' http://127.0.0.1:15419/
+> yerbas-cli freezerestrictedasset "$RESTRICTED_ASSET" "change_address"
+> curl --user myusername --data-binary '{"jsonrpc": "1.0", "id":"curltest", "method": "freezerestrictedasset", "params": ["$RESTRICTED_ASSET" "change_address"] }' -H 'content-type: text/plain;' http://127.0.0.1:15419/
+```
