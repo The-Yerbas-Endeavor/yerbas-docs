@@ -34,7 +34,7 @@ jobs:
         shell: bash
         run: |
           site_dir="$(mktemp -d)"
-          git archive HEAD -- . ':!_source' ':!.github' | tar -x -C "$site_dir"
+          git archive HEAD | tar -x -C "$site_dir" --exclude=_source --exclude=.github
           python3 _source/tools/check-links.py "$site_dir"
           test -f "$site_dir/.nojekyll"
           test "$(cat "$site_dir/CNAME")" = "docs.yerbas.org"
